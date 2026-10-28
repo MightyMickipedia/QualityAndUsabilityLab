@@ -1,0 +1,5 @@
+1. Create a git repo (done)
+2. Download the dataset (done)
+3. select the 7-rated faithfulness and content coverage summaries
+4. Create the error taxonomies for Faithfulness (https://arxiv.org/pdf/2104.13346 ) and Content Coverage (informativeness in table 2 of https://aclanthology.org/2024.emnlp-main.519.pdf ). Also create two examples for each type
+due: 4.11.
