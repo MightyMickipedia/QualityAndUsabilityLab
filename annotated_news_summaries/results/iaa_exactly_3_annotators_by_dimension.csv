@@ -1,0 +1,9 @@
+Dimension,dim_col,Alpha_all,N_units
+Structure & Coherence,d5,0.205,780
+Referential Clarity,d3,0.279,780
+Focus,d4,0.434,780
+Complexity,d8,0.456,780
+Content Coverage,d6,0.561,780
+Faithfulness,d7,0.642,780
+Grammaticality,d1,0.664,780
+Non-redundancy,d2,0.706,780

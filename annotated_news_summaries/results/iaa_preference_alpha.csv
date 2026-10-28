@@ -1,0 +1,4 @@
+subset,alpha_nominal,N_units
+all (>=2),0.738,735
+exactly 2,0.76,345
+exactly 3,0.731,390

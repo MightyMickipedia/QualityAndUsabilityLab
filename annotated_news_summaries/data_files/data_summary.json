@@ -1,0 +1,14 @@
+{
+  "annotations_clean_rows": 4506,
+  "annotations_exactly_3_rows": 2340,
+  "annotations_at_least_2_rows": 3720,
+  "unique_summary_units_clean": 2256,
+  "unique_summary_units_exactly_3": 780,
+  "unique_summary_units_at_least_2": 1470,
+  "annotators_anonymized": [
+    "annotator_1",
+    "annotator_2",
+    "annotator_3"
+  ],
+  "excluded_annotators_rule": "test/tester/test_annotator/dummy and names beginning with test or dummy"
+}

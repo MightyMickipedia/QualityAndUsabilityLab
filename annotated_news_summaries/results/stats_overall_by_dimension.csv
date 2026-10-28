@@ -1,0 +1,9 @@
+Dimension,dim_col,N_item_model_units,mean,std,var
+Grammaticality,d1,1470,5.828,1.207,1.457
+Non-redundancy,d2,1470,6.326,1.148,1.317
+Referential Clarity,d3,1470,6.729,0.54,0.292
+Focus,d4,1470,5.873,1.251,1.565
+Structure & Coherence,d5,1470,5.791,1.117,1.247
+Content Coverage,d6,1470,5.018,1.311,1.72
+Faithfulness,d7,1470,4.96,1.511,2.282
+Complexity,d8,1470,5.192,1.368,1.872

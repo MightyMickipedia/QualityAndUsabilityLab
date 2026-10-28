@@ -1,0 +1,9 @@
+Dimension,Odds Ratio,p_value
+Content Coverage,2.24,< 0.0001
+Faithfulness,2.14,< 0.0001
+Complexity,1.88,< 0.0001
+Referential Clarity,1.68,< 0.0001
+Grammaticality,1.54,< 0.0001
+Non-redundancy,1.5,< 0.0001
+Focus,1.42,< 0.0001
+Structure & Coherence,1.32,< 0.0001
