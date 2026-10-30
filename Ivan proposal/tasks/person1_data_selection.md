@@ -1,9 +1,9 @@
 # Person 1 - Select the 7-rated summaries
 
-Name: ______
+Name: Giuseppe
 
 ## Task
-Write `scripts/select_perfect.py` that reads `annotated_news_summaries/data_files/annotations_clean.jsonl` and writes:
+Write `scripts/select_perfect.py` that reads `annotated_news_summaries/data_files/annotations_exactly_3_annotators.jsonl` and writes:
 - `data/perfect_faithfulness.jsonl` - summaries with Faithfulness (`d7`) = 7
 - `data/perfect_coverage.jsonl` - summaries with Content Coverage (`d6`) = 7
 
