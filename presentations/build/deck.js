@@ -1,9 +1,6 @@
-// Builds one weekly deck in one or more styles.
-// Usage: node deck.js <week-folder> [style ...]
-//   node deck.js week-01                 -> scales (the team's style)
-//   node deck.js week-01 all             -> all four styles
-//   node deck.js week-01 gavel terminal  -> only these
-// Output: presentations/<week-folder>/<style>/<week-folder>-<style>.pptx
+// Builds one weekly deck.
+// Usage: node deck.js <week-folder>     e.g. node deck.js week-01
+// Output: presentations/<week-folder>/<week-folder>.pptx
 const fs = require("fs");
 const path = require("path");
 const pptxgen = require("pptxgenjs");
@@ -125,19 +122,14 @@ async function build(weekDir, styleKey) {
   defineLayout(pres, s, c);
   for (const d of c.slides) ({ done: slideDone, table: slideTable, questions: slideQuestions })[d.type](pres, s, d);
   const name = path.basename(weekDir);
-  const outDir = path.join(weekDir, styleKey);
-  fs.mkdirSync(outDir, { recursive: true });
-  const file = path.join(outDir, `${name}-${styleKey}.pptx`);
+  const file = path.join(weekDir, `${name}.pptx`);
   await pres.writeFile({ fileName: file });
   await applyTheme(file, themeFor(s));
   return file;
 }
 
 (async () => {
-  const [week, ...styles] = process.argv.slice(2);
-  if (!week) { console.error("usage: node deck.js <week-folder> [style ...]"); process.exit(1); }
-  const weekDir = path.resolve(__dirname, "..", week);
-  // Default style is "scales" (chosen for the weekly updates); "all" builds every style.
-  const keys = !styles.length ? ["scales"] : styles[0] === "all" ? Object.keys(STYLES) : styles;
-  for (const k of keys) console.log(await build(weekDir, k));
+  const [week] = process.argv.slice(2);
+  if (!week) { console.error("usage: node deck.js <week-folder>"); process.exit(1); }
+  console.log(await build(path.resolve(__dirname, "..", week), "scales"));
 })();

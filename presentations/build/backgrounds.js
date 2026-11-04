@@ -1,4 +1,4 @@
-// Renders the four "LLM judge" background images (1920x1080 PNG, very dark line art on black).
+// Renders the "LLM judge" background image (1920x1080 PNG, very dark line art on black).
 // Run: node backgrounds.js   -> writes assets/bg-<style>.png
 const fs = require("fs");
 const path = require("path");
@@ -26,22 +26,10 @@ function dots(color, step = 48, r = 1.6) {
 const svgDoc = (body) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><rect width="100%" height="100%" fill="#000"/>${body}</svg>`;
 
 const BG = {
-  // Robot judge holding a gavel, large on the right.
-  gavel: svgDoc(
-    icon("PiRobotThin", 900, 80, 1100, "#191919") +
-    icon("PiGavelThin", 600, 640, 460, "#221d13", -25)),
   // Scales of justice with a small robot head as the weight on one side.
   scales: svgDoc(
     icon("PiScalesThin", 760, -40, 1200, "#121d1c") +
     icon("PiRobotThin", 1595, 430, 210, "#172423")),
-  // Terminal look: faint dot grid and a huge cropped robot bottom right.
-  terminal: svgDoc(
-    dots("#0c120c") +
-    icon("PiRobotThin", 1050, 160, 1150, "#101a10")),
-  // Red pen look: a document under a magnifying glass, with check marks.
-  redpen: svgDoc(
-    icon("PiFileMagnifyingGlassThin", 950, 60, 1000, "#1c1212") +
-    icon("PiChecksThin", 760, 700, 380, "#231313", -8)),
 };
 
 (async () => {

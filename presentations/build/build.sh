@@ -1,24 +1,18 @@
 #!/usr/bin/env bash
-# Build, validate and export one week's slides.
-# Usage: ./build.sh week-01            (scales, the team's style)
-#        ./build.sh week-01 all        (all four styles)
-#        ./build.sh week-01 terminal   (one other style)
+# Build and check one week's slides.
+# Usage: ./build.sh week-01
+# Writes presentations/week-01/week-01.pptx; a PDF and preview images go to build/preview/ (not committed).
 # Needs: npm install (once), LibreOffice, poppler (pdftoppm).
 set -euo pipefail
 cd "$(dirname "$0")"
-WEEK=${1:?usage: ./build.sh week-NN [style ...]}; shift || true
+WEEK=${1:?usage: ./build.sh week-NN}
 export NODE_PATH="$PWD/node_modules"
 PY="${PY:-python3}"
 SK=$(ls -d ~/.claude/skills/synced/*/pptx 2>/dev/null | head -1 || true)
-[ -f assets/bg-gavel.png ] || node backgrounds.js >/dev/null
-for f in $(node deck.js "$WEEK" "$@"); do
-  if [ -n "$SK" ]; then
-    "$PY" "$SK/scripts/office/validate.py" "$f" | tail -1
-    (cd "$(dirname "$f")" && "$PY" "$SK/scripts/office/soffice.py" --headless --convert-to pdf "$(basename "$f")" >/dev/null 2>&1)
-  else
-    (cd "$(dirname "$f")" && soffice --headless --convert-to pdf "$(basename "$f")" >/dev/null 2>&1)
-  fi
-  p=preview/$(basename "${f%.pptx}"); mkdir -p "$p"; rm -f "$p"/*.jpg
-  pdftoppm -jpeg -r 80 "${f%.pptx}.pdf" "$p/s"
-  echo "$f"
-done
+[ -f assets/bg-scales.png ] || node backgrounds.js >/dev/null
+f=$(node deck.js "$WEEK")
+[ -n "$SK" ] && "$PY" "$SK/scripts/office/validate.py" "$f" | tail -1
+p="$PWD/preview/$WEEK"; mkdir -p "$p"; rm -f "$p"/*
+soffice --headless --convert-to pdf --outdir "$p" "$f" >/dev/null 2>&1
+pdftoppm -jpeg -r 80 "$p/$WEEK.pdf" "$p/s"
+echo "$f"
