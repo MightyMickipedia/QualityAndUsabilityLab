@@ -28,9 +28,19 @@ All 11 error types with one example change each. Details per type are further do
 **Done:** all 11 types have the paper definition, a German explanation and 2 examples (30 examples in total in `data/examples/examples.csv`).
 
 **Not done yet:**
-- Severity: no agreed scale. The low/medium/high values are each author's guess.
+- Severity: the scale is now defined (see Severity below). The low/medium/high values on the examples were each author's guess before that and haven't been rechecked.
 - In-domain sentences: open whether to use real sentences from other articles (as APPLS does) or invented ones (Mick's examples). Question for Neha.
 - Automatic error injection with an LLM, using these examples as few-shot prompts (next phase).
+
+## Severity
+
+Every injected error gets one of three levels (Neha, 04.11.).
+
+| Severity | Meaning | Example from our data |
+|---|---|---|
+| high | changes the main claim of the summary | „Die CDU“ → „Die SPD“ (F-EntE-1) |
+| medium | wrong secondary fact | „in Greifswald“ → „in Rostock“ (F-CircE-2) |
+| low | small detail, meaning mostly intact | „vier Kinder“ → „drei Kinder“ (F-EntE-2) |
 
 ## Who did what
 
