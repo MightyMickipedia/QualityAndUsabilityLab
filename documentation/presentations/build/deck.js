@@ -111,6 +111,34 @@ function slideQuestions(pres, s, d) {
   T(slide, list(d.right.items, false), { x: 6.7, y: 1.8, w: 2.65, h: 1.55, fontFace: s.body, fontSize: 10.5, color: s.text });
 }
 
+// A picture (e.g. a screenshot of a file) on the left, a short list on the right.
+function slideImage(pres, s, d, weekDir) {
+  const slide = pres.addSlide({ masterName: "CONTENT" });
+  title(slide, s, d.title);
+  const img = path.join(weekDir, d.image);
+  const { width, height } = require("child_process").execFileSync("python3", ["-c",
+    "import struct,sys;f=open(sys.argv[1],'rb');f.read(16);w,h=struct.unpack('>II',f.read(8));print(w,h)", img])
+    .toString().trim().split(" ").reduce((o, v, i) => (o[i ? "height" : "width"] = +v, o), {});
+  const h = 3.75, w = h * width / height;
+  slide.addImage({ path: img, x: 0.5, y: 1.3, w, h, altText: d.alt || d.title, objectName: "Screenshot" });
+  slide.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.3, w, h, fill: { type: "none" }, line: { color: s.line, width: 0.75 }, objectName: "Screenshot frame" });
+  const x = 0.5 + w + 0.4, tw = 9.5 - x;
+  T(slide, d.heading, { x, y: 1.3, w: tw, h: 0.3, fontFace: s.body, fontSize: 12, bold: true, color: s.accent });
+  T(slide, d.points.flatMap((t, i) => [
+    { text: "■  ", options: { bold: true, color: s.accent } },
+    { text: t, options: { breakLine: i < d.points.length - 1, paraSpaceAfter: 8 } }]),
+    { x, y: 1.68, w: tw, h: 3.3, fontFace: s.body, fontSize: 11.5, color: s.text });
+}
+
+// A heading and plain paragraphs (no numbering, no box).
+function slidePlain(pres, s, d) {
+  const slide = pres.addSlide({ masterName: "CONTENT" });
+  title(slide, s, d.title);
+  T(slide, d.heading, { x: 0.5, y: 1.3, w: 6.5, h: 0.3, fontFace: s.body, fontSize: 12, bold: true, color: s.accent });
+  T(slide, d.paragraphs.map((t, i) => ({ text: t, options: { breakLine: i < d.paragraphs.length - 1, paraSpaceAfter: 14 } })),
+    { x: 0.5, y: 1.68, w: 6.2, h: 3.3, fontFace: s.body, fontSize: 11.5, color: s.text });
+}
+
 async function build(weekDir, styleKey) {
   const c = require(path.join(weekDir, "content.js"));
   const s = STYLES[styleKey];
@@ -120,7 +148,8 @@ async function build(weekDir, styleKey) {
   pres.subject = `${c.project}, week ${c.week} (${c.date})`;
   pres.theme = { headFontFace: s.head, bodyFontFace: s.body };
   defineLayout(pres, s, c);
-  for (const d of c.slides) ({ done: slideDone, table: slideTable, questions: slideQuestions })[d.type](pres, s, d);
+  const types = { done: slideDone, image: slideImage, table: slideTable, questions: slideQuestions, plain: slidePlain };
+  for (const d of c.slides) types[d.type](pres, s, d, weekDir);
   const name = path.basename(weekDir);
   const file = path.join(weekDir, `${name}.pptx`);
   await pres.writeFile({ fileName: file });

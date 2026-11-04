@@ -7,7 +7,7 @@ Done: merged into `documentation/Taxonomy.md`. (Was: fill a reference list from 
 Persons 2-4 check their definitions against this list.
 
 ## 2. Example format
-Keep `examples/examples.csv` consistent (columns in `templates/example_format.md`). Check every row before the meeting.
+Keep `data/examples/examples.csv` consistent (columns in `templates/example_format.md`). Check every row before the meeting.
 
 ## 3. Weekly slides (by Tue evening)
 Turn `templates/weekly_update.md` into 2-3 slides. Everyone fills in their own line by Tuesday noon.

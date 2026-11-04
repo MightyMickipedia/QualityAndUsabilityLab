@@ -15,7 +15,7 @@ python scripts/select_perfect.py --criterion C         # at least one 7
 Only the Python standard library is needed (Python 3.8+).
 Further options: `--input`, `--outdir`, `--sample-size` (default 5), `--seed` (default 42).
 
-Input: `annotated_news_summaries/data_files/annotations_exactly_3_annotators.jsonl`
+Input: `data/annotated_news_summaries/data_files/annotations_exactly_3_annotators.jsonl`
 
 ## Definition of "perfect"
 

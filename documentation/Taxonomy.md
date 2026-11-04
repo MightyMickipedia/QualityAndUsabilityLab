@@ -5,14 +5,39 @@ Week 1 deliverable (due 04.11.). For each error type: name, definition from the 
 - Faithfulness: FRANK, Pagnoni et al. 2021, Table 1 - https://arxiv.org/pdf/2104.13346
 - Content Coverage: APPLS, Guo et al. 2024 (EMNLP), Table 2, informativeness - https://aclanthology.org/2024.emnlp-main.519.pdf
 - Examples come only from summaries all annotators rated 7 (`data/perfect_faithfulness.jsonl`, `data/perfect_coverage.jsonl`, option A).
-- Each example changes one thing. Full summaries are in `examples/examples.csv` (column `example_id`).
+- Each example changes one thing. Full summaries are in `data/examples/examples.csv` (column `example_id`).
 
-## Overview
+## At a glance
+
+All 11 error types with one example change each. Details per type are further down.
+
+| Dimension | Type | German name | Example change | Examples |
+|---|---|---|---|---|
+| Faithfulness | PredE | Prädikatfehler | „abschaffen“ → „beibehalten“ | 2 ✓ |
+| Faithfulness | EntE | Entitätsfehler | „Die CDU“ → „Die SPD“ | 2 ✓ |
+| Faithfulness | CircE | Umstandsfehler | „in Greifswald“ → „in Rostock“ | 2 ✓ |
+| Faithfulness | CorefE | Koreferenzfehler | „Sie“ (Esken) → „Er“ (Zuckerberg) | 2 ✓ |
+| Faithfulness | LinkE | Verknüpfungsfehler | „nachdem“ → „bevor“ | 2 ✓ |
+| Faithfulness | OutE | Information nicht im Artikel | + „Grönland hat rund 56.000 Einwohner.“ | 2 ✓ |
+| Faithfulness | GramE | Grammatikfehler | „wird von der SEC verklagt“ → „wird die SEC verklagt“ | 2 ✓ |
+| Coverage | Delete sentences | Sätze löschen | sentence on genetic differences and aggression deleted (ants) | 2 ✓ (+2 in examples.csv) |
+| Coverage | Add out-of-domain | Themenfremden Satz hinzufügen | + battery sentence in a Panama Canal summary | 2 ✓ (+2 in examples.csv) |
+| Coverage | Add in-domain | Themennahen Satz hinzufügen | + invented phone call between Frederiksen and Trump | 2 ✓ (+2 in examples.csv) |
+| Coverage | Add definitions | Definition hinzufügen | + definition of „Abholzung“ | 2 ✓ (+2 in examples.csv) |
+
+**Done:** all 11 types have the paper definition, a German explanation and 2 examples (30 examples in total in `data/examples/examples.csv`).
+
+**Not done yet:**
+- Severity: no agreed scale. The low/medium/high values are each author's guess.
+- In-domain sentences: open whether to use real sentences from other articles (as APPLS does) or invented ones (Mick's examples). Question for Neha.
+- Automatic error injection with an LLM, using these examples as few-shot prompts (next phase).
+
+## Who did what
 
 | Dimension | Paper | Types | Examples | Examples by |
 |---|---|---|---|---|
 | Faithfulness: semantic frame | FRANK | PredE, EntE, CircE | 6 / 6 | Malte |
-| Faithfulness: discourse and verifiability | FRANK | CorefE, LinkE, OutE, GramE | 8 / 8 | op380, Ivan |
+| Faithfulness: discourse and verifiability | FRANK | CorefE, LinkE, OutE, GramE | 8 / 8 | Anton, Ivan |
 | Content Coverage | APPLS | delete sentences, add out-of-domain, add in-domain, add definitions | 8 / 8 | Mick (8 more by Ivan in examples.csv) |
 
 ---
@@ -137,7 +162,7 @@ APPLS's examples all start from:
 
 Our rule: we delete one sentence that carries a key fact. The paper deletes sentences without choosing, so ours is stricter.
 
-The coverage examples below are Mick's (`APPLS_errors/human_labeled.csv`). Ivan made 8 more, one more pair per type: `C-DEL-3/4`, `C-OUT-3/4`, `C-IN-3/4`, `C-DEF-3/4` in `examples/examples.csv`.
+The coverage examples below are Mick's (`data/APPLS_errors/human_labeled.csv`). Ivan made 8 more, one more pair per type: `C-DEL-3/4`, `C-OUT-3/4`, `C-IN-3/4`, `C-DEF-3/4` in `data/examples/examples.csv`.
 
 ## Examples
 

@@ -77,5 +77,5 @@ Paper definitions and examples are already in `documentation/Taxonomy.md`, Part 
 - Severity guess (low / medium / high): ______
 
 ## Done when
-- [x] 4 types x 2 examples (`APPLS_errors/human_labeled.csv`)
-- [ ] all examples added to `examples/examples.csv`
+- [x] 4 types x 2 examples (`data/APPLS_errors/human_labeled.csv`)
+- [ ] all examples added to `data/examples/examples.csv`

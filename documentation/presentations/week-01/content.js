@@ -1,5 +1,5 @@
 // Week 1 content. Copy this folder for the next week and edit only this file.
-// Source of the text: "Ivan proposal/templates/weekly_update.md".
+// Source of the text: "documentation/Ivan proposal/templates/weekly_update.md".
 module.exports = {
   week: 1,
   date: "04.11.2026",
@@ -15,14 +15,27 @@ module.exports = {
       rows: [
         ["Giuseppe", "select_perfect.py picks the \"perfect\" summaries. Option A (all 3 annotators gave 7): 100 faithfulness, 66 coverage."],
         ["Malte", "PredE, EntE, CircE, 2 examples each."],
-        ["op380", "CorefE, LinkE, OutE, GramE, German explanations and 1 example each."],
+        ["Anton", "CorefE, LinkE, OutE, GramE, German explanations and 1 example each."],
         ["Mick", "Delete sentences, add out-of-domain, add in-domain, add definitions, 2 examples each."],
-        ["Ivan", "Merged everything into Taxonomy.md with the definitions from the papers, the second example for op380's 4 types, 8 more coverage examples, and all 30 examples with full summaries in examples.csv."],
+        ["Ivan", "Merged everything into Taxonomy.md with the definitions from the papers, the second example for Anton's 4 types, 8 more coverage examples, and all 30 examples with full summaries in examples.csv."],
+      ],
+    },
+    {
+      type: "image",
+      title: "The taxonomy file",
+      image: "taxonomy.png",
+      alt: "Screenshot of documentation/Taxonomy.md, Part 1: the 7 FRANK error types with definition, paper example and German explanation",
+      heading: "documentation/Taxonomy.md",
+      points: [
+        "One file for both taxonomies: Part 1 faithfulness (FRANK, 7 types), Part 2 coverage (APPLS, 4 types).",
+        "Per type: the paper's definition and example, a German explanation, 2 examples from our dataset.",
+        "Each example: original, modified, what changed, severity.",
+        "All 30 examples with full summaries: data/examples/examples.csv.",
       ],
     },
     {
       type: "table",
-      title: "Taxonomy (excerpt)",
+      title: "Taxonomy overview",
       note: "from documentation/Taxonomy.md · full definitions, German explanations and both examples per type are in the file",
       header: ["Dimension", "Type", "German name", "Example change"],
       rows: [
@@ -40,27 +53,13 @@ module.exports = {
       ],
     },
     {
-      type: "questions",
-      title: "Questions for Neha",
-      left: {
-        heading: "About our work",
-        items: [
-          "Is a summary \"perfect\" only if all 3 annotators gave 7? (A: 100/66, B: 167/131, C: 433/407)",
-          "Do we need severity levels? If yes, what's the scale? Right now each of us picks low/medium/high.",
-          "In-domain sentences: a real sentence from another article (as APPLS does), or an invented one? An invented one overlaps with OutE.",
-          "Are added definitions a coverage error in news summaries?",
-          "OutE: real-world facts that aren't in the article, or invented facts?",
-          "We weren't sure how to build the taxonomy, so we did it our way: paper definition, German explanation, 2 examples per type. Is this format fine?",
-        ],
-      },
-      right: {
-        heading: "Requests",
-        items: [
-          "Could you send us the most recent presentation? We don't think we have access to it.",
-          "Could you share last semester's error-injection scripts?",
-          "What exactly should be ready by next week?",
-        ],
-      },
+      type: "plain",
+      title: "Questions & Requests for Neha",
+      heading: "About our work",
+      paragraphs: [
+        "We weren't sure how to build the taxonomy, so we did it our way: paper definition, German explanation, 2 examples per type. Is this format fine?",
+        "Could you send us the most recent presentation? We don't think we have access to it.",
+      ],
     },
   ],
 };
