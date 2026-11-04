@@ -1,6 +1,6 @@
 # Task 4 - Inject coverage errors (all 4 APPLS types)
 
-**Goal:** get the four coverage errors into "perfect" summaries automatically, one error per output.
+**Goal:** get the four coverage errors into "perfect" summaries automatically.
 
 Input: `data/perfect_coverage.jsonl` (the current file: 66 summaries, 3 annotators, all gave 7). Some texts still contain `<br/>` / `<strong>` tags, which you can just remove. Few-shot examples: `data/examples/examples.csv` (C-DEL, C-OUT, C-IN, C-DEF) and `data/APPLS_errors/human_labeled.csv`.
 

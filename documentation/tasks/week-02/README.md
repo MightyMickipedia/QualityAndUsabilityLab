@@ -1,6 +1,6 @@
 # Week 2 tasks (04.11. - 11.11.2026)
 
-**Goal of the week:** automatic error injection. Scripts and prompts that take a "perfect" summary and return the same summary with one error of a given type and severity.
+**Goal of the week:** automatic error injection. Scripts and prompts that take a "perfect" summary and return the same summary with an error of a given type and severity.
 
 | # | Task | File |
 |---|---|---|
@@ -10,14 +10,12 @@
 | 4 | Injection: coverage errors (all 4 APPLS types) | `task4_coverage.md` |
 | 5 | Shared format and runner, severity guide, last semester's scripts, slides | `task5_pipeline.md` |
 
-## Rules for everyone
-- One error per output, of the requested type and severity.
+## Guidance for everyone
 - Python scripts are not a must for tasks 2-4. LLM prompts are probably easier for most types, see for yourself.
-- Save outputs in the shared format from task 5 (one JSON line per modified summary). The format and the runner are ready in `scripts/injection/` (README there). The runner is optional: it saves you writing your own API code. Until Friday, you can test prompts by hand in any chat model.
+- Save outputs in the shared format from task 5 (one JSON line per modified summary). The format and the runner are ready in `scripts/injection/` (README there). The runner is optional: it saves you writing your own API code.
 - Prompts go in `scripts/injection/prompts/`, scripts (if any) in `scripts/injection/`, outputs in `data/injected/`.
 - Test: in your task, take the same 10 summaries (mix short and long) and make one output per error type for each, so 10 per type (task 2: 30, tasks 3 and 4: 40 each).
-- Use the few-shot examples from `data/examples/examples.csv` for your types.
-- Post in the chat which task you take and when it's ready. Results are due by Tue 10.11. evening, so the slides are ready for Wed.
+- The examples in `data/examples/examples.csv` can be used as few-shot examples in your prompts (Neha suggested it). Not a must.
 - Research questions: Ivan writes a draft by Mon 09.11. and posts it in the chat. Give feedback if you don't agree.
 
 ## Dependencies

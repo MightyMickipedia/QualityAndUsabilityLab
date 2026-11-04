@@ -1,6 +1,6 @@
 # Task 3 - Inject discourse and verifiability errors (CorefE, LinkE, OutE, GramE)
 
-**Goal:** get CorefE, LinkE, OutE and GramE into "perfect" summaries automatically, one error per output.
+**Goal:** get CorefE, LinkE, OutE and GramE into "perfect" summaries automatically.
 
 Input: `data/perfect_faithfulness.jsonl` (the current file: 100 summaries, 3 annotators, all gave 7). Some texts still contain `<br/>` / `<strong>` tags, which you can just remove. Few-shot examples: `data/examples/examples.csv` (F-CorefE, F-LinkE, F-OutE, F-GramE).
 

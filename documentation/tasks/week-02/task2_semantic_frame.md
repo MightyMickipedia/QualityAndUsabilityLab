@@ -1,6 +1,6 @@
 # Task 2 - Inject semantic frame errors (PredE, EntE, CircE)
 
-**Goal:** get PredE, EntE and CircE into "perfect" summaries automatically, one error per output.
+**Goal:** get PredE, EntE and CircE into "perfect" summaries automatically.
 
 Input: `data/perfect_faithfulness.jsonl` (the current file: 100 summaries, 3 annotators, all gave 7). Some texts still contain `<br/>` / `<strong>` tags, which you can just remove. Few-shot examples: `data/examples/examples.csv` (F-PredE, F-EntE, F-CircE).
 
