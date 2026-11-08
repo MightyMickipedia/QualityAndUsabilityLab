@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_INPUT = ROOT / "annotated_news_summaries" / "data_files" / "annotations_at_least_2_annotators.jsonl"
+DEFAULT_INPUT = ROOT / "data" / "annotated_news_summaries" / "data_files" / "annotations_at_least_2_annotators.jsonl"
 DEFAULT_OUTDIR = ROOT / "data"
 DIMENSIONS = {"faithfulness": "d7", "coverage": "d6"}
 
