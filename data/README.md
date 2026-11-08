@@ -54,3 +54,16 @@ Input: `annotations_exactly_3_annotators.jsonl` - 2340 annotator rows, 780 uniqu
 
 Currently written files use option **A**.
 <!-- COUNTS:END -->
+## Counts per option (v2)
+
+<!-- COUNTS_V2:START -->
+Input: `annotations_at_least_2_annotators.jsonl` - 3720 annotator rows, 1470 unique summaries (item_id + model). Texts cleaned (HTML tags, umlauts, outer quotes); `n_sentences` added.
+
+| Option | Definition | Faithfulness (d7) | Coverage (d6) |
+|---|---|---|---|
+| A | every annotator gave 7 (strict) | 226 | 144 |
+| B | mean >= 6.5 | 355 | 279 |
+| C | at least one annotator gave 7 (loose) | 760 | 670 |
+
+Currently written files use option **A**.
+<!-- COUNTS_V2:END -->

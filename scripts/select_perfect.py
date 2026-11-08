@@ -9,11 +9,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_INPUT = ROOT / "annotated_news_summaries" / "data_files" / "annotations_exactly_3_annotators.jsonl"
+DEFAULT_INPUT = ROOT / "annotated_news_summaries" / "data_files" / "annotations_at_least_2_annotators.jsonl"
 DEFAULT_OUTDIR = ROOT / "data"
 DIMENSIONS = {"faithfulness": "d7", "coverage": "d6"}
-START, END = "<!-- COUNTS:START -->", "<!-- COUNTS:END -->"
-
 
 def is_perfect(ratings, criterion, threshold):
     if not ratings:
@@ -25,22 +23,77 @@ def is_perfect(ratings, criterion, threshold):
     return any(r == 7 for r in ratings)  # C
 
 
-# Repair double-encoded UTF-8 (Example: "zerstÃ¶rt" -> "zerstört")
+#text cleaning 
+
 MOJIBAKE = re.compile(r"Ã.|Â.|â€.")
+BR_TAG = re.compile(r"<br\s*/?>", re.I)
+ANY_TAG = re.compile(r"</?[A-Za-z][^>]*>")
+QUOTE_PAIRS = {'"': '"', "„": "“", "“": "”", "”": "”", "«": "»", "»": "«"}
+ALL_QUOTES = set(QUOTE_PAIRS) | set(QUOTE_PAIRS.values())
 
 
 def _redecode(s):
+    """Re-decode mojibake; bytes undefined in cp1252 (0x81, 0x8d, 0x8f, 0x90, 0x9d) pass through."""
+    out = bytearray()
+    for ch in s:
+        try:
+            out += ch.encode("cp1252")
+        except UnicodeEncodeError:
+            if ord(ch) > 255:
+                return None
+            out.append(ord(ch))
     try:
-        return s.encode("cp1252").decode("utf-8")
-    except UnicodeError:
+        return out.decode("utf-8")
+    except UnicodeDecodeError:
         return None
 
 
-def fix_text(text):
+STRAY = re.compile(r"[ÃÂ](?=[äöüßÄÖÜ])")
+
+def fix_encoding(text):
+    """Repair double-encoded UTF-8 ("zerstÃ¶rt" -> "zerstört")."""
+    text = _redecode(text) or MOJIBAKE.sub(lambda m: _redecode(m.group()) or m.group(), text)
+    return STRAY.sub("", text)
+
+def strip_tags(text):
+    """<br/> -> line break; all other tags are dropped, the text between them stays."""
+    return ANY_TAG.sub("", BR_TAG.sub("\n", text))
+
+
+def strip_outer_quotes(text):
+    """Remove one pair of quotes around the whole text (only if no other quotes inside)."""
+    if len(text) > 2 and QUOTE_PAIRS.get(text[0]) == text[-1]:
+        inner = text[1:-1]
+        if not any(c in ALL_QUOTES for c in inner):
+            return inner.strip()
+    return text
+
+
+def clean(text, quotes=False):
     if not isinstance(text, str):
         return text
-    return _redecode(text) or MOJIBAKE.sub(lambda m: _redecode(m.group()) or m.group(), text)
+    text = strip_tags(fix_encoding(text)).strip()
+    return strip_outer_quotes(text) if quotes else text
 
+
+#sentence count
+
+SENT_SPLIT = re.compile(r'(?:(?<=[.!?])|(?<=[.!?]["“”«]))\s+(?=["„“«]?[A-ZÄÖÜ0-9])')
+ABBR = ("dr.", "prof.", "nr.", "bzw.", "ca.", "usw.", "vs.", "z. b.", "u. a.", "d. h.", "st.")
+
+
+def count_sentences(text):
+    """Approximate sentence count (regex; merges after common abbreviations and ordinals like '3.')."""
+    parts = []
+    for p in SENT_SPLIT.split(text.strip()):
+        if parts and (parts[-1].lower().endswith(ABBR) or re.search(r"\b\d{1,2}\.$", parts[-1])):
+            parts[-1] += " " + p
+        elif p.strip():
+            parts.append(p)
+    return len(parts)
+
+
+#loading
 
 def load_grouped(path):
     """One record per (item_id, model), collecting the ratings of all annotators."""
@@ -56,14 +109,18 @@ def load_grouped(path):
                 continue
             n_rows += 1
             key = (row["item_id"], row["model"])
-            g = groups.setdefault(key, {
-                "item_id": key[0], "model": key[1],
-                "title": fix_text(row.get("title")),
-                "article": fix_text(row.get("article")),
-                "summary": fix_text(row.get("summary")),
-                "ratings_d6_coverage": [], "ratings_d7_faithfulness": [],
-                "n_annotators": 0,
-            })
+            g = groups.get(key)
+            if g is None:
+                summary = clean(row.get("summary"), quotes=True)
+                g = groups[key] = {
+                    "item_id": key[0], "model": key[1],
+                    "title": clean(row.get("title")),
+                    "article": clean(row.get("article")),
+                    "summary": summary,
+                    "ratings_d6_coverage": [], "ratings_d7_faithfulness": [],
+                    "n_annotators": 0,
+                    "n_sentences": count_sentences(summary) if isinstance(summary, str) else 0,
+                }
             g["n_annotators"] += 1
             for field, name in (("d6", "ratings_d6_coverage"), ("d7", "ratings_d7_faithfulness")):
                 value = row.get(field)
@@ -72,6 +129,8 @@ def load_grouped(path):
                     g[name].append(int(v) if v.is_integer() else v)
     return groups, n_rows
 
+
+#output
 
 def write_sample(path, dim, field, records, k, seed):
     sample = random.Random(seed).sample(records, min(k, len(records)))
@@ -83,26 +142,40 @@ def write_sample(path, dim, field, records, k, seed):
                   f"**Title:** {r['title']}", "",
                   f"**Ratings d7 (Faithfulness):** {r['ratings_d7_faithfulness']}  ",
                   f"**Ratings d6 (Coverage):** {r['ratings_d6_coverage']}  ",
-                  f"**Annotators:** {r['n_annotators']}", "",
+                  f"**Annotators:** {r['n_annotators']}  ",
+                  f"**Sentences:** {r['n_sentences']}", "",
                   "**Summary:**", "", f"> {summary}", "",
                   "**Article:**", "", str(r["article"]).strip(), ""]
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def update_readme(path, block):
-    """Replace only the block between the markers; the rest of the README stays untouched."""
+def update_readme(path, block, suffix):
+    """Replace only the block between the markers (own markers per suffix)."""
+    tag = f"COUNTS{suffix.upper()}"
+    start, end = f"<!-- {tag}:START -->", f"<!-- {tag}:END -->"
+    title = "Counts per option" + (f" ({suffix.strip('_')})" if suffix else "")
     text = path.read_text(encoding="utf-8") if path.exists() else "# data/\n"
-    if START not in text:
-        text += f"\n## Counts per option\n\n{START}\n{END}\n"
-    head, rest = text.split(START, 1)
-    tail = rest.split(END, 1)[1]
-    path.write_text(f"{head}{START}\n{block}\n{END}{tail}", encoding="utf-8")
+    if start not in text:
+        text += f"\n## {title}\n\n{start}\n{end}\n"
+    head, rest = text.split(start, 1)
+    tail = rest.split(end, 1)[1]
+    path.write_text(f"{head}{start}\n{block}\n{end}{tail}", encoding="utf-8")
+
+
+LEFTOVER = re.compile(r"</?[A-Za-z][^>]*>|Ã|Â|â€")
+
+
+def count_leftovers(records):
+    """Number of rows with HTML tags or broken umlauts in title/article/summary."""
+    return sum(any(LEFTOVER.search(str(r[k] or "")) for k in ("title", "article", "summary"))
+               for r in records)
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     ap.add_argument("--outdir", type=Path, default=DEFAULT_OUTDIR)
+    ap.add_argument("--suffix", default="_v2", help="suffix for output files (default _v2)")
     ap.add_argument("--criterion", choices=["A", "B", "C"], default="A",
                     help="A: all 7 | B: mean >= threshold | C: at least one 7 (default: A)")
     ap.add_argument("--mean-threshold", type=float, default=6.5,
@@ -121,23 +194,25 @@ def main():
     def ratings(g, field):
         return g["ratings_d7_faithfulness" if field == "d7" else "ratings_d6_coverage"]
 
-    # counts for all options
     counts = {opt: {f: sum(is_perfect(ratings(g, f), opt, args.mean_threshold) for g in groups.values())
                     for f in ("d7", "d6")} for opt in "ABC"}
 
-    # files for the chosen option
     for dim, field in DIMENSIONS.items():
         selected = [g for g in groups.values()
                     if is_perfect(ratings(g, field), args.criterion, args.mean_threshold)]
-        out = args.outdir / f"perfect_{dim}.jsonl"
+        out = args.outdir / f"perfect_{dim}{args.suffix}.jsonl"
         with open(out, "w", encoding="utf-8") as f:
             for rec in selected:
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
-        write_sample(args.outdir / f"sample_{dim}.md", dim, field, selected, args.sample_size, args.seed)
-        print(f"[option {args.criterion}] {out.name}: {len(selected)} summaries")
+        write_sample(args.outdir / f"sample_{dim}{args.suffix}.md", dim, field,
+                     selected, args.sample_size, args.seed)
+        n3 = sum(r["n_annotators"] == 3 for r in selected)
+        print(f"[option {args.criterion}] {out.name}: {len(selected)} summaries "
+              f"({n3} with 3 annotators), rows with tags/broken umlauts: {count_leftovers(selected)}")
 
     block = "\n".join([
-        f"Input: `{args.input.name}` - {n_rows} annotator rows, {len(groups)} unique summaries (item_id + model).",
+        f"Input: `{args.input.name}` - {n_rows} annotator rows, {len(groups)} unique summaries (item_id + model). "
+        "Texts cleaned (HTML tags, umlauts, outer quotes); `n_sentences` added.",
         "",
         "| Option | Definition | Faithfulness (d7) | Coverage (d6) |",
         "|---|---|---|---|",
@@ -148,7 +223,7 @@ def main():
         f"Currently written files use option **{args.criterion}**"
         + (f" (threshold {args.mean_threshold:g})" if args.criterion == "B" else "") + ".",
     ])
-    update_readme(args.outdir / "README.md", block)
+    update_readme(args.outdir / "README.md", block, args.suffix)
 
     print("\nCounts per option (unique summaries):")
     for opt in "ABC":
