@@ -65,4 +65,4 @@ For each type below: check the definition against the paper, write a German expl
 
 ## Done when
 - [ ] every type has German explanation + 2 examples
-- [ ] all examples added to `examples/examples.csv`
+- [ ] all examples added to `data/examples/examples.csv`

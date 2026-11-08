@@ -1,4 +1,4 @@
-# Example format (`examples/examples.csv`)
+# Example format (`data/examples/examples.csv`)
 
 Columns:
 | column | meaning |
