@@ -1,0 +1,256 @@
+{
+  "source_file": "data/perfect_coverage.jsonl",
+  "source_sha256": "3f62f281d65981dd9513d239b91d4b5a945fc72501fd3edfc1cb9cafb1fd83ec",
+  "word_count_method": "Whitespace-separated words after the same HTML-tag cleanup used by run.py.",
+  "selection_basis": {
+    "source_rows": 66,
+    "source_median_words": 100.5,
+    "short_range_words": [
+      55,
+      79
+    ],
+    "long_range_words": [
+      150,
+      198
+    ],
+    "distinct_items": 10,
+    "note": "Relative short/long groups within this dataset. Planned severity allocation is four high, three medium and three low for each error type, under the explicitly approved project calibration. In-domain plans require individual semantic validation of generated outputs; this manifest contains no generated errors."
+  },
+  "items": [
+    {
+      "item_id": "1124",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 55,
+      "selection_reason": "Football results provide several independent complete sentences.",
+      "possible_deletion": {
+        "sentence": "Harry Kane erzielt das entscheidende Elfmetertor.",
+        "severity": "low",
+        "reason": "Scorer detail is explicitly in the article; all match results remain."
+      },
+      "definition_term": "Elfmetertor",
+      "planned_severity": {
+        "delete_sentence": "low",
+        "add_out_of_domain_sentence": "high",
+        "add_in_domain_sentence": "high",
+        "add_definition": "high"
+      }
+    },
+    {
+      "item_id": "1204",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 60,
+      "selection_reason": "Compact multi-sentence disaster report with independent lead and consequences.",
+      "possible_deletion": {
+        "sentence": "Nach den verheerenden Bränden in Los Angeles schätzt US-Präsident Joe Biden, dass der Wiederaufbau mehrere Milliarden Dollar kosten wird.",
+        "severity": "high",
+        "reason": "Removing the opening sentence removes the reconstruction-cost lead; other fire consequences remain."
+      },
+      "definition_term": "Wiederaufbau",
+      "planned_severity": {
+        "delete_sentence": "high",
+        "add_out_of_domain_sentence": "high",
+        "add_in_domain_sentence": "high",
+        "add_definition": "high"
+      }
+    },
+    {
+      "item_id": "116",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 70,
+      "selection_reason": "Several complete accident-report sentences; the final positive alcohol/drug test supplies a removable concrete evidential confirmation while the main accident and injury facts remain.",
+      "possible_deletion": {
+        "sentence": "Ein Alkohol- und Drogentest bei der Festnahme war positiv.",
+        "severity": "low",
+        "reason": "Positive alcohol/drug test is a concrete evidential confirmation, distinct from the opening intoxication characterization; main accident and injury facts remain. Do not delete the life-threatening injury sentence for low."
+      },
+      "definition_term": "Autobahnen",
+      "planned_severity": {
+        "delete_sentence": "low",
+        "add_out_of_domain_sentence": "medium",
+        "add_in_domain_sentence": "medium",
+        "add_definition": "medium"
+      }
+    },
+    {
+      "item_id": "1039",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 73,
+      "selection_reason": "Complete fluent report; weather-driven firestorm mechanism is a central explanatory aspect explicitly supported by the article.",
+      "possible_deletion": {
+        "sentence": "Starke Winde und Trockenheit schaffen perfekte Bedingungen für Feuerstürme, die Feuerwehr hat kaum eine Chance, die Brände einzudämmen.",
+        "severity": "high",
+        "reason": "Complete fluent report; weather-driven firestorm mechanism is a central explanatory aspect explicitly supported by the article."
+      },
+      "definition_term": "Hydranten",
+      "planned_severity": {
+        "delete_sentence": "high",
+        "add_out_of_domain_sentence": "high",
+        "add_in_domain_sentence": "high",
+        "add_definition": "high"
+      }
+    },
+    {
+      "item_id": "1002",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 79,
+      "selection_reason": "Complete fluent report; prospective chancellorship is a central political-event aspect explicitly supported by the article.",
+      "possible_deletion": {
+        "sentence": "Nach dem Scheitern der Koalitionsverhandlungen zwischen ÖVP, SPÖ und Neos in Österreich könnte FPÖ-Chef Herbert Kickl der nächste Bundeskanzler werden.",
+        "severity": "high",
+        "reason": "Complete fluent report; prospective chancellorship is a central political-event aspect explicitly supported by the article."
+      },
+      "definition_term": "Bundeskanzler",
+      "planned_severity": {
+        "delete_sentence": "high",
+        "add_out_of_domain_sentence": "high",
+        "add_in_domain_sentence": "high",
+        "add_definition": "high"
+      }
+    },
+    {
+      "item_id": "1095",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 150,
+      "selection_reason": "Complete multi-paragraph account with separable background facts.",
+      "possible_deletion": {
+        "sentence": "Ein ausgesprochener Gegner davon ist auch der X-Besitzer und aktuelle Trump-Vertraute Elon Musk.",
+        "severity": "low",
+        "reason": "The article names Musk as an opponent; the policy dispute remains without this peripheral attribution."
+      },
+      "definition_term": "Hauptversammlung",
+      "planned_severity": {
+        "delete_sentence": "low",
+        "add_out_of_domain_sentence": "medium",
+        "add_in_domain_sentence": "medium",
+        "add_definition": "medium"
+      }
+    },
+    {
+      "item_id": "1221",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 152,
+      "selection_reason": "Long quantitative account whose national total, annual decline and ten-year comparison form one removable central-finding sentence; remaining tax-specific and regional information stays coherent.",
+      "possible_deletion": {
+        "sentence": "Die Einnahmen lagen um 3,6 Prozent unter dem Wert des Vorjahres, stiegen aber im Zehnjahresvergleich um 51,5 Prozent auf rund 2,48 Milliarden Euro.",
+        "severity": "high",
+        "reason": "Removes the central national annual decline, ten-year comparison and national total; regional and individual-tax details remain coherent."
+      },
+      "definition_term": "Sportwetten",
+      "planned_severity": {
+        "delete_sentence": "high",
+        "add_out_of_domain_sentence": "medium",
+        "add_in_domain_sentence": "medium",
+        "add_definition": "medium"
+      }
+    },
+    {
+      "item_id": "1032",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 153,
+      "selection_reason": "Complete report with separable incident description and political reactions.",
+      "possible_deletion": {
+        "sentence": "Der Landesvorsitzende der Linken in Mecklenburg-Vorpommern distanzierte sich von dem Vorfall und betonte, dass Gewalt keine Lösung sei.",
+        "severity": "medium",
+        "reason": "The article explicitly reports the regional Left leader distancing himself; attack and principal reactions remain."
+      },
+      "definition_term": "Wahlkampfauftritt",
+      "planned_severity": {
+        "delete_sentence": "medium",
+        "add_out_of_domain_sentence": "low",
+        "add_in_domain_sentence": "low",
+        "add_definition": "low"
+      }
+    },
+    {
+      "item_id": "122",
+      "model": "mistral-nemo",
+      "length_group": "long",
+      "word_count": 163,
+      "selection_reason": "Complete long political report, without the unsupported distancing claim in the other model version.",
+      "possible_deletion": {
+        "sentence": "Eine Trennung von der JA bräuchte jedoch eine Zweidrittelmehrheit bei einem Parteitag, da die JA relativ unabhängig ist und Mitglieder bis auf die Vorstände nicht gleichzeitig in der AfD sein müssen.",
+        "severity": "medium",
+        "reason": "The article explicitly requires a two-thirds party-conference vote; the organizational plan remains understandable without that procedural condition."
+      },
+      "definition_term": "Parteitag",
+      "planned_severity": {
+        "delete_sentence": "medium",
+        "add_out_of_domain_sentence": "low",
+        "add_in_domain_sentence": "low",
+        "add_definition": "low"
+      }
+    },
+    {
+      "item_id": "1262",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 198,
+      "selection_reason": "Complete long report; disagreement is attributed to distinct sources, not an internal unqualified contradiction.",
+      "possible_deletion": {
+        "sentence": "Die Vermittler aus Katar, Ägypten und den USA hätten in den vergangenen Tagen ihre Bemühungen um den Abschluss eines Abkommens zwischen Israel und der Hamas intensiviert.",
+        "severity": "medium",
+        "reason": "The article explicitly names Qatar, Egypt and the USA as mediators; removing this sentence leaves the reported deal and attributed denial intact."
+      },
+      "definition_term": "Waffenruhe",
+      "planned_severity": {
+        "delete_sentence": "medium",
+        "add_out_of_domain_sentence": "low",
+        "add_in_domain_sentence": "low",
+        "add_definition": "low"
+      }
+    }
+  ],
+  "source_caveats": [
+    {
+      "item": "1019/sauerkraut",
+      "status": "reserve",
+      "note": "Fluent 210-word summary, but final call for other organizations to leave X is not supported by article; no correction authorized."
+    },
+    {
+      "item": "1008/mistral-nemo",
+      "status": "excluded",
+      "note": "Single sentence; cannot delete exactly one sentence while retaining a complete sentence."
+    },
+    {
+      "item": "1/sauerkraut",
+      "status": "excluded",
+      "note": "Contains English word largely."
+    },
+    {
+      "item": "1208/wiedervereinigung and 1029/wiedervereinigung",
+      "status": "excluded",
+      "note": "End mid-sentence."
+    },
+    {
+      "item": "1238/sauerkraut and 1205/sauerkraut",
+      "status": "excluded",
+      "note": "Obvious existing grammatical defects."
+    },
+    {
+      "item": "1262/sauerkraut",
+      "status": "selected",
+      "note": "Opening is wordy but complete; agreement reports and denial are separately attributed in both article and summary."
+    }
+  ],
+  "severity_calibration": {
+    "status": "Explicitly user-approved project rule; not paper-validated.",
+    "delete": "high: central finding or decisive event aspect missing; medium: relevant secondary information missing; low: small factual peripheral detail missing. Real information loss and coherent remainder required.",
+    "add_in_domain": "high: new central interpretive aspect; medium: relevant secondary process; low: peripheral detail. Plausible invented information absent from article, without direct contradiction.",
+    "add_out_of_domain_sentence_and_add_definition": {
+      "ratio": "added_sentence_words / cleaned_original_summary_words; whitespace split as run.clean(summary).split()",
+      "low": "<= 0.15",
+      "medium": "> 0.15 and <= 0.35",
+      "high": "> 0.35",
+      "constraints": "Exactly one natural sentence, genuinely unrelated or dispensable correct definition, no padding.",
+      "confound": "High additions are easier on short originals; length and severity are not independent."
+    }
+  }
+}
