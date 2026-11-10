@@ -1,0 +1,142 @@
+{
+    "source":  "data/perfect_faithfulness.jsonl",
+    "source_sha256":  "0ba4886230ecab0d09e45d99c2f2547e0d399fc149faa37a41a359dbbd067048",
+    "error_types":  [
+                        "PredE",
+                        "EntE",
+                        "CircE"
+                    ],
+    "note":  "Dieselben zehn vollstaendigen Zusammenfassungen fuer alle drei Fehlertypen. Je Typ: vier high, drei medium, drei low. Fuenf kurze und fuenf lange Texte, einschliesslich der kuerzesten und laengsten Zusammenfassung des Datensatzes. Wortzahlen beziehen sich auf den unveraenderten Quelltext; der Runner entfernt HTML-Tags.",
+    "items":  [
+                  {
+                      "item_id":  "1180",
+                      "model":  "llama-1b",
+                      "length_group":  "short",
+                      "severity":  "high",
+                      "word_count":  6,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Biodeutsch: das Unwort des Jahres 2024"
+                  },
+                  {
+                      "item_id":  "1262",
+                      "model":  "llama-1b",
+                      "length_group":  "long",
+                      "severity":  "high",
+                      "word_count":  171,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Hier ist ein möglicher Artikel:\n\nEine Einigung zwischen Israel und der islamistischen Terrororganisation Hamas steht kurz bevor, wie Medienberichten zufolge. Die Hamas hat dem Deal zugestimmt, meldete die Nachrichtenagentur Reuters unter Berufung auf einen israelischen Beamten. Eine Einigung sei erzielt, es seien nur noch wenige technische Details zu klären.\n\nDer Zeitungen Times of Israel und Haaretz zufolge könnte die Vereinbarung bereits am \u003cstrong\u003eMittwoch\u003c/strong\u003e\u003cbr/\u003eabend oder am Donnerstag unterzeichnet werden. Die israelische Regierung bereite sich darauf vor, das Waffenstillstandsabkommen sowie die Liste der freizulassenden israelischen Geiseln und palästinensischen Gefangenen zu ratifizieren.\n\nNetanjahu: Keine endgültige Antwort der Hamas\n\nDas Büro von Israels Premierminister Benjamin Netanjahu dementierte unterdessen die Berichte. Die Hamas habe den Unterhändlern noch keine endgültige Antwort gegeben. Ein Hamas-Offizieller sagte laut der Nachrichtenagentur Reuters, die Miliz habe noch keine schriftliche Antwort gegeben.\n\nDie Vermittler aus Katar, Ägypten und den USA hatten in den vergangenen Tagen ihre Bemühungen um den Abschluss eines Abkommens zwischen Israel und der Hamas intensiviert. Die Hauptprobleme seien gelöst worden, teilte Katars Außenministerium am \u003cstrong\u003eDienst\u003c/strong\u003e.\n\nEin Ende der Spannung?"
+                  },
+                  {
+                      "item_id":  "1179",
+                      "model":  "mistral-nemo",
+                      "length_group":  "short",
+                      "severity":  "high",
+                      "word_count":  55,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Die Feuer in Los Angeles und Umgebung breiten sich trotz intensiver Löscharbeiten unaufhaltsam aus. Mindestens 24 Menschen sind tot, Tausende müssen ihre Häuser verlassen. Meteorologen warnen vor starken Winden, die das Feuer weiter anfachen könnten. Die Feuerwehr schätzt die Lage als kritisch ein, da der Wind auch Flammen und Glut in neue Gebiete tragen kann."
+                  },
+                  {
+                      "item_id":  "1010",
+                      "model":  "sauerkraut",
+                      "length_group":  "long",
+                      "severity":  "high",
+                      "word_count":  149,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Im Jahr 2022 stiegen die Strompreise in Deutschland zeitweise auf über 70 Cent je Kilowattstunde, inzwischen sind sie für Neukunden deutlich gesunken. Nachdem Russland im Sommer 2022 die Gaslieferungen an Deutschland einstellte, schossen die Gaspreise in die Höhe und befinden sich nun wieder auf dem Niveau vor der Gaskrise im Herbst 2021. Die Benzin- und Dieselpreise unterliegen einem saisonalen Muster und sind in den Sommermonaten aufgrund der erhöhten Nachfrage besonders hoch. Auch geopolitische Ereignisse und die Wirtschaftslage in wichtigen Absatzmärkten wie den USA oder China haben Einfluss auf den Benzinpreis. Eine Karte zeigt jedes Windrad, das in diesem Jahr in Deutschland ans Netz gegangen ist, und verdeutlicht, dass Norddeutschland immer noch der Schwerpunkt des Ausbaus bleibt, auch wenn dort bereits die meisten Anlagen stehen. Bei der Solarenergie liegen die südlichen Bundesländer vorne, da sie relativ sonnenreich sind und über ausreichende finanzielle Mittel verfügen, um in erneuerbare Energien zu investieren."
+                  },
+                  {
+                      "item_id":  "1204",
+                      "model":  "gpt3.5",
+                      "length_group":  "short",
+                      "severity":  "medium",
+                      "word_count":  60,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Nach den verheerenden Bränden in Los Angeles schätzt US-Präsident Joe Biden, dass der Wiederaufbau mehrere Milliarden Dollar kosten wird. Bisher sind mindestens 24 Menschen gestorben und über 180.000 mussten evakuiert werden. Sportteams und Musiker haben Großspenden angekündigt, während die Staatsanwaltschaft gegen mutmaßliche Plünderer vorgeht. Die Bekanntgabe der Oscarnominierungen wurde aufgrund der Brände verschoben, die Oscarverleihung soll jedoch wie geplant stattfinden."
+                  },
+                  {
+                      "item_id":  "1245",
+                      "model":  "sauerkraut",
+                      "length_group":  "long",
+                      "severity":  "medium",
+                      "word_count":  146,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Die elektronische Patientenakte (ePA) wird ab sofort für alle gesetzlich Versicherten in Deutschland eingeführt, es sei denn, sie widersprechen bei ihrer Versicherung. Die ePA ist ein digitaler Speicher für Befunde, Laborwerte und Angaben zu Medikamenten und soll die Patienten ein Leben lang begleiten. Zunächst startet die praktische Anwendung nur in drei Modellregionen: Hamburg mit Umland sowie Franken sollen mehr als 250 Praxen, Apotheken und Krankenhäuser die Alltagsverwendung testen. Eine dritte Modellregion ist in Nordrhein-Westfalen vorgesehen. Sobald das System stabil funktioniert, soll der bundesweite Einsatz für alle 73 Millionen gesetzlich Versicherten starten, voraussichtlich frühestens ab Mitte Februar. Die ePA soll die bisher an verschiedenen Orten abgelegten Patientendaten digital zusammentragen und ein Ende der Zettelwirtschaft im Gesundheitswesen bringen. Notfalldaten, Röntgenbilder, Arztbriefe, Befunde und Medikationspläne sowie Impfausweis, Mutterpass oder Untersuchungsheft für Kinder können dann elektronisch archiviert und schnell abgerufen werden. Zuletzt hatten Experten allerdings Zweifel an der Datensicherheit geäußert."
+                  },
+                  {
+                      "item_id":  "1242",
+                      "model":  "mistral-nemo",
+                      "length_group":  "short",
+                      "severity":  "medium",
+                      "word_count":  60,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "SPD-Politiker kritisieren Scholz\u0027 Weigerung, vor der Bundestagswahl weitere Unterstützung für die Ukraine in Höhe von drei Milliarden Euro für Waffenlieferungen zu genehmigen. Sie fordern einen Schulterschluss mit CDU und CSU, um die überplanmäßige Ausgabe zu tragen. Scholz lehnt Einsparungen an anderer Stelle ab, während Verteidigungspolitiker betonen, dass nur eine Kombination aus Unterstützung und Diplomatie zu einem stabilen Waffenstillstand führen wird."
+                  },
+                  {
+                      "item_id":  "1232",
+                      "model":  "sauerkraut",
+                      "length_group":  "long",
+                      "severity":  "low",
+                      "word_count":  144,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Der designierte US-Präsident Donald Trump hat die Gründung einer neuen Bundesbehörde zur Erhebung von Zöllen und anderen Einkünften aus dem Ausland angekündigt, welche den Namen \"External Revenue Service\" tragen soll.\n\nTrump plant, die neue Behörde direkt nach seiner Amtseinführung am 20. Januar per Dekret zu schaffen und will damit eine neue Zollpolitik umsetzen, die er bereits mehrmals im Wahlkampf ankündigte.\n\nUnter anderem plant Trump, zehn Prozent auf weltweite Einfuhren in die USA zu erheben, wobei Produkte aus China sogar mit 60 Prozent belastet werden könnten. Kanada und Mexiko sollen nach Trumps Aussage jeweils 25 Prozent zahlen, solange sie seiner Meinung nach nicht ausreichend gegen Migranten und den Drogenhandel an den US-Grenzen vorgehen.\n\nDie geplante neue Zollpolitik könnte den Welthandel sehr belasten und auch der Europäischen Union (EU) drohen hohe Zöllen an, da Trump von der EU erwartet, mehr amerikanisches Öl und Gas zu importieren."
+                  },
+                  {
+                      "item_id":  "1094",
+                      "model":  "gpt3.5",
+                      "length_group":  "short",
+                      "severity":  "low",
+                      "word_count":  66,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Die ZEIT ONLINE startet eine neue Ausgabe von \"\"Deutschland spricht\"\", bei der Leser mit unterschiedlichen politischen Ansichten zusammengebracht werden, um respektvoll über Politik zu diskutieren. Auch die Frankfurter Allgemeine Zeitung und die \"\"Bild\"\"-Zeitung rufen zur Teilnahme auf. Die Anmeldung läuft bis zum 9. Februar, Partner werden am 10. Februar vorgestellt, Gespräche finden am 16. Februar statt. Bisherige Teilnehmer waren zufrieden und 90 Prozent würden wieder teilnehmen."
+                  },
+                  {
+                      "item_id":  "1115",
+                      "model":  "sauerkraut",
+                      "length_group":  "long",
+                      "severity":  "low",
+                      "word_count":  143,
+                      "ratings_d7_faithfulness":  [
+                                                      7,
+                                                      7,
+                                                      7
+                                                  ],
+                      "summary":  "Der sächsische Politiker der Linken Nam Duy Nguyen wurde laut seiner Partei bei Protesten gegen den AfD-Parteitag in Riesa von einem Polizisten bewusstlos geschlagen.\n\nDie Partei teilte mit, dass auch ein Begleiter von Nguyen Schläge ins Gesicht bekommen und verletzt worden sei. Die Parteispitze hat angekündigt, Strafanzeige gegen die verantwortlichen Beamten zu stellen.\n\nDer 29-jährige Nam Duy Nguyen hatte bei der Landtagswahl in Sachsen am 1. September 2024 eines der beiden Direktmandate für seine Partei in Leipzig geholt und so den Linken den Einzug in den Landtag gesichert.\n\nRund 10.000 Menschen hatten gegen den AfD-Bundesparteitag in Riesa demonstriert, die Stimmung war teils aufgeheizt.\n\nDie Linke fordert eine Verurteilung des Übergriffs und sieht darin einen Angriff auf das Vertrauen der Bürgerinnen und Bürger in die Polizei. Die Partei hat alle Parteien in Sachsen und bundesweit aufgefordert, diesen Angriff ohne Wenn und Aber zu verurteilen."
+                  }
+              ]
+}
