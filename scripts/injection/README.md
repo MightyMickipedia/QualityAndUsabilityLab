@@ -67,6 +67,7 @@ Your prompt should ask for JSON `{"modified_summary": "...", "change": "..."}` (
 
 Automatic warnings (`warnings` field). They only catch obvious failures, so check the outputs by hand anyway:
 - `unchanged`, `empty answer`, `answer was not the requested JSON`
+- `no fitting change`: the model returned the summary unchanged on purpose and `change` starts with `KEINE_PASSENDE_AENDERUNG:` (some prompts allow this when no error of that type and severity fits). `unchanged` without that marker means the model just failed to change anything
 - `length changed`: for types that swap a word or phrase (PredE, EntE, CircE, CorefE, LinkE, GramE), if the length is outside 0.8-1.25×
 - OutE and `add_*` should get longer, `delete_sentence` shorter. If not, there's a warning
 - `maybe not German`

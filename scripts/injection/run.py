@@ -40,6 +40,7 @@ EXAMPLES = ROOT / "data" / "examples" / "examples.csv"
 FAITHFULNESS = {"PredE", "EntE", "CircE", "CorefE", "LinkE", "OutE", "GramE"}
 COVERAGE = {"delete_sentence", "add_out_of_domain_sentence", "add_in_domain_sentence", "add_definition"}
 SEVERITIES = {"high", "medium", "low"}
+NO_CHANGE_MARKER = "KEINE_PASSENDE_AENDERUNG:"  # start of "change" when the model finds no fitting error
 
 
 def clean(text: str) -> str:
@@ -215,6 +216,10 @@ def main():
             print(f"[{i}/{len(rows)}] {r['item_id']}/{r['model']} FAILED: {e}", file=sys.stderr)
             continue
         warnings = checks(summary, answer["modified_summary"], a.error_type)
+        if answer["change"].startswith(NO_CHANGE_MARKER):
+            # The model declined on purpose (prompts may allow this). Not the same as a failed "unchanged".
+            declined = answer["modified_summary"].strip() == summary.strip()
+            warnings = ["no fitting change"] if declined else ["no fitting change, but the text was changed"] + warnings
         if not answer["parsed"]:
             warnings.insert(0, "answer was not the requested JSON")
         rec = {
