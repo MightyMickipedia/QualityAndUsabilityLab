@@ -1,0 +1,25 @@
+{
+  "error_types": {
+    "delete_sentence": "Wähle anhand des gesamten Artikels und der gesamten Zusammenfassung einen Satz mit einer relevanten Information des Artikels, dessen Inhalt nach der Löschung nicht mehr aus dem Rest hervorgeht. Entferne keine bloße Wiederholung oder inhaltsleere Schlussformel. Der Rest muss verständlich bleiben, ohne unklare Bezüge oder abgebrochene Argumentation; mindestens ein vollständiger Satz muss erhalten bleiben.",
+    "add_out_of_domain_sentence": "Ergänze einen sachlich unproblematischen Satz aus einem eindeutig anderen Themengebiet, ohne sinnvollen inhaltlichen Bezug zum Artikel. Eine Nebeninformation zum selben Thema reicht nicht aus.",
+    "add_in_domain_sentence": "Erfinde eine plausible neue Information zum selben Thema oder Ereignis, die weder ausdrücklich noch sinngemäß im Artikel steht. Vermeide Wiederholungen, bloße Definitionen und direkte Widersprüche zum Artikel. Benenne die Erfindung nur in change; behaupte keine Übernahme aus einer anderen Quelle.",
+    "add_definition": "Ergänze eine sachlich korrekte Definition eines in der Zusammenfassung bereits vorkommenden Begriffs, der im Kontext ausreichend verständlich ist. Die Definition muss für das Verständnis der Nachricht entbehrlich sein und darf keine neue Behauptung zum berichteten Ereignis enthalten. Definiere einen Sachbegriff; eine Personenbiografie oder zusätzliche Angaben zu einer konkreten Person sind keine Begriffsdefinition."
+  },
+  "severities": {
+    "add_in_domain": {
+      "high": "Die erfundene Ergänzung führt einen neuen zentralen Deutungsaspekt ein. Die Anzahl ihrer Wörter bestimmt den Schweregrad nicht.",
+      "medium": "Die erfundene Ergänzung führt einen relevanten Nebenprozess ein. Die Anzahl ihrer Wörter bestimmt den Schweregrad nicht.",
+      "low": "Die erfundene Ergänzung führt ein nebensächliches Detail ein. Die Anzahl ihrer Wörter bestimmt den Schweregrad nicht."
+    },
+    "add_irrelevant": {
+      "high": "Der Wortanteil des Zusatzes muss mehr als 35 Prozent betragen: Anzahl Wörter des hinzugefügten Satzes geteilt durch Anzahl Wörter der vollständigen bereinigten Ausgangszusammenfassung. Zähle Wörter durch Trennung an Leerraum (Whitespace, wie Python str.split()), nicht durch Tokens oder Satzzeichen. Die Ausgangszusammenfassung ist der Nenner, nicht der geänderte Text.",
+      "medium": "Der Wortanteil des Zusatzes muss mehr als 15 und höchstens 35 Prozent betragen: Anzahl Wörter des hinzugefügten Satzes geteilt durch Anzahl Wörter der vollständigen bereinigten Ausgangszusammenfassung. Zähle Wörter durch Trennung an Leerraum (Whitespace, wie Python str.split()), nicht durch Tokens oder Satzzeichen. Die Ausgangszusammenfassung ist der Nenner, nicht der geänderte Text.",
+      "low": "Der Wortanteil des Zusatzes darf höchstens 15 Prozent betragen: Anzahl Wörter des hinzugefügten Satzes geteilt durch Anzahl Wörter der vollständigen bereinigten Ausgangszusammenfassung. Zähle Wörter durch Trennung an Leerraum (Whitespace, wie Python str.split()), nicht durch Tokens oder Satzzeichen. Die Ausgangszusammenfassung ist der Nenner, nicht der geänderte Text."
+    },
+    "delete": {
+      "high": "Ein zentraler Befund oder ein entscheidender Ereignisaspekt fehlt nach der Löschung.",
+      "medium": "Eine relevante Nebeninformation fehlt; die Hauptaussage bleibt erhalten.",
+      "low": "Ein kleines sachliches Randdetail fehlt; die Bedeutung bleibt weitgehend erhalten."
+    }
+  }
+}
