@@ -60,9 +60,8 @@ function title(slide, s, text) {
 function slideDone(pres, s, d) {
   const slide = pres.addSlide({ masterName: "CONTENT" });
   title(slide, s, d.title);
-  // Project manager badge
-  slide.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 0.5, y: 1.36, w: 3.45, h: 0.32, rectRadius: 0.08, fill: { color: s.cell }, line: { color: s.accent, width: 1 }, objectName: "PM badge" });
-  T(slide, d.pm, { x: 0.62, y: 1.36, w: 3.25, h: 0.32, valign: "middle", fontFace: s.body, fontSize: 11, color: s.text });
+  // Project manager line
+  T(slide, d.pm, { x: 0.5, y: 1.36, w: 5, h: 0.32, valign: "middle", fontFace: s.body, fontSize: 11, color: s.muted });
   // Headline
   slide.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.88, w: 0.06, h: 0.62, fill: { color: s.accent }, line: { type: "none" }, objectName: "Headline bar" });
   T(slide, [
@@ -119,7 +118,8 @@ function slideImage(pres, s, d, weekDir) {
   const { width, height } = require("child_process").execFileSync("python3", ["-c",
     "import struct,sys;f=open(sys.argv[1],'rb');f.read(16);w,h=struct.unpack('>II',f.read(8));print(w,h)", img])
     .toString().trim().split(" ").reduce((o, v, i) => (o[i ? "height" : "width"] = +v, o), {});
-  const h = 3.75, w = h * width / height;
+  let h = 3.75, w = h * width / height;
+  if (w > 5.6) { w = 5.6; h = w * height / width; } // wide pictures: keep room for the list
   slide.addImage({ path: img, x: 0.5, y: 1.3, w, h, altText: d.alt || d.title, objectName: "Screenshot" });
   slide.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.3, w, h, fill: { type: "none" }, line: { color: s.line, width: 0.75 }, objectName: "Screenshot frame" });
   const x = 0.5 + w + 0.4, tw = 9.5 - x;
@@ -128,6 +128,26 @@ function slideImage(pres, s, d, weekDir) {
     { text: "■  ", options: { bold: true, color: s.accent } },
     { text: t, options: { breakLine: i < d.points.length - 1, paraSpaceAfter: 8 } }]),
     { x, y: 1.68, w: tw, h: 3.3, fontFace: s.body, fontSize: 11.5, color: s.text });
+}
+
+// Two or three pictures side by side, each with a caption above it. No list.
+function slideImages(pres, s, d, weekDir) {
+  const slide = pres.addSlide({ masterName: "CONTENT" });
+  title(slide, s, d.title);
+  const size = (img) => require("child_process").execFileSync("python3", ["-c",
+    "import struct,sys;f=open(sys.argv[1],'rb');f.read(16);w,h=struct.unpack('>II',f.read(8));print(w,h)", img])
+    .toString().trim().split(" ").map(Number);
+  d.images.forEach((im, i) => {
+    const img = path.join(weekDir, im.image);
+    const [pw, ph] = size(img);
+    const n = d.images.length, gap = 0.3, colW = (9 - gap * (n - 1)) / n;
+    let w = colW, h = w * ph / pw;
+    if (h > 3.4) { h = 3.4; w = h * pw / ph; }
+    const x = 0.5 + i * (colW + gap);
+    T(slide, im.caption, { x, y: 1.25, w: colW, h: 0.28, fontFace: s.body, fontSize: n > 2 ? 10 : 11, bold: true, color: s.accent });
+    slide.addImage({ path: img, x, y: 1.6, w, h, altText: im.alt || im.caption, objectName: `Screenshot ${i + 1}` });
+    slide.addShape(pres.shapes.RECTANGLE, { x, y: 1.6, w, h, fill: { type: "none" }, line: { color: s.line, width: 0.75 }, objectName: `Screenshot frame ${i + 1}` });
+  });
 }
 
 // A heading and plain paragraphs (no numbering, no box).
@@ -148,7 +168,7 @@ async function build(weekDir, styleKey) {
   pres.subject = `${c.project}, week ${c.week} (${c.date})`;
   pres.theme = { headFontFace: s.head, bodyFontFace: s.body };
   defineLayout(pres, s, c);
-  const types = { done: slideDone, image: slideImage, table: slideTable, questions: slideQuestions, plain: slidePlain };
+  const types = { done: slideDone, image: slideImage, images: slideImages, table: slideTable, questions: slideQuestions, plain: slidePlain };
   for (const d of c.slides) types[d.type](pres, s, d, weekDir);
   const name = path.basename(weekDir);
   const file = path.join(weekDir, `${name}.pptx`);

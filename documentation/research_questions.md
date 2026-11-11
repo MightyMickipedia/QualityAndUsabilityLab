@@ -1,6 +1,6 @@
 # Research questions
 
-Draft by Ivan, 10.11.2026. To be discussed with the team and finalised with Neha on 11.11.
+Agreed with Neha on 11.11.2026.
 
 **RQ1 (error sensitivity):** For each of the 11 error types, how often do LLM judges prefer the original summary over the version with one injected error, and does that rate grow with the error's severity (low, medium, high)?
 
@@ -10,10 +10,10 @@ Draft by Ivan, 10.11.2026. To be discussed with the team and finalised with Neha
 
 ## How we'd measure them
 
-- The judge gets the article and two summaries and answers "A" or "B" (both judge prompts are in `documentation/intro_kickoff.pdf`: "Prompt 1: simple" and "Prompt 2: detailed and defined").
-- **RQ1:** pairs of (original, injected version). The metric is the share of pairs where the judge picks the original, per error type and per severity. A judge that sees no difference lands at 50%.
-- **RQ2:** both versions come from the same perfect summary. One gets a faithfulness error injected, the other gets a sentence deleted. The metric is the share of pairs where the judge picks each version.
-- **RQ3:** the same pairs as in RQ1, judged once with the simple prompt and once with the detailed prompt, which defines coverage and faithfulness.
+- We give the judge the article and two summaries. It answers "A" or "B". We use the two judge prompts from the kickoff slides (`documentation/intro_kickoff.pdf`): the simple one and the detailed one.
+- **RQ1:** the judge compares the original summary with the version that has an error. We count how often it picks the original, for each error type and each severity.
+- **RQ2:** we take one perfect summary and make two versions of it. One has a factual error, the other is missing a sentence. We count how often the judge picks each of them.
+- **RQ3:** we take the pairs from RQ1 and run them twice, once with the simple prompt and once with the detailed prompt. The detailed prompt explains what coverage and faithfulness mean.
 
 ## How they relate to the kickoff slides
 

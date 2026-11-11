@@ -18,8 +18,8 @@ npm install                # once
 ./build.sh week-02         # -> documentation/presentations/week-02/week-02.pptx
 ```
 
-Slide types in `content.js`: `done` (project manager, headline, who did what), `image` (a picture such as a screenshot, with a short list next to it), `table` (header + rows), `plain` (heading + paragraphs), `questions` (numbered list + a box on the right).
+Slide types in `content.js`: `done` (project manager, headline, who did what), `image` (a picture such as a screenshot, with a short list next to it), `images` (two or three pictures side by side with captions), `table` (header + rows), `plain` (heading + paragraphs), `questions` (numbered list + a box on the right).
 
-To screenshot part of a markdown file for an `image` slide: `node build/screenshot.js ../Taxonomy.md "# Part 1" "¹ Table 1" week-01/taxonomy.png` (start line, end line). Add more types in `deck.js` if a week needs them.
+To screenshot part of a markdown file for an `image` slide: `node build/screenshot.js ../Taxonomy.md "# Part 1" "¹ Table 1" week-01/taxonomy.png` (start line, end line; an optional page width in px as fifth argument makes the screenshot narrower). Add more types in `deck.js` if a week needs them.
 
 `build.sh` uses LibreOffice and `pdftoppm` to make a PDF and preview images in `build/preview/` (not committed). If the local pptx skill is installed, it also validates the file; set `PY=/path/to/python` to a Python with `defusedxml` and `lxml`.
