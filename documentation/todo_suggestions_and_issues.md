@@ -9,12 +9,6 @@ Things we noticed in each other's work. Suggestions, not tasks. Grouped by the p
   - Idea: `scripts/select_perfect.py` strips a first line that starts with "Hier ist …:" (last semester's `perturb.py` does this with `_split_boilerplate`). The alternative is to drop those 15 summaries.
   - Items: faithfulness 1077, 1318, 1336, 137, 143, 5184, 5757 (llama-3b), 1112, 1262, 1328 (llama-1b); coverage 117, 1279, 1349, 137 (llama-3b), 1262 (llama-1b).
 
-## Malte
-
-- **The 30 test outputs are missing.** The three prompts (`semantic_frame_prede.md`, `_ente.md`, `_circe.md`) and the selection of 10 summaries with severities (`data/injected/semantic_frame_selection.json`) are in the repo, but the injection wasn't run. `data/injected/semantic_frame_test.jsonl` (10 summaries × 3 types = 30 outputs) doesn't exist yet.
-  - Idea: run the prompts with `scripts/injection/run.py` (commands in `scripts/injection/README.md`), one run per type and severity with `--items` from your selection file and `--out data/injected/semantic_frame_test.jsonl`. A free key from openrouter.ai works, e.g. with the model `nvidia/nemotron-3.5-super-vl:free`.
-  - Worth a look afterwards: item 1180/llama-1b is only six words long ("Biodeutsch: das Unwort des Jahres 2024"), so a PredE or CircE may not fit. Your fallback rule should catch that, and the runner then shows the warning `no fitting change`.
-
 ## Anton
 
 - **The prompt files in the repo have different names than the ones the outputs point to.**
