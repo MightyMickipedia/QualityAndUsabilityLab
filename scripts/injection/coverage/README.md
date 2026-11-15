@@ -1,6 +1,6 @@
 # Coverage-Prompts
 
-Die fertige Abgabe mit direkten Links zu Ergebnis und Prompts steht in der [Coverage-Übersicht](../../../data/injected/coverage_README.md). Dieser Ordner enthält das wiederverwendbare Codegerüst und Hilfsdaten.
+Dieser Ordner enthält das wiederverwendbare Codegerüst und Hilfsdaten.
 
 - `coverage_selection.json`: Auswahl der zehn Ausgangstexte und Zuordnung der Schweregrade; keine generierten Ausgaben.
 - `../prompts/coverage_delete.md`, `../prompts/coverage_add.md`: gemeinsame Promptstruktur und Texterhaltung.
