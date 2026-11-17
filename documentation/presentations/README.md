@@ -5,18 +5,21 @@ Neha asked for 2-3 update slides every week (meeting 28.10.2026). This folder ha
 ## Folders
 
 - `build/` - the generator (`deck.js`), the style (`styles.js`), the background picture (`backgrounds.js` -> `assets/bg-scales.png`)
+- `template/` - an empty deck to start from: `content.js` with placeholder text, two placeholder pictures and `template.pptx`
 - `week-01/` - `content.js` (this week's text), `taxonomy.png` (screenshot for slide 2) and `week-01.pptx`
 
 ## New week
 
 ```bash
-mkdir documentation/presentations/week-02
-cp documentation/presentations/week-01/content.js documentation/presentations/week-02/
-# edit documentation/presentations/week-02/content.js (week, date, slide text)
+cp -r documentation/presentations/template documentation/presentations/week-03
+rm documentation/presentations/week-03/template.pptx
+# edit documentation/presentations/week-03/content.js (week, date, placeholder slide text)
 cd documentation/presentations/build
 npm install                # once
-./build.sh week-02         # -> documentation/presentations/week-02/week-02.pptx
+./build.sh week-03         # -> documentation/presentations/week-03/week-03.pptx
 ```
+
+Without the build: open `template/template.pptx` in PowerPoint or Google Slides and type over the text.
 
 Slide types in `content.js`: `done` (project manager, headline, who did what), `image` (a picture such as a screenshot, with a short list next to it), `images` (two or three pictures side by side with captions), `table` (header + rows), `plain` (heading + paragraphs), `questions` (numbered list + a box on the right).
 

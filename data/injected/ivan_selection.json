@@ -1,0 +1,490 @@
+{
+ "note": "Ivan's 25 summaries per error type from data v2 (random, seed 2026). Skips the 15 summaries with model chatter and the ones used in the test files. Severity 8 low / 9 medium / 8 high per type. PredE has four extra summaries (seeds 2027, 2028, 2030) that replace 1263, 134, 1442 and 1326, where the model made no change. add_out_of_domain_sentence: 1285 was swapped for another summary (seed 2029) because the model changed a second word in three tries. Four outputs were regenerated on 17.11. after a review (PredE 112, 131 and this swap; PredE 1326 ended with no change after three tries).",
+ "selection": {
+  "add_out_of_domain_sentence": [
+   {
+    "item_id": "1035",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 1
+   },
+   {
+    "item_id": "1180",
+    "model": "mistral-nemo",
+    "severity": "high",
+    "batch": 1
+   },
+   {
+    "item_id": "1282",
+    "model": "wiedervereinigung",
+    "severity": "high",
+    "batch": 1
+   },
+   {
+    "item_id": "5829",
+    "model": "llama-1b",
+    "severity": "medium",
+    "batch": 1
+   },
+   {
+    "item_id": "1371",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "5223",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1029",
+    "model": "sauerkraut",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "5475",
+    "model": "llama-3b",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1090",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "5475",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1340",
+    "model": "wiedervereinigung",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1347",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1329",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1233",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "1447",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1334",
+    "model": "wiedervereinigung",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1326",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 3
+   },
+   {
+    "item_id": "140",
+    "model": "wiedervereinigung",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1438",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1411",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1273",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1407",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 3
+   },
+   {
+    "item_id": "4479",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1340",
+    "model": "sauerkraut",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1282",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 3,
+    "replaces": "1285/mistral-nemo, where the model changed a second word in three tries"
+   }
+  ],
+  "add_definition": [
+   {
+    "item_id": "1239",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 1
+   },
+   {
+    "item_id": "1120",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 1
+   },
+   {
+    "item_id": "1",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 1
+   },
+   {
+    "item_id": "1344",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 1
+   },
+   {
+    "item_id": "1023",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 1
+   },
+   {
+    "item_id": "1029",
+    "model": "wiedervereinigung",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "116",
+    "model": "sauerkraut",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "1029",
+    "model": "llama-1b",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "1239",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1000",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1394",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "4381",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1394",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "5847",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1083",
+    "model": "llama-3b",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1219",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1125",
+    "model": "wiedervereinigung",
+    "severity": "low",
+    "batch": 3
+   },
+   {
+    "item_id": "1207",
+    "model": "mistral-nemo",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1207",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "1208",
+    "model": "wiedervereinigung",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "5797",
+    "model": "sauerkraut",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1023",
+    "model": "llama-1b",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1207",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1024",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "5223",
+    "model": "wiedervereinigung",
+    "severity": "low",
+    "batch": 3
+   }
+  ],
+  "PredE": [
+   {
+    "item_id": "1263",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 1
+   },
+   {
+    "item_id": "1143",
+    "model": "sauerkraut",
+    "severity": "high",
+    "batch": 1
+   },
+   {
+    "item_id": "1208",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 1
+   },
+   {
+    "item_id": "1438",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 1
+   },
+   {
+    "item_id": "1329",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 1
+   },
+   {
+    "item_id": "1325",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "134",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1334",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1311",
+    "model": "mistral-nemo",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1368",
+    "model": "sauerkraut",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1413",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 2
+   },
+   {
+    "item_id": "1013",
+    "model": "llama-3b",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1234",
+    "model": "mistral-nemo",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "1242",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 2
+   },
+   {
+    "item_id": "132",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 2
+   },
+   {
+    "item_id": "1053",
+    "model": "mistral-nemo",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1313",
+    "model": "llama-3b",
+    "severity": "low",
+    "batch": 3
+   },
+   {
+    "item_id": "1431",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "145",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "134",
+    "model": "mistral-nemo",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "5879",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 3
+   },
+   {
+    "item_id": "1317",
+    "model": "gpt3.5",
+    "severity": "medium",
+    "batch": 3
+   },
+   {
+    "item_id": "112",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "131",
+    "model": "gpt3.5",
+    "severity": "high",
+    "batch": 3
+   },
+   {
+    "item_id": "1326",
+    "model": "llama-1b",
+    "severity": "low",
+    "batch": 3
+   },
+   {
+    "item_id": "1442",
+    "model": "mistral-nemo",
+    "severity": "low",
+    "batch": 3,
+    "replaces": "an output with the warning 'no fitting change'"
+   },
+   {
+    "item_id": "1010",
+    "model": "mistral-nemo",
+    "severity": "low",
+    "batch": 3,
+    "replaces": "an output with the warning 'no fitting change'"
+   },
+   {
+    "item_id": "1335",
+    "model": "gpt3.5",
+    "severity": "low",
+    "batch": 3,
+    "replaces": "an output with the warning 'no fitting change'"
+   },
+   {
+    "item_id": "1011",
+    "model": "sauerkraut",
+    "severity": "low",
+    "batch": 3,
+    "replaces": "an output with the warning 'no fitting change'"
+   }
+  ]
+ }
+}
