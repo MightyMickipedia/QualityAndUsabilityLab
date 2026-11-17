@@ -110,8 +110,6 @@ würden.
 
 **Summary:**
 
-> Hier ist ein möglicher Artikel:
-> 
 > Eine Einigung zwischen Israel und der islamistischen Terrororganisation Hamas steht kurz bevor, wie Medienberichten zufolge. Die Hamas hat dem Deal zugestimmt, meldete die Nachrichtenagentur Reuters unter Berufung auf einen israelischen Beamten. Eine Einigung sei erzielt, es seien nur noch wenige technische Details zu klären.
 > 
 > Der Zeitungen Times of Israel und Haaretz zufolge könnte die Vereinbarung bereits am Mittwoch

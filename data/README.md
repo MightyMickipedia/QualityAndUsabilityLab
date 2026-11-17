@@ -83,7 +83,7 @@ Currently written files use option **A**.
 ## Counts per option (v2)
 
 <!-- COUNTS_V2:START -->
-Input: `annotations_at_least_2_annotators.jsonl` - 3720 annotator rows, 1470 unique summaries (item_id + model). Texts cleaned (HTML tags, umlauts, outer quotes); `n_sentences` added.
+Input: `annotations_at_least_2_annotators.jsonl` - 3720 annotator rows, 1470 unique summaries (item_id + model). Texts cleaned (HTML tags, umlauts, outer quotes, model chatter before the summary); `n_sentences` added.
 
 | Option | Definition | Faithfulness (d7) | Coverage (d6) |
 |---|---|---|---|

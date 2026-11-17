@@ -69,11 +69,36 @@ def strip_outer_quotes(text):
     return text
 
 
+# Model chatter before the actual summary, e.g. "Hier ist eine Zusammenfassung des Artikels:"
+# (max. 150 chars up to the colon, so normal colons inside a summary are not hit)
+CHATTER = re.compile(
+    r"^\s*(?:hier ist|hier sind|gerne|natürlich|selbstverständlich)\b[^\n]{0,150}?:\s*",
+    re.I,
+)
+
+
+def strip_chatter(text):
+    """Remove model chatter before the summary. Returns (text, removed_prefix or None)."""
+    m = CHATTER.match(text)
+    if m and len(text) > m.end():
+        return text[m.end():].strip(), m.group().strip()
+    return text, None
+
+
 def clean(text, quotes=False):
     if not isinstance(text, str):
         return text
     text = strip_tags(fix_encoding(text)).strip()
     return strip_outer_quotes(text) if quotes else text
+
+
+def clean_summary(text):
+    """Cleaning for summaries: tags/encoding -> chatter -> outer quotes. Returns (text, removed_prefix)."""
+    text = clean(text)
+    if not isinstance(text, str):
+        return text, None
+    text, removed = strip_chatter(text)  # must run before the quote check
+    return strip_outer_quotes(text), removed
 
 
 #sentence count
@@ -111,12 +136,13 @@ def load_grouped(path):
             key = (row["item_id"], row["model"])
             g = groups.get(key)
             if g is None:
-                summary = clean(row.get("summary"), quotes=True)
+                summary, removed = clean_summary(row.get("summary"))
                 g = groups[key] = {
                     "item_id": key[0], "model": key[1],
                     "title": clean(row.get("title")),
                     "article": clean(row.get("article")),
                     "summary": summary,
+                    "chatter_removed": removed,  # None or the removed prefix
                     "ratings_d6_coverage": [], "ratings_d7_faithfulness": [],
                     "n_annotators": 0,
                     "n_sentences": count_sentences(summary) if isinstance(summary, str) else 0,
@@ -207,12 +233,14 @@ def main():
         write_sample(args.outdir / f"sample_{dim}{args.suffix}.md", dim, field,
                      selected, args.sample_size, args.seed)
         n3 = sum(r["n_annotators"] == 3 for r in selected)
+        n_chat = sum(bool(r["chatter_removed"]) for r in selected)
         print(f"[option {args.criterion}] {out.name}: {len(selected)} summaries "
-              f"({n3} with 3 annotators), rows with tags/broken umlauts: {count_leftovers(selected)}")
+              f"({n3} with 3 annotators), chatter removed: {n_chat}, "
+              f"rows with tags/broken umlauts: {count_leftovers(selected)}")
 
     block = "\n".join([
         f"Input: `{args.input.name}` - {n_rows} annotator rows, {len(groups)} unique summaries (item_id + model). "
-        "Texts cleaned (HTML tags, umlauts, outer quotes); `n_sentences` added.",
+        "Texts cleaned (HTML tags, umlauts, outer quotes, model chatter before the summary); `n_sentences` added.",
         "",
         "| Option | Definition | Faithfulness (d7) | Coverage (d6) |",
         "|---|---|---|---|",
@@ -228,6 +256,12 @@ def main():
     print("\nCounts per option (unique summaries):")
     for opt in "ABC":
         print(f"  {opt}: d7 faithfulness={counts[opt]['d7']}, d6 coverage={counts[opt]['d6']}")
+
+    chatter = [g for g in groups.values() if g["chatter_removed"]]
+    print(f"\nChatter removed in {len(chatter)} summaries (all, not only selected):")
+    for g in chatter:
+        print(f"  {g['item_id']} / {g['model']}: {g['chatter_removed']!r}")
+
     print(f"\nTotal: {n_rows} rows, {len(groups)} unique summaries. README updated.")
 
 
