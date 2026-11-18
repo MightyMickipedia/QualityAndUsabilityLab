@@ -22,6 +22,15 @@ So sehen solche Fehler aus:
 ## Zusammenfassung
 {summary}
 
-Antworte nur mit JSON, ohne weiteren Text:
-Schreibe Anführungszeichen innerhalb der Texte als \" und Zeilenumbrüche als \n. Kein Text vor oder nach dem JSON, kein ```-Block.
-{"modified_summary": "<die geänderte Zusammenfassung>", "change": "<kurz: was wurde geändert>"}
+## Kontrolle und Ausgabe
+Prüfe vor der Antwort intern:
+1. Entspricht der Fehler ausschließlich dem Zieltyp und dem angeforderten Schweregrad?
+2. Ist die neue Angabe gegenüber dem Artikel tatsächlich falsch?
+3. Ist außerhalb der ausgewählten Stelle der gesamte Ausgangstext unverändert enthalten?
+4. Passt die Änderung zur vorhandenen Grammatik?
+
+Wenn keine geeignete Änderung für Typ und Schweregrad möglich ist, gib die vollständige Ausgangszusammenfassung unverändert zurück und beginne change mit "KEINE_PASSENDE_AENDERUNG:" samt kurzer Erklärung. Erzeuge keinen anderen Fehlertyp, um die Aufgabe scheinbar zu erfüllen.
+
+Antworte ausschließlich mit einem gültigen JSON-Objekt mit genau zwei String-Feldern: modified_summary und change.
+Verwende gerade doppelte Anführungszeichen für JSON-Schlüssel und Stringwerte. Maskiere Anführungszeichen und Zeilenumbrüche innerhalb der Strings korrekt. Kein Markdown-Codeblock und kein Text außerhalb des JSON-Objekts.
+{"modified_summary": "<die vollständige geänderte Zusammenfassung>", "change": "<ursprüngliche Stelle> -> <neue Stelle>; kurze Erklärung des sachlichen Fehlers"}
