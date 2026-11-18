@@ -1,0 +1,539 @@
+{
+  "source": "data/perfect_faithfulness_v2.jsonl",
+  "source_sha256": "557b0292bdce4df059bba05efa48a1d09c2cee804689f352c50e7d1e3eb02973",
+  "error_types": [
+    "EntE",
+    "CircE"
+  ],
+  "note": "Finale Auswahl nach dem Ersatz von neun Varianten. Pro Fehlertyp 25 Originale. Die Auswahl unterscheidet sich zwischen EntE und CircE. items_by_error_type dokumentiert die endgültigen Testfälle; initial_items dokumentiert die ursprüngliche Auswahl.",
+  "severity_note": "Severity bezeichnet die angeforderte Stufe. Die tatsächliche Schwere wird später von Hand annotiert.",
+  "initial_source_sha256": "ed267e329d23fee5ddb5291002bfa847c210d017793102977e288ee547e5b1de",
+  "initial_items": [
+    {
+      "item_id": "112",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 74,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1349",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 22,
+      "severity": "low"
+    },
+    {
+      "item_id": "1007",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 14,
+      "severity": "high"
+    },
+    {
+      "item_id": "145",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 77,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1203",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 44,
+      "severity": "low"
+    },
+    {
+      "item_id": "1325",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 41,
+      "severity": "high"
+    },
+    {
+      "item_id": "1268",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 35,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1082",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 23,
+      "severity": "low"
+    },
+    {
+      "item_id": "1238",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 22,
+      "severity": "high"
+    },
+    {
+      "item_id": "1263",
+      "model": "sauerkraut",
+      "length_group": "short",
+      "word_count": 75,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1397",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 69,
+      "severity": "low"
+    },
+    {
+      "item_id": "5694",
+      "model": "mistral-nemo",
+      "length_group": "short",
+      "word_count": 20,
+      "severity": "high"
+    },
+    {
+      "item_id": "1411",
+      "model": "gpt3.5",
+      "length_group": "short",
+      "word_count": 72,
+      "severity": "medium"
+    },
+    {
+      "item_id": "5687",
+      "model": "gpt3.5",
+      "length_group": "long",
+      "word_count": 108,
+      "severity": "high"
+    },
+    {
+      "item_id": "1313",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 145,
+      "severity": "medium"
+    },
+    {
+      "item_id": "140",
+      "model": "gpt3.5",
+      "length_group": "long",
+      "word_count": 94,
+      "severity": "low"
+    },
+    {
+      "item_id": "1160",
+      "model": "gpt3.5",
+      "length_group": "long",
+      "word_count": 89,
+      "severity": "high"
+    },
+    {
+      "item_id": "1011",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 127,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1452",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 105,
+      "severity": "low"
+    },
+    {
+      "item_id": "1385",
+      "model": "llama-1b",
+      "length_group": "long",
+      "word_count": 96,
+      "severity": "high"
+    },
+    {
+      "item_id": "1053",
+      "model": "sauerkraut",
+      "length_group": "long",
+      "word_count": 126,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1300",
+      "model": "gpt3.5",
+      "length_group": "long",
+      "word_count": 101,
+      "severity": "low"
+    },
+    {
+      "item_id": "1261",
+      "model": "mistral-nemo",
+      "length_group": "long",
+      "word_count": 85,
+      "severity": "high"
+    },
+    {
+      "item_id": "1439",
+      "model": "gpt3.5",
+      "length_group": "long",
+      "word_count": 90,
+      "severity": "medium"
+    },
+    {
+      "item_id": "1125",
+      "model": "mistral-nemo",
+      "length_group": "long",
+      "word_count": 85,
+      "severity": "low"
+    }
+  ],
+  "items_by_error_type": {
+    "EntE": [
+      {
+        "item_id": "1082",
+        "model": "mistral-nemo",
+        "word_count": 23,
+        "severity": "low"
+      },
+      {
+        "item_id": "1125",
+        "model": "mistral-nemo",
+        "word_count": 85,
+        "severity": "low"
+      },
+      {
+        "item_id": "108",
+        "model": "sauerkraut",
+        "word_count": 97,
+        "severity": "low",
+        "replaces": {
+          "item_id": "1203",
+          "model": "mistral-nemo",
+          "reason": "no_fitting_change"
+        }
+      },
+      {
+        "item_id": "1300",
+        "model": "gpt3.5",
+        "word_count": 101,
+        "severity": "low"
+      },
+      {
+        "item_id": "1260",
+        "model": "mistral-nemo",
+        "word_count": 102,
+        "severity": "low",
+        "replaces": {
+          "item_id": "1349",
+          "model": "mistral-nemo",
+          "reason": "no_fitting_change"
+        }
+      },
+      {
+        "item_id": "1397",
+        "model": "mistral-nemo",
+        "word_count": 69,
+        "severity": "low"
+      },
+      {
+        "item_id": "140",
+        "model": "gpt3.5",
+        "word_count": 94,
+        "severity": "low"
+      },
+      {
+        "item_id": "1452",
+        "model": "sauerkraut",
+        "word_count": 105,
+        "severity": "low"
+      },
+      {
+        "item_id": "1011",
+        "model": "sauerkraut",
+        "word_count": 127,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1053",
+        "model": "sauerkraut",
+        "word_count": 126,
+        "severity": "medium"
+      },
+      {
+        "item_id": "112",
+        "model": "gpt3.5",
+        "word_count": 74,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1263",
+        "model": "sauerkraut",
+        "word_count": 75,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1389",
+        "model": "gpt3.5",
+        "word_count": 82,
+        "severity": "medium",
+        "replaces": {
+          "item_id": "1268",
+          "model": "mistral-nemo",
+          "reason": "inaccurate_original_summary"
+        }
+      },
+      {
+        "item_id": "1313",
+        "model": "sauerkraut",
+        "word_count": 145,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1411",
+        "model": "gpt3.5",
+        "word_count": 72,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1439",
+        "model": "gpt3.5",
+        "word_count": 90,
+        "severity": "medium"
+      },
+      {
+        "item_id": "145",
+        "model": "gpt3.5",
+        "word_count": 77,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1007",
+        "model": "mistral-nemo",
+        "word_count": 14,
+        "severity": "high"
+      },
+      {
+        "item_id": "1160",
+        "model": "gpt3.5",
+        "word_count": 89,
+        "severity": "high"
+      },
+      {
+        "item_id": "1238",
+        "model": "mistral-nemo",
+        "word_count": 22,
+        "severity": "high"
+      },
+      {
+        "item_id": "1261",
+        "model": "mistral-nemo",
+        "word_count": 85,
+        "severity": "high"
+      },
+      {
+        "item_id": "1325",
+        "model": "mistral-nemo",
+        "word_count": 41,
+        "severity": "high"
+      },
+      {
+        "item_id": "1385",
+        "model": "llama-1b",
+        "word_count": 96,
+        "severity": "high"
+      },
+      {
+        "item_id": "5687",
+        "model": "gpt3.5",
+        "word_count": 108,
+        "severity": "high"
+      },
+      {
+        "item_id": "5694",
+        "model": "mistral-nemo",
+        "word_count": 20,
+        "severity": "high"
+      }
+    ],
+    "CircE": [
+      {
+        "item_id": "108",
+        "model": "sauerkraut",
+        "word_count": 97,
+        "severity": "low",
+        "replaces": {
+          "item_id": "1082",
+          "model": "mistral-nemo",
+          "reason": "no_fitting_change"
+        }
+      },
+      {
+        "item_id": "1125",
+        "model": "mistral-nemo",
+        "word_count": 85,
+        "severity": "low"
+      },
+      {
+        "item_id": "1220",
+        "model": "gpt3.5",
+        "word_count": 89,
+        "severity": "low",
+        "replaces": {
+          "item_id": "1203",
+          "model": "mistral-nemo",
+          "reason": "no_fitting_change"
+        }
+      },
+      {
+        "item_id": "1300",
+        "model": "gpt3.5",
+        "word_count": 101,
+        "severity": "low"
+      },
+      {
+        "item_id": "1349",
+        "model": "mistral-nemo",
+        "word_count": 22,
+        "severity": "low"
+      },
+      {
+        "item_id": "1397",
+        "model": "mistral-nemo",
+        "word_count": 69,
+        "severity": "low"
+      },
+      {
+        "item_id": "140",
+        "model": "gpt3.5",
+        "word_count": 94,
+        "severity": "low"
+      },
+      {
+        "item_id": "1452",
+        "model": "sauerkraut",
+        "word_count": 105,
+        "severity": "low"
+      },
+      {
+        "item_id": "1011",
+        "model": "sauerkraut",
+        "word_count": 127,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1053",
+        "model": "sauerkraut",
+        "word_count": 126,
+        "severity": "medium"
+      },
+      {
+        "item_id": "112",
+        "model": "gpt3.5",
+        "word_count": 74,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1263",
+        "model": "sauerkraut",
+        "word_count": 75,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1389",
+        "model": "gpt3.5",
+        "word_count": 82,
+        "severity": "medium",
+        "replaces": {
+          "item_id": "1268",
+          "model": "mistral-nemo",
+          "reason": "inaccurate_original_summary"
+        }
+      },
+      {
+        "item_id": "1313",
+        "model": "sauerkraut",
+        "word_count": 145,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1411",
+        "model": "gpt3.5",
+        "word_count": 72,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1439",
+        "model": "gpt3.5",
+        "word_count": 90,
+        "severity": "medium"
+      },
+      {
+        "item_id": "145",
+        "model": "gpt3.5",
+        "word_count": 77,
+        "severity": "medium"
+      },
+      {
+        "item_id": "1048",
+        "model": "gpt3.5",
+        "word_count": 74,
+        "severity": "high",
+        "replaces": {
+          "item_id": "1007",
+          "model": "mistral-nemo",
+          "reason": "no_fitting_change"
+        }
+      },
+      {
+        "item_id": "1160",
+        "model": "gpt3.5",
+        "word_count": 89,
+        "severity": "high"
+      },
+      {
+        "item_id": "1424",
+        "model": "gpt3.5",
+        "word_count": 67,
+        "severity": "high",
+        "replaces": {
+          "item_id": "1238",
+          "model": "mistral-nemo",
+          "reason": "no_fitting_change"
+        }
+      },
+      {
+        "item_id": "1261",
+        "model": "mistral-nemo",
+        "word_count": 85,
+        "severity": "high"
+      },
+      {
+        "item_id": "1325",
+        "model": "mistral-nemo",
+        "word_count": 41,
+        "severity": "high"
+      },
+      {
+        "item_id": "1332",
+        "model": "gpt3.5",
+        "word_count": 82,
+        "severity": "high",
+        "replaces": {
+          "item_id": "1385",
+          "model": "llama-1b",
+          "reason": "invalid_json_and_no_fitting_change"
+        }
+      },
+      {
+        "item_id": "5687",
+        "model": "gpt3.5",
+        "word_count": 108,
+        "severity": "high"
+      },
+      {
+        "item_id": "5694",
+        "model": "mistral-nemo",
+        "word_count": 20,
+        "severity": "high"
+      }
+    ]
+  }
+}
