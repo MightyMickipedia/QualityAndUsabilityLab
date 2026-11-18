@@ -1,0 +1,666 @@
+{
+ "seed": 2026,
+ "per_type": 5,
+ "samples": [
+  {
+   "sample_id": "s001",
+   "output_id": "inj-CorefE-high-123-mistral-nemo-20261118-120318-09cf",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s002",
+   "output_id": "inj-CircE-high-1325-mistral-nemo-20261117-131724-80c6",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s003",
+   "output_id": "inj-PredE-medium-1317-gpt3.5-20261116-133959-b7ba",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s004",
+   "output_id": "inj-add_definition-low-1125-wiedervereinigung-20261116-132450-adb2",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s005",
+   "output_id": "inj-GramE-low-1010-sauerkraut-20261117-201644-2f21",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s006",
+   "output_id": "inj-add_out_of_domain_sentence-medium-1438-sauerkraut-20261116-131648-9104",
+   "file": "add_out_of_domain_sentence.jsonl",
+   "error_type": "add_out_of_domain_sentence",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s007",
+   "output_id": "inj-LinkE-medium-1385-gpt3.5-20261118-121620-0c3f",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s008",
+   "output_id": "inj-EntE-medium-1053-sauerkraut-20261117-125937-cd75",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s009",
+   "output_id": "inj-PredE-high-1438-gpt3.5-20261116-114858-9f3d",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s010",
+   "output_id": "inj-add_definition-high-5797-sauerkraut-20261118-110338-c7a7",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s011",
+   "output_id": "inj-delete_sentence-high-108-gpt3.5-C-DEL-9",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s012",
+   "output_id": "inj-GramE-medium-1396-sauerkraut-20261117-202923-1890",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s013",
+   "output_id": "inj-add_definition-high-1394-gpt3.5-20261116-120252-a64e",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s014",
+   "output_id": "inj-OutE-high-1227-gpt3.5-20261117-201354-5be8",
+   "file": "add_outE.jsonl",
+   "error_type": "OutE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s015",
+   "output_id": "inj-EntE-low-1300-gpt3.5-20261117-125426-743c",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s016",
+   "output_id": "inj-CircE-medium-1439-gpt3.5-20261117-131258-a4d3",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s017",
+   "output_id": "inj-add_out_of_domain_sentence-high-4479-gpt3.5-20261116-131952-abea",
+   "file": "add_out_of_domain_sentence.jsonl",
+   "error_type": "add_out_of_domain_sentence",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s018",
+   "output_id": "inj-add_definition-medium-1207-sauerkraut-20261116-132613-08e5",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s019",
+   "output_id": "inj-CorefE-high-1419-gpt3.5-20261118-120318-09cf",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s020",
+   "output_id": "inj-add_in_domain_sentence-medium-1205-gpt3.5-C-IN-1205",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s021",
+   "output_id": "inj-EntE-low-108-sauerkraut-20261118-111518-789a",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s022",
+   "output_id": "inj-delete_sentence-high-1158-sauerkraut-C-DEL-13",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s023",
+   "output_id": "inj-CircE-medium-1411-gpt3.5-20261117-131258-a4d3",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s024",
+   "output_id": "inj-LinkE-low-111-gpt3.5-20261118-121144-6143",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s025",
+   "output_id": "inj-CircE-low-108-sauerkraut-20261118-111630-f9c7",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s026",
+   "output_id": "inj-CircE-low-1300-gpt3.5-20261117-130850-f446",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s027",
+   "output_id": "inj-CorefE-medium-1094-gpt3.5-20261118-115728-3327",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s028",
+   "output_id": "inj-LinkE-medium-5890-gpt3.5-20261118-121620-0c3f",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s029",
+   "output_id": "inj-GramE-high-1085-mistral-nemo-20261117-203822-675b",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s030",
+   "output_id": "inj-PredE-medium-1311-mistral-nemo-20261116-121218-462d",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s031",
+   "output_id": "inj-EntE-low-1082-mistral-nemo-20261117-125426-743c",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s032",
+   "output_id": "inj-LinkE-medium-1363-gpt3.5-20261118-121620-0c3f",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s033",
+   "output_id": "inj-add_out_of_domain_sentence-medium-1334-wiedervereinigung-20261116-131648-9104",
+   "file": "add_out_of_domain_sentence.jsonl",
+   "error_type": "add_out_of_domain_sentence",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s034",
+   "output_id": "inj-PredE-high-1431-gpt3.5-20261116-134128-fa1c",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s035",
+   "output_id": "inj-add_out_of_domain_sentence-medium-1411-gpt3.5-20261116-131648-9104",
+   "file": "add_out_of_domain_sentence.jsonl",
+   "error_type": "add_out_of_domain_sentence",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s036",
+   "output_id": "inj-add_definition-low-1083-llama-3b-20261116-115730-1259",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s037",
+   "output_id": "inj-GramE-medium-1048-gpt3.5-20261117-202923-1890",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s038",
+   "output_id": "inj-PredE-medium-1368-sauerkraut-20261116-121218-462d",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s039",
+   "output_id": "inj-GramE-high-1341-gpt3.5-20261117-203822-675b",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s040",
+   "output_id": "inj-CorefE-medium-1326-gpt3.5-20261118-115728-3327",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s041",
+   "output_id": "inj-add_in_domain_sentence-medium-1085-gpt3.5-C-IN-1085",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s042",
+   "output_id": "inj-OutE-low-1008-gpt3.5-20261117-200445-93bd",
+   "file": "add_outE.jsonl",
+   "error_type": "OutE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s043",
+   "output_id": "inj-delete_sentence-medium-1120-gpt3.5-C-DEL-11",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s044",
+   "output_id": "inj-EntE-high-1238-mistral-nemo-20261117-130529-15f8",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "group": "B",
+   "annotators": [
+    "Anton",
+    "Ivan"
+   ],
+   "adjudicator": "Mick"
+  },
+  {
+   "sample_id": "s045",
+   "output_id": "inj-add_in_domain_sentence-low-1285-mistral-nemo-C-IN-1285",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s046",
+   "output_id": "inj-delete_sentence-high-1318-gpt3.5-C-DEL-22",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s047",
+   "output_id": "inj-LinkE-medium-1440-gpt3.5-20261118-121620-0c3f",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s048",
+   "output_id": "inj-OutE-medium-1236-mistral-nemo-20261117-200906-6da3",
+   "file": "add_outE.jsonl",
+   "error_type": "OutE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s049",
+   "output_id": "inj-CorefE-low-1032-sauerkraut-20261118-115342-85ce",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "group": "E",
+   "annotators": [
+    "Mick",
+    "Giuseppe"
+   ],
+   "adjudicator": "Ivan"
+  },
+  {
+   "sample_id": "s050",
+   "output_id": "inj-add_in_domain_sentence-low-1125-gpt3.5-C-IN-1125",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s051",
+   "output_id": "inj-delete_sentence-high-1032-sauerkraut-C-DEL-7",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s052",
+   "output_id": "inj-add_out_of_domain_sentence-high-1233-gpt3.5-20261116-115551-7536",
+   "file": "add_out_of_domain_sentence.jsonl",
+   "error_type": "add_out_of_domain_sentence",
+   "group": "A",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "adjudicator": "Malte"
+  },
+  {
+   "sample_id": "s053",
+   "output_id": "inj-add_in_domain_sentence-medium-1313-gpt3.5-C-IN-1313",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "group": "C",
+   "annotators": [
+    "Ivan",
+    "Malte"
+   ],
+   "adjudicator": "Giuseppe"
+  },
+  {
+   "sample_id": "s054",
+   "output_id": "inj-OutE-high-5049-mistral-nemo-20261117-201354-5be8",
+   "file": "add_outE.jsonl",
+   "error_type": "OutE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  },
+  {
+   "sample_id": "s055",
+   "output_id": "inj-OutE-high-109-mistral-nemo-20261117-201354-5be8",
+   "file": "add_outE.jsonl",
+   "error_type": "OutE",
+   "group": "D",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "adjudicator": "Anton"
+  }
+ ]
+}

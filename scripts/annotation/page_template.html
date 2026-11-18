@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annotation · __NAME__</title>
+<style>
+:root{--bg:#fff;--fg:#1f2328;--muted:#59636e;--line:#d1d9e0;--card:#f6f8fa;--accent:#0969da;--ins:#d1f4d6;--del:#ffd7d5;--ok:#1a7f37}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#e6edf3;--muted:#9198a1;--line:#3d444d;--card:#161b22;--accent:#4493f8;--ins:#1f5a2c;--del:#7a2a28;--ok:#3fb950}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:0}
+h2{font-size:15px;margin:22px 0 6px;color:var(--muted);font-weight:600}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.muted{color:var(--muted);font-size:14px}
+.type{border-left:4px solid var(--accent);background:var(--card);padding:10px 14px;margin:14px 0;border-radius:0 6px 6px 0}
+.type b{font-family:ui-monospace,monospace}
+.text{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px;white-space:pre-wrap}
+ins{background:var(--ins);text-decoration:none;border-radius:3px;padding:1px 2px}
+del{background:var(--del);border-radius:3px;padding:1px 2px}
+details{border:1px solid var(--line);border-radius:6px;padding:8px 14px}
+summary{cursor:pointer;font-weight:600}
+.article{white-space:pre-wrap;margin-top:8px}
+.q{margin:16px 0}
+.q p{margin:0 0 2px;font-weight:600}
+.q small{display:block;color:var(--muted);margin-bottom:8px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:9px 16px;cursor:pointer}
+button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+.nav{display:flex;justify-content:space-between;gap:8px;margin:24px 0 12px}
+.save{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.done{color:var(--ok);font-weight:600}
+.skip{opacity:.4}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><h1>Annotation · __NAME__</h1><span class="muted" id="progress"></span></div>
+<div id="item"></div>
+<div class="nav"><button id="prev">← Back</button><button id="next">Next →</button></div>
+<div class="save">
+  <button id="download">Save answers file</button>
+  <button id="copy">Copy answers</button>
+  <span class="muted" id="status"></span>
+</div>
+<p class="muted">Your answers are kept in this browser while you work. When you are done, save the file and put it into <code>data/annotation/answers/__NAME__.json</code>.</p>
+</main>
+<script>
+const NAME = "__NAME__";
+const ITEMS = __DATA__;
+const KEY = "annotation-" + NAME;
+const QUESTIONS = [
+  {id: "q1", text: "1. How many changes are there?", hint: "Several words can be one change, if they belong to one error. A second, unrelated edit is \"more than one\".", opts: ["one", "none", "more than one"]},
+  {id: "q2", text: "2. Is the change of the asked error type?", hint: "For faithfulness types the changed statement must also be wrong compared to the article. A weaker but still true statement is \"no\".", opts: ["yes", "no", "unclear"]},
+  {id: "q3", text: "3. Is the changed part correct German?", hint: "Grammar and spelling of the changed or added words.", opts: ["yes", "no"]},
+  {id: "q4", text: "4. How severe is the error?", hint: "high: changes the main claim. medium: a wrong secondary fact. low: a small detail. For coverage types: how important is the deleted sentence, or how much does the added sentence distract.", opts: ["low", "medium", "high"]},
+];
+let answers = {};
+try { answers = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+let pos = 0;
+
+// Which questions need an answer: none after "none" in question 1, and no German check for GramE (it is wrong on purpose).
+function asked(item, a) {
+  return QUESTIONS.filter(q => q.id === "q1" || (a.q1 !== "none" && !(q.id === "q3" && item.type === "GramE")));
+}
+function complete(item) {
+  const a = answers[item.id] || {};
+  return asked(item, a).every(q => a[q.id]);
+}
+function store() { try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch (e) {} }
+
+function render() {
+  const item = ITEMS[pos], a = answers[item.id] || {};
+  const need = asked(item, a).map(q => q.id);
+  const done = ITEMS.filter(complete).length;
+  document.getElementById("progress").textContent = `Output ${pos + 1} of ${ITEMS.length} · ${done} done`;
+  let h = `<div class="type">Asked error type: <b>${item.type}</b><br>${item.definition}</div>`;
+  h += `<h2>Modified summary (new words marked)</h2><div class="text">${item.modified}</div>`;
+  h += `<h2>Original summary (removed words marked)</h2><div class="text">${item.original}</div>`;
+  h += `<h2>Article</h2><details><summary>${item.title || "Show the article"}</summary><div class="article">${item.article}</div></details>`;
+  for (const q of QUESTIONS) {
+    const on = need.includes(q.id);
+    h += `<div class="q${on ? "" : " skip"}"><p>${q.text}</p><small>${on ? q.hint : "Not needed for this output."}</small><div class="opts">`;
+    for (const o of q.opts) h += `<button data-q="${q.id}" data-o="${o}" class="${a[q.id] === o && on ? "on" : ""}" ${on ? "" : "disabled"}>${o}</button>`;
+    h += `</div></div>`;
+  }
+  document.getElementById("item").innerHTML = h;
+  document.getElementById("prev").disabled = pos === 0;
+  document.getElementById("next").disabled = pos === ITEMS.length - 1;
+  document.getElementById("status").innerHTML = done === ITEMS.length ? '<span class="done">All outputs done.</span>' : `${ITEMS.length - done} outputs left`;
+}
+
+function output() {
+  const clean = {};
+  for (const item of ITEMS) {
+    const a = answers[item.id] || {}, row = {};
+    for (const q of asked(item, a)) if (a[q.id]) row[q.id] = a[q.id];
+    if (Object.keys(row).length) clean[item.id] = row;
+  }
+  return JSON.stringify({annotator: NAME, saved: new Date().toISOString(), answers: clean}, null, 1);
+}
+
+document.getElementById("item").addEventListener("click", e => {
+  const b = e.target.closest("button[data-q]");
+  if (!b) return;
+  const id = ITEMS[pos].id;
+  answers[id] = Object.assign({}, answers[id], {[b.dataset.q]: b.dataset.o});
+  store(); render();
+});
+document.getElementById("prev").onclick = () => { pos--; render(); scrollTo(0, 0); };
+document.getElementById("next").onclick = () => { pos++; render(); scrollTo(0, 0); };
+document.getElementById("download").onclick = () => {
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(new Blob([output()], {type: "application/json"}));
+  link.download = NAME + ".json";
+  link.click();
+};
+document.getElementById("copy").onclick = async () => {
+  try { await navigator.clipboard.writeText(output()); document.getElementById("status").textContent = "Copied."; }
+  catch (e) { document.getElementById("status").textContent = "Copying is blocked here, use the file."; }
+};
+render();
+</script>
+</body>
+</html>

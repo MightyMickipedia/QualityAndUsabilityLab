@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 720" font-family="Helvetica, Arial, sans-serif">
+<rect width="760" height="720" fill="#ffffff"/>
+<defs>
+<marker id="a0" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+<marker id="a1" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker>
+<marker id="a2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker>
+<marker id="a3" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9333ea"/></marker>
+<marker id="a4" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e11d48"/></marker>
+</defs>
+<line x1="510.0" y1="151.1" x2="320.6" y2="411.7" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" marker-end="url(#a0)"/>
+<line x1="540.4" y1="382.1" x2="283.9" y2="298.8" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" marker-end="url(#a1)"/>
+<line x1="380.0" y1="570.0" x2="380.0" y2="229.0" stroke="#d97706" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" marker-end="url(#a2)"/>
+<line x1="219.6" y1="382.1" x2="476.1" y2="298.8" stroke="#9333ea" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" marker-end="url(#a3)"/>
+<line x1="244.2" y1="143.1" x2="439.4" y2="411.7" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" marker-end="url(#a4)"/>
+<line x1="443.1" y1="151.1" x2="424.5" y2="159.6" stroke="#2563eb" stroke-width="3" stroke-linecap="round"  marker-end="url(#a0)"/>
+<line x1="538.1" y1="151.1" x2="528.3" y2="235.0" stroke="#2563eb" stroke-width="3" stroke-linecap="round"  marker-end="url(#a0)"/>
+<line x1="609.4" y1="377.9" x2="555.8" y2="319.7" stroke="#0d9488" stroke-width="3" stroke-linecap="round"  marker-end="url(#a1)"/>
+<line x1="540.4" y1="436.8" x2="516.2" y2="441.7" stroke="#0d9488" stroke-width="3" stroke-linecap="round"  marker-end="url(#a1)"/>
+<line x1="401.4" y1="570.0" x2="444.1" y2="494.1" stroke="#d97706" stroke-width="3" stroke-linecap="round"  marker-end="url(#a2)"/>
+<line x1="358.6" y1="570.0" x2="315.9" y2="494.1" stroke="#d97706" stroke-width="3" stroke-linecap="round"  marker-end="url(#a2)"/>
+<line x1="219.6" y1="436.8" x2="243.8" y2="441.7" stroke="#9333ea" stroke-width="3" stroke-linecap="round"  marker-end="url(#a3)"/>
+<line x1="150.6" y1="377.9" x2="204.2" y2="319.7" stroke="#9333ea" stroke-width="3" stroke-linecap="round"  marker-end="url(#a3)"/>
+<line x1="221.0" y1="143.1" x2="231.7" y2="235.0" stroke="#e11d48" stroke-width="3" stroke-linecap="round"  marker-end="url(#a4)"/>
+<line x1="299.5" y1="143.1" x2="335.5" y2="159.6" stroke="#e11d48" stroke-width="3" stroke-linecap="round"  marker-end="url(#a4)"/>
+<circle cx="380.0" cy="180.0" r="44" fill="#f6f8fa" stroke="#1f2328" stroke-width="1.5"/><text x="380.0" y="185.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2328">Giuseppe</text>
+<circle cx="522.7" cy="283.6" r="44" fill="#f6f8fa" stroke="#1f2328" stroke-width="1.5"/><text x="522.7" y="288.6" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2328">Anton</text>
+<circle cx="468.2" cy="451.4" r="44" fill="#f6f8fa" stroke="#1f2328" stroke-width="1.5"/><text x="468.2" y="456.4" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2328">Ivan</text>
+<circle cx="291.8" cy="451.4" r="44" fill="#f6f8fa" stroke="#1f2328" stroke-width="1.5"/><text x="291.8" y="456.4" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2328">Malte</text>
+<circle cx="237.3" cy="283.6" r="44" fill="#f6f8fa" stroke="#1f2328" stroke-width="1.5"/><text x="237.3" y="288.6" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2328">Mick</text>
+<rect x="428.4" y="63.1" width="230" height="84" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="543.4" y="87.1" text-anchor="middle" font-size="20" font-weight="bold" fill="#2563eb">Group A</text>
+<text x="543.4" y="107.1" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">PredE</text>
+<text x="543.4" y="123.1" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">add_out_of_domain_sentence</text>
+<text x="543.4" y="139.1" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">add_definition</text>
+<rect x="544.4" y="381.9" width="200" height="68" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="2.5"/>
+<text x="644.4" y="405.9" text-anchor="middle" font-size="20" font-weight="bold" fill="#0d9488">Group B</text>
+<text x="644.4" y="425.9" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">EntE</text>
+<text x="644.4" y="441.9" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">CircE</text>
+<rect x="280.0" y="574.0" width="200" height="68" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+<text x="380.0" y="598.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#d97706">Group C</text>
+<text x="380.0" y="618.0" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">delete_sentence</text>
+<text x="380.0" y="634.0" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">add_in_domain_sentence</text>
+<rect x="15.6" y="381.9" width="200" height="68" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="2.5"/>
+<text x="115.6" y="405.9" text-anchor="middle" font-size="20" font-weight="bold" fill="#9333ea">Group D</text>
+<text x="115.6" y="425.9" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">OutE</text>
+<text x="115.6" y="441.9" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">GramE</text>
+<rect x="116.6" y="71.1" width="200" height="68" rx="8" fill="#ffffff" stroke="#e11d48" stroke-width="2.5"/>
+<text x="216.6" y="95.1" text-anchor="middle" font-size="20" font-weight="bold" fill="#e11d48">Group E</text>
+<text x="216.6" y="115.1" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">CorefE</text>
+<text x="216.6" y="131.1" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#59636e">LinkE</text>
+<line x1="150" y1="680" x2="195" y2="680" stroke="#59636e" stroke-width="3"/><text x="205" y="685" font-size="14" fill="#59636e">annotate the group</text>
+<line x1="380" y1="680" x2="425" y2="680" stroke="#59636e" stroke-width="2.2" stroke-dasharray="7 6"/><text x="435" y="685" font-size="14" fill="#59636e">adjudicator</text>
+</svg>
