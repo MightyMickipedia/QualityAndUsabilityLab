@@ -1,6 +1,6 @@
 # Annotation task
 
-Everybody rates 12 summaries. It takes about 1 hour (up to 5 minutes per summary). If possible, finish before the meeting on 25.11., so we have first results for the midterm. Why we do it and how the sample was drawn is in `annotation_proposal.md`.
+Everybody rates 12 summaries. It takes about 1 hour (up to 5 minutes per summary). Why we do it is in `annotation_proposal.md`.
 
 ## Who rates what
 
@@ -12,7 +12,7 @@ Everybody rates 12 summaries. It takes about 1 hour (up to 5 minutes per summary
 | Mick | `data/annotation/pages/Mick.html` | `data/annotation/answers/Mick.json` |
 | Ivan | `data/annotation/pages/Ivan.html` | `data/annotation/answers/Ivan.json` |
 
-Your 12 summaries are drawn at random and in random order. You don't get the error types you generated or wrote the prompt for. Every summary is also rated by one other person, but you don't know by whom.
+Your 12 summaries are drawn at random and in random order. You don't get the error types you generated or wrote the prompt for. Every summary is also rated by one other person (in parallel), but you don't know by whom.
 
 ## Steps
 
