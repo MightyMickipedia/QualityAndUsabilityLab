@@ -1,64 +1,66 @@
 """Draw the annotation sample and build one HTML page per annotator.
 
-Reads the outputs in data/injected/ (shared format), draws PER_TYPE outputs per error type,
-gives each group of error types to two annotators and an adjudicator (see GROUPS) and writes
-  data/annotation/sample.json          which output is which sample, and who annotates it
+Reads the week-3 outputs in data/injected/ (shared format), draws N_SAMPLE outputs at random
+(2 or 3 per error type, the same number per asked severity, only short to medium texts), gives each output to two annotators
+at random and writes
+  data/annotation/sample.json          which sample is which output, and who annotates it
   data/annotation/pages/<name>.html    the page for one annotator, nothing to install
-Usage: python scripts/annotation/build_pages.py
+Nobody gets an error type they generated or wrote the prompt for. Everybody gets the same number
+of outputs, in random order, so error types and severities are mixed.
+An existing sample.json is kept, so the pages stay the same when outputs are regenerated later.
+Usage: python scripts/annotation/build_pages.py            build the pages from sample.json (draw it if missing)
+       python scripts/annotation/build_pages.py --redraw   draw a new sample
 """
 import difflib
+import hashlib
 import html
 import json
 import random
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 INJECTED = ROOT / "data" / "injected"
 OUT = ROOT / "data" / "annotation"
 SEED = 2026
-PER_TYPE = 5
+N_SAMPLE = 30  # 2 annotators each -> 12 per person
+PER_OUTPUT = 2
+PEOPLE = ["Giuseppe", "Malte", "Anton", "Mick", "Ivan"]
 
-# groups of error types: two annotators each, and an adjudicator who settles where the two differ.
-# See documentation/annotation_proposal.md.
-GROUPS = {
-    "A": (["PredE", "add_out_of_domain_sentence", "add_definition"], ["Giuseppe", "Anton"], "Malte"),
-    "B": (["EntE", "CircE"], ["Anton", "Ivan"], "Mick"),
-    "C": (["delete_sentence", "add_in_domain_sentence"], ["Ivan", "Malte"], "Giuseppe"),
-    "D": (["OutE", "GramE"], ["Malte", "Mick"], "Anton"),
-    "E": (["CorefE", "LinkE"], ["Mick", "Giuseppe"], "Ivan"),
+# who generated the week-3 outputs or wrote the prompt, per error type: they don't annotate it
+INVOLVED = {
+    "PredE": {"Ivan", "Malte"},
+    "EntE": {"Malte"},
+    "CircE": {"Malte"},
+    "CorefE": {"Anton"},
+    "LinkE": {"Anton"},
+    "OutE": {"Giuseppe", "Anton"},
+    "GramE": {"Giuseppe", "Anton"},
+    "delete_sentence": {"Mick"},
+    "add_in_domain_sentence": {"Mick"},
+    "add_out_of_domain_sentence": {"Ivan", "Mick"},
+    "add_definition": {"Ivan", "Mick"},
 }
-ASSIGNMENT = {t: (g, pair, adj) for g, (types, pair, adj) in GROUPS.items() for t in types}
 
-DEFINITIONS = {
-    "PredE": "Predicate error: the action or state (usually the verb) contradicts the article. The participants are right, but what they do is wrong.",
-    "EntE": "Entity error: a participant of the action (person, organisation, thing) or one of its attributes, such as a number, is wrong.",
-    "CircE": "Circumstance error: action and participants are right, but the circumstances are wrong: place, time, manner or condition.",
-    "CorefE": "Coreference error: a pronoun or reference points to the wrong antecedent, or to none.",
-    "LinkE": "Discourse link error: statements are linked wrongly, for example a wrong order in time or a wrong cause.",
-    "OutE": "Out-of-article error: the summary contains information that is not in the article, even if it is true in reality.",
-    "GramE": "Grammatical error: the grammar of a sentence is so broken that the sentence loses its meaning.",
-    "delete_sentence": "Delete sentence: one sentence with important information was removed from the summary.",
-    "add_in_domain_sentence": "Add in-domain sentence: one sentence was added that sounds fitting but does not belong to this article.",
-    "add_out_of_domain_sentence": "Add out-of-domain sentence: one sentence from a completely different topic was added.",
-    "add_definition": "Add definition: a definition or background explanation of a term was added.",
-}
+# only short to medium texts, so one summary takes a few minutes (about the shortest 40% of the outputs)
+MAX_ARTICLE_WORDS = 450
+MAX_SUMMARY_WORDS = 120
 
 # outputs that can't be annotated: (item_id, model) -> reason
 EXCLUDE = {("1408", "mistral-nemo"): "the original summary is in English"}
 
-SKIP_FILES = ("_test.jsonl", "example_")
-
 
 def load_outputs():
+    """All changed week-3 outputs, by error type."""
     by_type = {}
     for path in sorted(INJECTED.glob("*.jsonl")):
-        if path.name.endswith(SKIP_FILES[0]) or path.name.startswith(SKIP_FILES[1]):
+        if path.name.endswith("_test.jsonl") or path.name.startswith("example_"):
             continue
         for line in open(path, encoding="utf-8"):
             rec = json.loads(line)
             if rec["original_summary"].strip() == rec["modified_summary"].strip():
-                continue  # the model made no change, nothing to annotate
+                continue  # the model made no change
             if (str(rec["item_id"]), rec["model"]) in EXCLUDE:
                 continue
             rec["file"] = path.name
@@ -71,81 +73,147 @@ def load_articles():
     for dim in ("faithfulness", "coverage"):
         for line in open(ROOT / "data" / f"perfect_{dim}_v2.jsonl", encoding="utf-8"):
             r = json.loads(line)
-            articles[str(r["item_id"])] = (r.get("title", ""), r["article"])
+            title = r.get("title", "")
+            if title == "Title Not Found":  # placeholder in the source data
+                title = ""
+            articles[str(r["item_id"])] = (title, r["article"])
     return articles
 
 
 def mark_changes(original, modified):
-    """Word-level diff. Returns (original with removed words marked, modified with new words marked)."""
+    """The modified summary as HTML: removed words struck through in <del>, new words in <ins>."""
     a, b = re.split(r"(\s+)", original), re.split(r"(\s+)", modified)
-    left, right = [], []
+    out = []
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
-        old, new = html.escape("".join(a[i1:i2])), html.escape("".join(b[j1:j2]))
-        if op == "equal":
-            left.append(old)
-            right.append(new)
-        else:
-            if old.strip():
-                left.append(f"<del>{old}</del>")
-            else:
-                left.append(old)
-            if new.strip():
-                right.append(f"<ins>{new}</ins>")
-            else:
-                right.append(new)
-    return "".join(left), "".join(right)
+        old, new = "".join(a[i1:i2]), "".join(b[j1:j2])
+        if op == "equal" or not (old.strip() or new.strip()):
+            out.append(html.escape(new))
+            continue
+        side = new if new.strip() else old  # keep the spaces around the change
+        lead, trail = re.match(r"\s*", side).group(), re.search(r"\s*$", side).group()
+        parts = []
+        if old.strip():
+            parts.append(f'<del title="removed">{html.escape(old.strip())}</del>')
+        if new.strip():
+            parts.append(f"<ins>{html.escape(new.strip())}</ins>")
+        out.append(lead + " ".join(parts) + trail)
+    return "".join(out)
+
+
+SEVERITIES = ["low", "medium", "high"]
+
+
+def draw_sample(rng, by_type):
+    """2 or 3 outputs per error type, different severities within a type where possible,
+    and the same number of low, medium and high overall. Only existing outputs, nothing new."""
+    types = sorted(by_type)
+    target = N_SAMPLE // len(SEVERITIES)
+    for _ in range(10000):
+        per_type = {t: N_SAMPLE // len(types) for t in types}
+        for t in rng.sample(types, N_SAMPLE - sum(per_type.values())):
+            per_type[t] += 1
+        slots = {}
+        for t in types:
+            have = [s for s in SEVERITIES if any(r["severity"] == s for r in by_type[t])]
+            sev = rng.sample(have, min(per_type[t], len(have)))
+            sev += [rng.choice(have) for _ in range(per_type[t] - len(sev))]
+            slots[t] = sev
+        counts = [sum(sev.count(s) for sev in slots.values()) for s in SEVERITIES]
+        if all(c == target for c in counts):
+            break
+    else:
+        raise SystemExit("could not balance the severities, try another seed")
+    picked = []
+    for t in types:
+        for s in SEVERITIES:
+            if s not in slots[t]:
+                continue
+            pool = [r for r in by_type[t] if r["severity"] == s]
+            picked += rng.sample(pool, slots[t].count(s))
+    rng.shuffle(picked)
+    return picked
+
+
+def assign(rng, picked):
+    """Two annotators per output, at random among those allowed, with equal load. Retries until it fits."""
+    target = len(picked) * PER_OUTPUT // len(PEOPLE)
+    for _ in range(1000):
+        load = {p: 0 for p in PEOPLE}
+        result = []
+        # hardest outputs first: those with the fewest allowed annotators
+        order = sorted(range(len(picked)), key=lambda i: (len(INVOLVED[picked[i]["error_type"]]), rng.random()), reverse=True)
+        ok = True
+        chosen = {}
+        for i in order:
+            allowed = [p for p in PEOPLE if p not in INVOLVED[picked[i]["error_type"]] and load[p] < target]
+            if len(allowed) < PER_OUTPUT:
+                ok = False
+                break
+            rng.shuffle(allowed)
+            allowed.sort(key=lambda p: load[p])
+            pair = allowed[:PER_OUTPUT]
+            for p in pair:
+                load[p] += 1
+            chosen[i] = sorted(pair, key=PEOPLE.index)
+        if ok:
+            return [chosen[i] for i in range(len(picked))]
+    raise SystemExit("could not assign the outputs evenly, try another seed")
+
+
+def clean(text):
+    """Doubled quotes ("" for ") come from the source dataset, not from the injection."""
+    return text.replace('""', '"')
+
+
+def sample_tag(entries):
+    """Short fingerprint of the sample; pages and answers files carry it, so answers can't land on another sample."""
+    return hashlib.sha1(json.dumps(entries, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:8]
 
 
 def main():
     rng = random.Random(SEED)
-    by_type, articles = load_outputs(), load_articles()
-    sample = []
-    for error_type, (_, annotators, _) in ASSIGNMENT.items():
-        pool = by_type.get(error_type, [])
-        if len(pool) < PER_TYPE:
-            print(f"warning: only {len(pool)} outputs for {error_type}")
-        for rec in rng.sample(pool, min(PER_TYPE, len(pool))):
-            sample.append((rec, annotators))
-    # sample ids in random order, so the id says nothing about the output
-    order = list(range(len(sample)))
-    rng.shuffle(order)
-    entries = []
-    for number, idx in enumerate(order, 1):
-        rec, annotators = sample[idx]
-        group, _, adjudicator = ASSIGNMENT[rec["error_type"]]
-        entries.append({"sample_id": f"s{number:03d}", "output_id": rec["id"], "file": rec["file"],
-                        "error_type": rec["error_type"], "group": group, "annotators": annotators,
-                        "adjudicator": adjudicator, "_rec": rec})
-
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "pages").mkdir(exist_ok=True)
     (OUT / "answers").mkdir(exist_ok=True)
-    with open(OUT / "sample.json", "w", encoding="utf-8") as f:
-        json.dump({"seed": SEED, "per_type": PER_TYPE,
-                   "samples": [{k: v for k, v in e.items() if k != "_rec"} for e in entries]},
-                  f, ensure_ascii=False, indent=1)
+    sample_file = OUT / "sample.json"
+
+    if sample_file.exists() and "--redraw" not in sys.argv:
+        # keep the drawn sample; the texts are stored in it, so later reruns of outputs don't change the pages
+        entries = json.load(open(sample_file, encoding="utf-8"))["samples"]
+        print(f"kept the sample in {sample_file.relative_to(ROOT)} (use --redraw for a new one)")
+    else:
+        articles = load_articles()
+        by_type = {t: [r for r in recs if len(articles[str(r["item_id"])][1].split()) <= MAX_ARTICLE_WORDS
+                       and len(r["modified_summary"].split()) <= MAX_SUMMARY_WORDS]
+                   for t, recs in load_outputs().items()}
+        picked = draw_sample(rng, by_type)
+        pairs = assign(rng, picked)
+        entries = [{"sample_id": f"s{n:03d}", "output_id": rec["id"], "file": rec["file"], "error_type": rec["error_type"],
+                    "dimension": rec["dimension"], "asked_severity": rec["severity"], "annotators": pair,
+                    "item_id": str(rec["item_id"]), "title": articles[str(rec["item_id"])][0],
+                    "article": articles[str(rec["item_id"])][1], "original_summary": clean(rec["original_summary"]),
+                    "modified_summary": clean(rec["modified_summary"])}
+                   for n, (rec, pair) in enumerate(zip(picked, pairs), 1)]
+        with open(sample_file, "w", encoding="utf-8") as f:
+            json.dump({"seed": SEED, "n_sample": N_SAMPLE, "tag": sample_tag(entries), "samples": entries}, f, ensure_ascii=False, indent=1)
 
     template = open(Path(__file__).with_name("page_template.html"), encoding="utf-8").read()
-    names = sorted({n for _, pair, _ in GROUPS.values() for n in pair})
-    for name in names:
+    for name in PEOPLE:
+        mine = [e for e in entries if name in e["annotators"]]
+        random.Random(f"{SEED}-{name}").shuffle(mine)  # own random order per annotator, the same on every build
         items = []
-        # grouped by error type, so the annotator works on one type at a time
-        for error_type in ASSIGNMENT:
-            for e in entries:
-                if e["error_type"] != error_type or name not in e["annotators"]:
-                    continue
-                rec = e["_rec"]
-                original, modified = mark_changes(rec["original_summary"], rec["modified_summary"])
-                title, article = articles[str(rec["item_id"])]
-                items.append({"id": e["sample_id"], "type": error_type, "definition": DEFINITIONS[error_type],
-                              "original": original, "modified": modified,
-                              "title": html.escape(title), "article": html.escape(article)})
-        page = template.replace("__NAME__", name).replace(
+        for e in mine:
+            title, article = e["title"], e["article"]
+            # the page gets no error type, severity or model: the article, the summary with the marks,
+            # and the original summary folded away
+            items.append({"id": e["sample_id"], "summary": mark_changes(e["original_summary"], e["modified_summary"]),
+                          "original": html.escape(e["original_summary"]),
+                          "title": html.escape(title), "article": html.escape(article)})
+        page = template.replace("__NAME__", name).replace("__SAMPLE__", sample_tag(entries)).replace(
             "__DATA__", json.dumps(items, ensure_ascii=False).replace("</", "<\\/"))
         (OUT / "pages" / f"{name}.html").write_text(page, encoding="utf-8")
-        groups = ", ".join(g for g, (_, pair, _) in GROUPS.items() if name in pair)
-        print(f"{name}: {len(items)} outputs (groups {groups})")
-    print(f"{len(entries)} outputs in the sample -> {OUT.relative_to(ROOT)}/")
+        print(f"{name}: {len(items)} outputs")
+    print(f"{len(entries)} outputs in the sample, {PER_OUTPUT} annotators each -> {OUT.relative_to(ROOT)}/")
 
 
 if __name__ == "__main__":

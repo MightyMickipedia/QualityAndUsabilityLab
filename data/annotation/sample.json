@@ -1,666 +1,517 @@
 {
  "seed": 2026,
- "per_type": 5,
+ "n_sample": 30,
+ "tag": "b51867da",
  "samples": [
   {
    "sample_id": "s001",
-   "output_id": "inj-CorefE-high-123-mistral-nemo-20261118-120318-09cf",
-   "file": "add_corefE.jsonl",
-   "error_type": "CorefE",
-   "group": "E",
+   "output_id": "inj-GramE-high-1340-gpt3.5-20261117-203822-675b",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
    "annotators": [
     "Mick",
-    "Giuseppe"
+    "Ivan"
    ],
-   "adjudicator": "Ivan"
+   "item_id": "1340",
+   "title": "",
+   "article": "Der Sender rbb hat nach eigenen Angaben sämtliche Beiträge,\nin denen es um Belästigungsvorwürfe gegen den Grünenbundestagsabgeordneten Stefan\nGelbhaar geht, zurückgezogen. Es gebe Zweifel an der Identität einer Frau,\ndie zentrale Vorwürfe gegen Gelbhaar erhoben habe, teilte der Sender mit . \"Mit hoher\nWahrscheinlichkeit existiert diese Frau gar nicht.\"\nWeitere Recherchen hätten zu einer\nGrünenbezirkspolitikerin geführt, die sich als die betroffene Frau ausgegeben\nhaben und unter falschem Namen die eidesstattliche Versicherung abgegeben haben\nsoll. Der Sender erstattete Strafanzeige gegen die Politikerin.\n\nGelbhaar bestreitet Vorwürfe\n\n\"Nicht alle Vorwürfe, über die wir berichtet haben,\nsind damit automatisch nichtig – ein wesentlicher Vorwurf allerdings\nschon\", teilte der rbb mit. Der Sender hatte auf Grundlage mehrerer eidesstattlicher Versicherungen\n von Frauen über die Vorwürfe gegen Gelbhaar berichtet. Zudem gab es demnach anonyme \nMeldungen an die Ombudsstelle der Grünen.\nGelbhaar hatte zuvor die Vorwürfe\ngegen ihn bestritten und ging von einer \"geplanten Aktion\" gegen\nseine Person aus, wie er auf seiner Website schrieb.\nDie Spitze der Berliner\nGrünen zeigte sich \"erschüttert über den Bericht des rbb\" und fordert, etwaige Falschaussagen konsequent zu ahnden. \"Eine falsche eidesstattliche Erklärung abzugeben ist\neine Straftat\", zitiert die Nachrichtenagentur dpa die Landesvorsitzenden Nina Stahr und Philmon Ghirmai. Auch parteirechtlich könnte es Folgen\ngeben: \"Wenn sich der Vorwurf bewahrheitet und klar ist, wer die betroffene\nPerson ist, werden wir auch parteirechtliche Schritte einleiten.\"\nKerstin Müller, ehemalige Vorsitzende der Grünenbundestagsfraktion und inzwischen einfaches Parteimitglied in Berlin-Pankow, stellte sich hinter Stefan Gelbhaar. \"Es bestätigt sich immer mehr, dass hier wahrscheinlich mit einer Intrige eine nicht genehme Person beschädigt und aus dem Verkehr gezogen werden sollte\", sagte sie dem RedaktionsNetzwerk Deutschland  (RND) . \"Es kann kein Zufall sein, dass einen Tag vor der Listenaufstellung die Beschwerden bei der Ombudsstelle auflaufen und das auch noch der Presse gesteckt wird.\"\nGelbhaar, der seit 2017 für\ndie Grünen im Bundestag sitzt, war bei einer ersten\nWahlversammlung im November mit 98,4 Prozent der Stimmen zum\nDirektkandidaten gewählt worden. Nachdem Mitte Dezember die Vorwürfe gegen ihn bekannt wurden, setzte der Kreisverband Pankow eine\nWiederholung an . Als neue Direktkandidatin wurde dort Julia Schneider gewählt.",
+   "original_summary": "Der rbb hat sämtliche Beiträge zu Belästigungsvorwürfen gegen den Grünenbundestagsabgeordneten Stefan Gelbhaar zurückgezogen, da Zweifel an der Identität der beschuldigenden Frau bestehen. Es wird vermutet, dass eine Grünenbezirkspolitikerin unter falschem Namen die Vorwürfe erhoben hat. Gelbhaar bestreitet die Anschuldigungen und spricht von einer geplanten Aktion gegen ihn. Die Berliner Grünen fordern, Falschaussagen konsequent zu ahnden, und erwägen auch parteirechtliche Schritte. Ehemalige Parteimitglieder wie Kerstin Müller unterstützen Gelbhaar und vermuten eine Intrige, um ihn zu schaden.",
+   "modified_summary": "Der rbb wird sämtliche Beiträge zu Belästigungsvorwürfen gegen den Grünenbundestagsabgeordneten Stefan Gelbhaar zurückgezogen, da Zweifel an der Identität der beschuldigenden Frau bestehen.\nEs wird vermutet, dass eine Grünenbezirkspolitikerin unter falschem Namen die Vorwürfe erhoben hat.\nGelbhaar bestreitet die Anschuldigungen und spricht von einer geplanten Aktion gegen ihn.\nDie Berliner Grünen fordern, Falschaussagen konsequent zu ahnden, und erwägen auch parteirechtliche Schritte.\nEhemalige Parteimitglieder wie Kerstin Müller unterstützen Gelbhaar und vermuten eine Intrige, um ihn zu schaden."
   },
   {
    "sample_id": "s002",
-   "output_id": "inj-CircE-high-1325-mistral-nemo-20261117-131724-80c6",
-   "file": "CircE.jsonl",
-   "error_type": "CircE",
-   "group": "B",
+   "output_id": "inj-LinkE-high-132-gpt3.5-20261118-122059-a3d9",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
    "annotators": [
-    "Anton",
+    "Malte",
     "Ivan"
    ],
-   "adjudicator": "Mick"
+   "item_id": "132",
+   "title": "",
+   "article": "Am Dienstag überraschte Gukesh den Weltmeister Ding Liren im 7. Zug mit einem Turmmanöver. Ding war geschockt, wie er später sagte, doch er rettete sich dank einer kunstvollen Verteidigungsleistung. Es war das vierte Remis in Serie. Damit steht es \nim Titelduell zwischen Ding Liren und\n dem Herausforderer Gukesh weiter unentschieden, 3,5 zu 3,5. Angesetzt\n ist das WM-Duell auf bis zu vierzehn \nPartien. Für jeden Sieg gibt es einen Punkt, für jedes Remis einen \nhalben. Weltmeister wird der Spieler, der zuerst 7,5 Punkte erreicht.\nBei uns können Sie alle Partien mit den Experten von chess.com live verfolgen, hier ab 10 Uhr die achte Partie dieser WM.\nUnser Reporter Ulrich Stock schreibt vom Ort des Geschehens. Alle Texte aus Singapur lesen Sie hier . Der Großmeister Niclas Huschenbeth liefert für ZEIT ONLINE Videoanalysen aller Partien zu.",
+   "original_summary": "Im Titelduell zwischen Ding Liren und Herausforderer Gukesh steht es nach dem vierten Remis in Serie weiterhin unentschieden, 3,5 zu 3,5. Gukesh überraschte Ding mit einem Turmmanöver, doch Ding rettete sich mit einer kunstvollen Verteidigung. Das WM-Duell ist auf bis zu vierzehn Partien angesetzt, der erste Spieler, der 7,5 Punkte erreicht, wird Weltmeister. Die achte Partie der WM kann live auf chess.com verfolgt werden.",
+   "modified_summary": "Im Titelduell zwischen Ding Liren und Herausforderer Gukesh steht es nach dem vierten Remis in Serie weiterhin unentschieden, 3,5 zu 3,5. Gukesh überraschte Ding mit einem Turmmanöver, deshalb rettete sich Ding mit einer kunstvollen Verteidigung. Das WM-Duell ist auf bis zu vierzehn Partien angesetzt, der erste Spieler, der 7,5 Punkte erreicht, wird Weltmeister. Die achte Partie der WM kann live auf chess.com verfolgt werden."
   },
   {
    "sample_id": "s003",
-   "output_id": "inj-PredE-medium-1317-gpt3.5-20261116-133959-b7ba",
-   "file": "PredE.jsonl",
-   "error_type": "PredE",
-   "group": "A",
+   "output_id": "inj-add_out_of_domain_sentence-low-5475-sauerkraut-20261116-115010-3cac",
+   "file": "add_out_of_domain_sentence.jsonl",
+   "error_type": "add_out_of_domain_sentence",
+   "dimension": "coverage",
+   "asked_severity": "low",
    "annotators": [
-    "Giuseppe",
+    "Malte",
     "Anton"
    ],
-   "adjudicator": "Malte"
+   "item_id": "5475",
+   "title": "EU-Kommission erlaubt subventionierten Industriestrompreis",
+   "article": "Die EU-Kommission gestattet zukünftig unter bestimmten Voraussetzungen direkte staatliche \nSubventionen zu Strompreissenkung zur Entlastung energieintensiver Unternehmen. Damit ermöglicht die Kommission grundsätzlich die Einführung eines Industriestrompreises, den die \nschwarz-rote Bundesregierung im Koalitionsvertrag angekündigt hatte.\nKonkret dürfen die \nRegierungen der 27 EU-Staaten die \nStrompreise für energieintensive Branchen wie die Chemieindustrie oder \ndie Zementherstellung deckeln und mit Staatshilfen querfinanzieren, teilte die EU-Kommission mit. Voraussetzung ist demnach jedoch, dass die Unternehmen in die Umstellung auf eine \nklimafreundlichere Produktion investieren. \"Es ist ein Instrument, um den Klimaschutz voranzutreiben, die Widerstandsfähigkeit Europas\n zu stärken und sicherzustellen, dass unsere Industrie weltweit \nwettbewerbsfähig bleibt\", sagte Wettbewerbskommissarin Teresa Ribera in \nBrüssel.\nDieser Artikel wird weiter aktualisiert.",
+   "original_summary": "Die EU-Kommission ermöglicht unter bestimmten Voraussetzungen direkte staatliche Subventionen zur Strompreissenkung für energieintensive Unternehmen, um die Einführung eines Industriestrompreises zu ermöglichen.\n\nDie Regierungen der 27 EU-Staaten dürfen die Strompreise für energieintensive Branchen wie die Chemieindustrie oder die Zementherstellung deckeln und mit Staatshilfen querfinanzieren, Voraussetzung ist jedoch ein Invest in die Umstellung auf eine klimafreundlichere Produktion.\n\nDie Wettbewerbskommissarin Teresa Ribera sieht das neue Instrument als Möglichkeit, den Klimaschutz voranzutreiben, die Widerstandsfähigkeit Europas zu stärken und sicherzustellen, dass die europäische Industrie weltweit wettbewerbsfähig bleibt.\n\nDieser Artikel wird weiter aktualisiert.",
+   "modified_summary": "Die EU-Kommission ermöglicht unter bestimmten Voraussetzungen direkte staatliche Subventionen zur Strompreissenkung für energieintensive Unternehmen, um die Einführung eines Industriestrompreises zu ermöglichen. Der Mond umkreist die Erde.\n\nDie Regierungen der 27 EU-Staaten dürfen die Strompreise für energieintensive Branchen wie die Chemieindustrie oder die Zementherstellung deckeln und mit Staatshilfen querfinanzieren, Voraussetzung ist jedoch ein Invest in die Umstellung auf eine klimafreundlichere Produktion.\n\nDie Wettbewerbskommissarin Teresa Ribera sieht das neue Instrument als Möglichkeit, den Klimaschutz voranzutreiben, die Widerstandsfähigkeit Europas zu stärken und sicherzustellen, dass die europäische Industrie weltweit wettbewerbsfähig bleibt.\n\nDieser Artikel wird weiter aktualisiert."
   },
   {
    "sample_id": "s004",
-   "output_id": "inj-add_definition-low-1125-wiedervereinigung-20261116-132450-adb2",
-   "file": "add_definition.jsonl",
-   "error_type": "add_definition",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s005",
-   "output_id": "inj-GramE-low-1010-sauerkraut-20261117-201644-2f21",
-   "file": "add_gramE.jsonl",
-   "error_type": "GramE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s006",
-   "output_id": "inj-add_out_of_domain_sentence-medium-1438-sauerkraut-20261116-131648-9104",
-   "file": "add_out_of_domain_sentence.jsonl",
-   "error_type": "add_out_of_domain_sentence",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s007",
-   "output_id": "inj-LinkE-medium-1385-gpt3.5-20261118-121620-0c3f",
-   "file": "add_linkE.jsonl",
-   "error_type": "LinkE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s008",
-   "output_id": "inj-EntE-medium-1053-sauerkraut-20261117-125937-cd75",
-   "file": "EntE.jsonl",
-   "error_type": "EntE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s009",
-   "output_id": "inj-PredE-high-1438-gpt3.5-20261116-114858-9f3d",
-   "file": "PredE.jsonl",
-   "error_type": "PredE",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s010",
-   "output_id": "inj-add_definition-high-5797-sauerkraut-20261118-110338-c7a7",
-   "file": "add_definition.jsonl",
-   "error_type": "add_definition",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s011",
-   "output_id": "inj-delete_sentence-high-108-gpt3.5-C-DEL-9",
-   "file": "delete_sentence.jsonl",
-   "error_type": "delete_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s012",
-   "output_id": "inj-GramE-medium-1396-sauerkraut-20261117-202923-1890",
-   "file": "add_gramE.jsonl",
-   "error_type": "GramE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s013",
-   "output_id": "inj-add_definition-high-1394-gpt3.5-20261116-120252-a64e",
-   "file": "add_definition.jsonl",
-   "error_type": "add_definition",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s014",
-   "output_id": "inj-OutE-high-1227-gpt3.5-20261117-201354-5be8",
-   "file": "add_outE.jsonl",
-   "error_type": "OutE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s015",
-   "output_id": "inj-EntE-low-1300-gpt3.5-20261117-125426-743c",
-   "file": "EntE.jsonl",
-   "error_type": "EntE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s016",
-   "output_id": "inj-CircE-medium-1439-gpt3.5-20261117-131258-a4d3",
-   "file": "CircE.jsonl",
-   "error_type": "CircE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s017",
-   "output_id": "inj-add_out_of_domain_sentence-high-4479-gpt3.5-20261116-131952-abea",
-   "file": "add_out_of_domain_sentence.jsonl",
-   "error_type": "add_out_of_domain_sentence",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s018",
-   "output_id": "inj-add_definition-medium-1207-sauerkraut-20261116-132613-08e5",
-   "file": "add_definition.jsonl",
-   "error_type": "add_definition",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s019",
-   "output_id": "inj-CorefE-high-1419-gpt3.5-20261118-120318-09cf",
-   "file": "add_corefE.jsonl",
-   "error_type": "CorefE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s020",
-   "output_id": "inj-add_in_domain_sentence-medium-1205-gpt3.5-C-IN-1205",
-   "file": "add_in_domain_sentence.jsonl",
-   "error_type": "add_in_domain_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s021",
-   "output_id": "inj-EntE-low-108-sauerkraut-20261118-111518-789a",
-   "file": "EntE.jsonl",
-   "error_type": "EntE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s022",
-   "output_id": "inj-delete_sentence-high-1158-sauerkraut-C-DEL-13",
-   "file": "delete_sentence.jsonl",
-   "error_type": "delete_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s023",
-   "output_id": "inj-CircE-medium-1411-gpt3.5-20261117-131258-a4d3",
-   "file": "CircE.jsonl",
-   "error_type": "CircE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s024",
-   "output_id": "inj-LinkE-low-111-gpt3.5-20261118-121144-6143",
-   "file": "add_linkE.jsonl",
-   "error_type": "LinkE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s025",
-   "output_id": "inj-CircE-low-108-sauerkraut-20261118-111630-f9c7",
-   "file": "CircE.jsonl",
-   "error_type": "CircE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s026",
-   "output_id": "inj-CircE-low-1300-gpt3.5-20261117-130850-f446",
-   "file": "CircE.jsonl",
-   "error_type": "CircE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s027",
-   "output_id": "inj-CorefE-medium-1094-gpt3.5-20261118-115728-3327",
-   "file": "add_corefE.jsonl",
-   "error_type": "CorefE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s028",
-   "output_id": "inj-LinkE-medium-5890-gpt3.5-20261118-121620-0c3f",
-   "file": "add_linkE.jsonl",
-   "error_type": "LinkE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s029",
-   "output_id": "inj-GramE-high-1085-mistral-nemo-20261117-203822-675b",
-   "file": "add_gramE.jsonl",
-   "error_type": "GramE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s030",
-   "output_id": "inj-PredE-medium-1311-mistral-nemo-20261116-121218-462d",
-   "file": "PredE.jsonl",
-   "error_type": "PredE",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s031",
-   "output_id": "inj-EntE-low-1082-mistral-nemo-20261117-125426-743c",
-   "file": "EntE.jsonl",
-   "error_type": "EntE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s032",
-   "output_id": "inj-LinkE-medium-1363-gpt3.5-20261118-121620-0c3f",
-   "file": "add_linkE.jsonl",
-   "error_type": "LinkE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s033",
-   "output_id": "inj-add_out_of_domain_sentence-medium-1334-wiedervereinigung-20261116-131648-9104",
-   "file": "add_out_of_domain_sentence.jsonl",
-   "error_type": "add_out_of_domain_sentence",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s034",
-   "output_id": "inj-PredE-high-1431-gpt3.5-20261116-134128-fa1c",
-   "file": "PredE.jsonl",
-   "error_type": "PredE",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s035",
-   "output_id": "inj-add_out_of_domain_sentence-medium-1411-gpt3.5-20261116-131648-9104",
-   "file": "add_out_of_domain_sentence.jsonl",
-   "error_type": "add_out_of_domain_sentence",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s036",
-   "output_id": "inj-add_definition-low-1083-llama-3b-20261116-115730-1259",
-   "file": "add_definition.jsonl",
-   "error_type": "add_definition",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s037",
-   "output_id": "inj-GramE-medium-1048-gpt3.5-20261117-202923-1890",
-   "file": "add_gramE.jsonl",
-   "error_type": "GramE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s038",
-   "output_id": "inj-PredE-medium-1368-sauerkraut-20261116-121218-462d",
-   "file": "PredE.jsonl",
-   "error_type": "PredE",
-   "group": "A",
-   "annotators": [
-    "Giuseppe",
-    "Anton"
-   ],
-   "adjudicator": "Malte"
-  },
-  {
-   "sample_id": "s039",
-   "output_id": "inj-GramE-high-1341-gpt3.5-20261117-203822-675b",
-   "file": "add_gramE.jsonl",
-   "error_type": "GramE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s040",
-   "output_id": "inj-CorefE-medium-1326-gpt3.5-20261118-115728-3327",
-   "file": "add_corefE.jsonl",
-   "error_type": "CorefE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s041",
-   "output_id": "inj-add_in_domain_sentence-medium-1085-gpt3.5-C-IN-1085",
-   "file": "add_in_domain_sentence.jsonl",
-   "error_type": "add_in_domain_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s042",
-   "output_id": "inj-OutE-low-1008-gpt3.5-20261117-200445-93bd",
-   "file": "add_outE.jsonl",
-   "error_type": "OutE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s043",
-   "output_id": "inj-delete_sentence-medium-1120-gpt3.5-C-DEL-11",
-   "file": "delete_sentence.jsonl",
-   "error_type": "delete_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s044",
-   "output_id": "inj-EntE-high-1238-mistral-nemo-20261117-130529-15f8",
-   "file": "EntE.jsonl",
-   "error_type": "EntE",
-   "group": "B",
-   "annotators": [
-    "Anton",
-    "Ivan"
-   ],
-   "adjudicator": "Mick"
-  },
-  {
-   "sample_id": "s045",
-   "output_id": "inj-add_in_domain_sentence-low-1285-mistral-nemo-C-IN-1285",
-   "file": "add_in_domain_sentence.jsonl",
-   "error_type": "add_in_domain_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s046",
-   "output_id": "inj-delete_sentence-high-1318-gpt3.5-C-DEL-22",
-   "file": "delete_sentence.jsonl",
-   "error_type": "delete_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s047",
-   "output_id": "inj-LinkE-medium-1440-gpt3.5-20261118-121620-0c3f",
-   "file": "add_linkE.jsonl",
-   "error_type": "LinkE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s048",
-   "output_id": "inj-OutE-medium-1236-mistral-nemo-20261117-200906-6da3",
-   "file": "add_outE.jsonl",
-   "error_type": "OutE",
-   "group": "D",
-   "annotators": [
-    "Malte",
-    "Mick"
-   ],
-   "adjudicator": "Anton"
-  },
-  {
-   "sample_id": "s049",
-   "output_id": "inj-CorefE-low-1032-sauerkraut-20261118-115342-85ce",
-   "file": "add_corefE.jsonl",
-   "error_type": "CorefE",
-   "group": "E",
-   "annotators": [
-    "Mick",
-    "Giuseppe"
-   ],
-   "adjudicator": "Ivan"
-  },
-  {
-   "sample_id": "s050",
-   "output_id": "inj-add_in_domain_sentence-low-1125-gpt3.5-C-IN-1125",
-   "file": "add_in_domain_sentence.jsonl",
-   "error_type": "add_in_domain_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s051",
-   "output_id": "inj-delete_sentence-high-1032-sauerkraut-C-DEL-7",
-   "file": "delete_sentence.jsonl",
-   "error_type": "delete_sentence",
-   "group": "C",
-   "annotators": [
-    "Ivan",
-    "Malte"
-   ],
-   "adjudicator": "Giuseppe"
-  },
-  {
-   "sample_id": "s052",
    "output_id": "inj-add_out_of_domain_sentence-high-1233-gpt3.5-20261116-115551-7536",
    "file": "add_out_of_domain_sentence.jsonl",
    "error_type": "add_out_of_domain_sentence",
-   "group": "A",
+   "dimension": "coverage",
+   "asked_severity": "high",
+   "annotators": [
+    "Giuseppe",
+    "Malte"
+   ],
+   "item_id": "1233",
+   "title": "",
+   "article": "Holstein Kiel – Borussia Dortmund 4:2 (3:0)\nBorussia Dortmund hat in der Bundesliga überraschend gegen den Tabellenvorletzten Holstein Kiel mit 2:4 (0:3) verloren. Der BVB zeigte dabei vor allem in der ersten Halbzeit große Schwächen in der Defensive, während Kiel den Sieg mit einer disziplinierten Leistung sicherte.\nIn der 27. Minute gingen die Gastgeber durch Shuto Machino in Führung, der nach einem Fehler von Julian Brandt einen präzisen Rechtsschuss verwandelte. Nur fünf Minuten später (32. Spielminute) erhöhte Phil Harres per Kopf auf 2:0. Kurz vor der Halbzeitpause traf Alexander Bernhardsson in der Nachspielzeit (45.+4) zum dritten Mal für die Kieler. Dortmund konnte in der zweiten Hälfte durch Giovanni Reyna (71.) und Jamie Gittens (77.) verkürzen, ehe Fiete Arp in der Nachspielzeit (90.+8) den Schlusspunkt setzte. Kiels Lewis Holtby sah nach einem Foulspiel in der 86. Minute die Rote Karte.\nFür Holstein Kiel bedeutet der unerwartete Sieg wichtige Punkte im Kampf um den Klassenerhalt. Der BVB hingegen droht, den Anschluss an die Champions-League-Plätze zu verlieren. Bereits am Freitag steht für Dortmund ein Auswärtsspiel gegen Eintracht Frankfurt an, während Kiel am Samstag bei der TSG Hoffenheim zu Gast ist.",
+   "original_summary": "Borussia Dortmund verliert überraschend 2:4 gegen Holstein Kiel in der Bundesliga. Kiel sichert sich den Sieg mit einer disziplinierten Leistung, während der BVB vor allem in der ersten Halbzeit Schwächen in der Defensive zeigt. Tore von Machino, Harres und Bernhardsson bringen Kiel in Führung, Dortmund verkürzt durch Reyna und Gittens. Arp setzt den Schlusspunkt. Holtby sieht Rot. Kiel sammelt wichtige Punkte im Abstiegskampf, während Dortmund den Anschluss an die Champions-League-Plätze zu verlieren droht.",
+   "modified_summary": "Borussia Dortmund verliert überraschend 2:4 gegen Holstein Kiel in der Bundesliga. Kiel sichert sich den Sieg mit einer disziplinierten Leistung, während der BVB vor allem in der ersten Halbzeit Schwächen in der Defensive zeigt. Tore von Machino, Harres und Bernhardsson bringen Kiel in Führung, Dortmund verkürzt durch Reyna und Gittens. Arp setzt den Schlusspunkt. Holtby sieht Rot. Kiel sammelt wichtige Punkte im Abstiegskampf, während Dortmund den Anschluss an die Champions-League-Plätze zu verlieren droht. Die Vereinten Nationen schätzen, dass bis zum Jahr 2050 mehr als zwei Milliarden Menschen in Regionen mit akutem Wassermangel leben könnten, wenn keine Gegenmaßnahmen ergriffen werden."
+  },
+  {
+   "sample_id": "s005",
+   "output_id": "inj-CorefE-high-123-mistral-nemo-20261118-120318-09cf",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
+   "annotators": [
+    "Mick",
+    "Ivan"
+   ],
+   "item_id": "123",
+   "title": "",
+   "article": "Der bedeutendste deutsche Aktienindex Dax         hat\nerstmals die 20.000-Punkte-Marke überstiegen. Der deutsche\nLeitindex stieg in der Spitze um 0,4 Prozent auf\n20.003,50 Zähler. Innerhalb nur eines Jahres ist der Dax damit \num rund 3.000 Zähler gestiegen. Erst Mitte September hatte er die \nMarke von 19.000 Punkten übertroffen , zuvor Mitte März die von 18.000 .\nGrund dafür sind laut Börsenexperten die Hoffnung auf vorerst weiter sinkende Zinsen in den USA und\nin der Euro-Zone, die für mehr Konsum und Investitionen sorgen . Angesichts der zuletzt deutlich gefallenen Inflation setzen Anleger \noffenbar darauf, dass die Notenbanken die Leitzinsen weiter senken. Das ist positiv für Aktienkäufer, weil Unternehmen dann im besten Fall wachsen und mehr wert werden.\nRekorde auch bei US-Indizes\nSeit\nJahresbeginn legte der Dax bereits 16 Prozent zu. Auch wegen der positiven Entwicklungen an der Wall Street steigt der Dax: Die beiden dort bedeutenden Aktienindexe S&P\n500 und Nasdaq-Composite erreichten zu\nWochenbeginn einen neuen Schlussrekord. Auch die Wahl Donald Trumps zum neuen US-Präsidenten lässt die Wall Street auf mehr Gewinne hoffen , da Trump Steuersenkungen, Zölle und weniger Regulierungen versprochen hat.\nDie Wall Street entwickelt sich also bereits länger positiv, der Dax scheint den Zahlen zufolge nun nachzuziehen. Gleichzeitig steht die Entwicklung an den Börsen in Kontrast zur eher schwierigen\nWirtschaftslage in Deutschland . Doch Investoren richten sich oft eher nach künftigen Gewinnen. Zudem sind die meisten der 40 Konzerne, aus denen der Dax gespeist wird, international aufgestellt.",
+   "original_summary": "Der DAX hat erstmals die 20.000-Punkte-Marke überschritten und innerhalb eines Jahres um rund 3.000 Zähler gestiegen. Hoffnung auf sinkende Zinsen und eine positive Entwicklung an der Wall Street treiben den Index nach oben, während die Inflation sinkt und Anleger auf weitere Leitzinssenkungen setzen.",
+   "modified_summary": "Der DAX hat erstmals die 20.000-Punkte-Marke überschritten und innerhalb eines Jahres um rund 3.000 Zähler gestiegen. Hoffnung auf sinkende Zinsen und eine positive Entwicklung an der Wall Street treiben den Index nach oben, während er sinkt und Anleger auf weitere Leitzinssenkungen setzen."
+  },
+  {
+   "sample_id": "s006",
+   "output_id": "inj-delete_sentence-high-1180-mistral-nemo-C-DEL-15",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "dimension": "coverage",
+   "asked_severity": "high",
    "annotators": [
     "Giuseppe",
     "Anton"
    ],
-   "adjudicator": "Malte"
+   "item_id": "1180",
+   "title": "\"Biodeutsch\" ist Unwort des Jahres 2024",
+   "article": "\"Biodeutsch\" ist das Unwort des Jahres 2024. Das Wort werde vor allem in den Sozialen Medien in rassistischer und nationalistischer Weise gebraucht, teilte die Jury der Sprachaktion in Marburg zur Begründung ihrer Wahl mit. \"Die mit dem Gebrauch von biodeutsch einhergehende Unterteilung in angeblich 'echte' Deutsche und in Deutsche zweiter Klasse ist eine Form von Alltagsrassismus\", erklärte die Jury. Mehr in Kürze hier auf ZEIT ONLINE",
+   "original_summary": "Das Unwort des Jahres 2024 ist \"Biodeutsch\". Die Jury der Sprachaktion in Marburg kritisierte den rassistischen und nationalistischer Gebrauch des Begriffs in sozialen Medien, der eine Unterteilung in angeblich \"echte\" Deutsche und Deutsche zweiter Klasse darstelle.",
+   "modified_summary": "Die Jury der Sprachaktion in Marburg kritisierte den rassistischen und nationalistischer Gebrauch des Begriffs in sozialen Medien, der eine Unterteilung in angeblich \"echte\" Deutsche und Deutsche zweiter Klasse darstelle."
   },
   {
-   "sample_id": "s053",
+   "sample_id": "s007",
+   "output_id": "inj-GramE-medium-1180-mistral-nemo-20261117-202923-1890",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "dimension": "faithfulness",
+   "asked_severity": "medium",
+   "annotators": [
+    "Mick",
+    "Ivan"
+   ],
+   "item_id": "1180",
+   "title": "\"Biodeutsch\" ist Unwort des Jahres 2024",
+   "article": "\"Biodeutsch\" ist das Unwort des Jahres 2024. Das Wort werde vor allem in den Sozialen Medien in rassistischer und nationalistischer Weise gebraucht, teilte die Jury der Sprachaktion in Marburg zur Begründung ihrer Wahl mit. \"Die mit dem Gebrauch von biodeutsch einhergehende Unterteilung in angeblich 'echte' Deutsche und in Deutsche zweiter Klasse ist eine Form von Alltagsrassismus\", erklärte die Jury. Mehr in Kürze hier auf ZEIT ONLINE",
+   "original_summary": "Das Unwort des Jahres 2024 ist \"Biodeutsch\". Die Jury der Sprachaktion in Marburg kritisierte den rassistischen und nationalistischer Gebrauch des Begriffs in sozialen Medien, der eine Unterteilung in angeblich \"echte\" Deutsche und Deutsche zweiter Klasse darstelle.",
+   "modified_summary": "Das Unwort des Jahres 2024 ist \"Biodeutsch\". Der Jury der Sprachaktion in Marburg kritisierte den rassistischen und nationalistischer Gebrauch des Begriffs in sozialen Medien, der eine Unterteilung in angeblich \"echte\" Deutsche und Deutsche zweiter Klasse darstelle."
+  },
+  {
+   "sample_id": "s008",
+   "output_id": "inj-CorefE-low-1210-sauerkraut-20261118-115342-85ce",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "dimension": "faithfulness",
+   "asked_severity": "low",
+   "annotators": [
+    "Giuseppe",
+    "Ivan"
+   ],
+   "item_id": "1210",
+   "title": "",
+   "article": "Chinesische Behörden ziehen einem Bericht zufolge den Verkauf des US-Geschäfts von TikTok an Techmilliardär und Trump-Berater Elon Musk in Betracht. Das berichtet die Agentur Bloomberg unter Berufung auf mit der Angelegenheit vertraute Personen. TikTok soll am 19. Januar laut Gesetz in den USA aus den App-Stores von Apple und Google verbannt werden, wenn die US-Sparte der App bis dahin nicht vom chinesischen Inhaber ByteDance verkauft wurde. Außerdem soll der Zugang über Webbrowser verhindert werden. TikTok bezeichnete die Berichte um einen Verkauf an Tesla-Chef Elon Musk, dem auch der Kurznachrichtendienst X (ehemals Twitter) gehört, gegenüber der britischen BBC als \"reine Fiktion\".\nDer erzwungene Verkauf oder das Verbot der von 170 Millionen Amerikanern genutzten App stieß nicht nur bei Nutzern, sondern auch auf beiden Seiten des politischen Spektrums auf Widerstand. Zwei demokratische Abgeordnete drängten den Kongress und Präsident Joe Biden am Montag, die Frist zu verlängern. \"Ein Verbot würde ein einzigartiges Informations- und Kultursystem zerschlagen und Millionen von Menschen zum Schweigen bringen\", sagte Senator Edward Markey.\nEin TikTok-Verbot habe schwerwiegende Folgen für Millionen von Amerikanern, die auf die App für soziale Kontakte und ihren wirtschaftlichen Lebensunterhalt angewiesen seien. Der designierte Präsident Donald Trump hatte den Obersten Gerichtshof gebeten , die Umsetzung des Gesetzes zu verzögern, um nach seinem Amtsantritt am 20. Januar Zeit für eine \"politische Lösung\" des Problems zu haben.\nTikTok-Nutzer in den USA wollen sich darauf aber nicht offenbar verlassen und suchen bereits nach Alternativen. Eine scheint das ebenfalls chinesische Netzwerk Xiaohongshu zu sein, das unter dem englischen Namen Red Note bekannt ist. Die App zählte am Montag zu den am meisten heruntergeladenen Anwendungen im App-Store des US-Tech-Giganten Apple. Laut der US-Zeitung USA Today ähnelt das Layout von Red Note dem der Anwendung Pinterest und werde oft als chinesische Version von Instagram bezeichnet.",
+   "original_summary": "Die chinesische Regierung erwägt angeblich den Verkauf der US-Sparte von TikTok an Elon Musk, um einem Verbot in den USA zu entgehen.\n\nTikTok soll am 19. Januar aus den App-Stores von Apple und Google verbannt werden, wenn die US-Sparte nicht bis dahin verkauft wird.\n\nDer potenzielle Verkauf an den Tech-Milliardär wurde von TikTok als \"reine Fiktion\" abgestritten.\n\nEin Verbot der populären App stößt sowohl bei Nutzern als auch auf beiden Seiten des politischen Spektrums auf Widerstand.\n\nZwei demokratische Abgeordnete drängen den Kongress und Präsident Joe Biden, die Frist zu verlängern, um ein Verbot zu vermeiden.",
+   "modified_summary": "Die chinesische Regierung erwägt angeblich den Verkauf der US-Sparte von TikTok an Elon Musk, um einem Verbot in den USA zu entgehen.\n\nTikTok soll am 19. Januar aus den App-Stores von Apple und Google verbannt werden, wenn die US-Sparte nicht bis dahin verkauft wird.\n\nDer potenzielle Verkauf an den Tech-Milliardär wurde von ihr als \"reine Fiktion\" abgestritten.\n\nEin Verbot der populären App stößt sowohl bei Nutzern als auch auf beiden Seiten des politischen Spektrums auf Widerstand.\n\nZwei demokratische Abgeordnete drängen den Kongress und Präsident Joe Biden, die Frist zu verlängern, um ein Verbot zu vermeiden."
+  },
+  {
+   "sample_id": "s009",
+   "output_id": "inj-add_in_domain_sentence-medium-1287-gpt3.5-C-IN-1287",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "dimension": "coverage",
+   "asked_severity": "medium",
+   "annotators": [
+    "Malte",
+    "Anton"
+   ],
+   "item_id": "1287",
+   "title": "",
+   "article": "Nach der grundsätzlichen Einigung zwischen Israel und der Hamas auf eine Waffenruhe und die Freilassung von Geiseln müssen Details der Absprache noch festgezurrt werden. An letzten Einzelheiten des Abkommens wurde nach Worten des\n israelischen Regierungschefs Benjamin Netanjahu noch in der Nacht gearbeitet. Die \nVereinbarung muss am Donnerstag auch noch von der israelischen Regierung und \ndem Sicherheitskabinett gebilligt werden. Israels Staatspräsident Izchak Herzog hat dazu aufgerufen, dem Waffenruheabkommen mit der Hamas zuzustimmen. Dies ist bisher bekannt:\nDie Vereinbarung soll laut Katars Ministerpräsident Mohammed Al Thani am 466. Tag nach Kriegsbeginn in Kraft treten und in einer ersten Phase 42 Tage dauern. Das ist  am Sonntag um 12.15 Uhr (11.15 Uhr MEZ).\nIn diesen ersten sechs Wochen sollen 33 der Geiseln aus der Gewalt der Hamas freigelassen werden, darunter Frauen, Soldatinnen, Minderjährige sowie ältere und kranke Menschen. Israels Streitkräfte sollen sich teilweise aus dem Gazastreifen zurückziehen, vertriebene Palästinenser in den Norden des Gebiets heimkehren dürfen. In späteren Schritten soll es zur Freilassung der verbleibenden Geiseln und zum dauerhaften Waffenstillstand kommen. Israel geht noch von 98 \nVerschleppten im Gazastreifen  aus, von denen mindestens 34 tot sein dürften. Dem Auswärtigen Amt in Berlin zufolge ist unter den Geiseln auch eine\n \"niedrige zweistellige Anzahl von Personen mit Deutschlandbezug\".\nIm Gegenzug sollen erneut palästinensische Häftlinge aus israelischen Gefängnissen freikommen. Al Thani nannte dazu bisher keine Zahl. Ein israelischer Regierungsvertreter hatte von Hunderten Häftlingen gesprochen, die freikommen sollten.\n\nWaffenruhe umfasst drei Phasen\n\nIn der ersten der insgesamt drei Phasen sollen Vertriebene in ihre Wohnorte in dem Küstengebiet zurückkehren können und mehr der dringend benötigten Hilfsgüter nach Gaza geliefert werden, sagte Al Thani. Die humanitäre Hilfe soll umgehend deutlich aufgestockt werden. Auf Details der zweiten und dritten Phase wollen sich die Konfliktparteien Al Thani zufolge während der ersten Phase einigen.\nDer Grenzübergang Rafah zwischen Ägypten und dem Gazastreifen soll Sicherheitskreisen zufolge bereits an diesem Donnerstagmorgen wieder eröffnet werden. Einem Vertreter des ägyptischen Roten Halbmonds im Nord-Sinai zufolge wiesen die Behörden die ägyptische und palästinensische Seite an, den Grenzübergang von beiden Seiten zu öffnen. 600 Lastwagen mit Hilfslieferungen seien für die Einfuhr vorbereitet worden.\nDas Rote Kreuz bot seine Unterstützung bei der Umsetzung des neuen Waffenruheabkommens an. Während einer ersten Waffenruhe im November 2023 hatte das IRK als  neutrale Instanz die Rückkehr von 109 Hamas-Geiseln nach Israel und die Freilassung von 154 palästinensischen Häftlingen aus israelischen Gefängnissen unterstützt.\nDie Vereinten Nationen boten ebenfalls an, Israel und die Hamas bei der Umsetzung der vereinbarten Waffenruhe zu unterstützen. Die UN würden \"die Lieferung von anhaltender humanitärer Hilfe  an die unzähligen Palästinenser, die weiter leiden, hochfahren\", sagte UN-Generalsekretär António Guterres.\nVerfolgen Sie weitere Entwicklungen zur Situation in Nahost in unserem Liveblog .",
+   "original_summary": "Israel und die Hamas haben sich auf eine Waffenruhe und die Freilassung von Geiseln geeinigt, Details müssen noch festgelegt werden. Die Vereinbarung soll am Sonntag in Kraft treten, in einer ersten Phase sollen 33 Geiseln freigelassen werden. Israel geht von 98 Verschleppten aus, darunter Personen mit Deutschlandbezug. Im Gegenzug sollen palästinensische Häftlinge freikommen. Die Waffenruhe umfasst drei Phasen, darunter die Rückkehr von Vertriebenen und die Lieferung von Hilfsgütern nach Gaza. Der Grenzübergang Rafah soll bereits am Donnerstagmorgen geöffnet werden. Das Rote Kreuz und die UN bieten Unterstützung bei der Umsetzung der Waffenruhe an.",
+   "modified_summary": "Israel und die Hamas haben sich auf eine Waffenruhe und die Freilassung von Geiseln geeinigt, Details müssen noch festgelegt werden. Die Vereinbarung soll am Sonntag in Kraft treten, in einer ersten Phase sollen 33 Geiseln freigelassen werden. Israel geht von 98 Verschleppten aus, darunter Personen mit Deutschlandbezug. Im Gegenzug sollen palästinensische Häftlinge freikommen. Die Waffenruhe umfasst drei Phasen, darunter die Rückkehr von Vertriebenen und die Lieferung von Hilfsgütern nach Gaza. Der Grenzübergang Rafah soll bereits am Donnerstagmorgen geöffnet werden. Das Rote Kreuz und die UN bieten Unterstützung bei der Umsetzung der Waffenruhe an. Die Vereinbarung sieht außerdem vor, dass internationale Beobachter an den Übergängen die Verteilung der Hilfsgüter dokumentieren."
+  },
+  {
+   "sample_id": "s010",
+   "output_id": "inj-GramE-low-1236-gpt3.5-20261117-201644-2f21",
+   "file": "add_gramE.jsonl",
+   "error_type": "GramE",
+   "dimension": "faithfulness",
+   "asked_severity": "low",
+   "annotators": [
+    "Mick",
+    "Ivan"
+   ],
+   "item_id": "1236",
+   "title": "",
+   "article": "Südkoreas Polizei und Mitarbeiter der Antikorruptionsbehörde (CIO) haben den suspendierten Präsidenten Yoon Suk Yeol festgenommen. Yoon sei am \nMittwochmorgen aus seinem Wohnsitz abgeführt worden, um ihn zur Staatsanwaltschaft zu \nbringen, berichtete Südkoreas amtliche Nachrichtenagentur Yonhap. Damit ist Yoon das erste amtierende Staatsoberhaupt des Landes, das in Haft genommen wurde.\nYoon soll wegen der kurzzeitigen Verhängung des Kriegsrechts Anfang Dezember vernommen werden, hatte sich bisher aber geweigert, zur Vernehmung zu erscheinen. Ein erster Versuch, einen Haftbefehl umzusetzen, war Anfang Januar am Widerstand des militärischen Sicherheitsdienstes gescheitert . An der nun erfolgreichen Festnahme waren Tausende Einsatzkräfte beteiligt.\n\nMit Leitern in Yoons Residenz\n\nEinigen Polizisten gelang es Beobachtern zufolge, mithilfe von Leitern in die Residenz einzudringen. Zunächst kam es zu gewalttätigen Auseinandersetzungen, wie die südkoreanische Nachrichtenagentur Yonhap berichtete.\nYoons Anwälte hatten bekannt gegeben, dieser sei bereit, bei der Behörde zu erscheinen. \"Präsident Yoon hat entschieden, \nheute persönlich bei der Korruptionsermittlungsbehörde zu erscheinen\", schrieb Yoons Anwalt Seok Dong Hyeon auf Facebook. Yoon werde überdies später \nam Tag eine Rede halten, schrieb Seok weiter.\nGegen Yoon Suk Yeol wird wegen Machtmissbrauchs und Aufruhrs ermittelt, nachdem er am 3. Dezember im Zuge eines Haushaltsstreits mit der Opposition kurzzeitig das Kriegsrecht ausgerufen hatte. Das Parlament stimmte daraufhin für seine Amtsenthebung. In den kommenden Wochen prüft das Verfassungsgericht nun diese Entscheidung.\nYoon, der sich wochenlang in seiner Residenz verschanzt hatte, verteidigte die Ausrufung des Kriegsrechts als legitime Maßnahme, nachdem die Opposition in einem Haushaltsstreit Yoons politische Pläne im Parlament verhindert hatte. Er werde gegen die Versuche, ihn aus dem Amt zu drängen, \"bis zum Ende kämpfen\", sagte Yoon. Als Reaktion auf die Ausrufung des Kriegsrechts demonstrierten Zehntausende Menschen gegen Yoon und für den Erhalt der Demokratie in Südkorea, aber auch Unterstützer Yoons organisierten Proteste.",
+   "original_summary": "Südkoreas Polizei und die Antikorruptionsbehörde haben den suspendierten Präsidenten Yoon Suk Yeol festgenommen, nachdem er sich geweigert hatte, zur Vernehmung zu erscheinen. Yoon ist das erste amtierende Staatsoberhaupt des Landes, das in Haft genommen wurde. Er wird wegen Machtmissbrauchs und Aufruhrs untersucht, nachdem er kurzzeitig das Kriegsrecht ausgerufen hatte. Trotzdem verteidigt Yoon diese Maßnahme als legitim und kündigt an, bis zum Ende zu kämpfen.",
+   "modified_summary": "Südkoreas Polizei und die Antikorruptionsbehörde haben den suspendierten Präsidenten Yoon Suk Yeol festgenommen, nachdem er sich geweigert hatte, zur Vernehmung zu erscheinen. Yoon ist das erste amtierende Staatsoberhaupt des Landes, das in Haft genommen wurde. Ihn wird wegen Machtmissbrauchs und Aufruhrs untersucht, nachdem er kurzzeitig das Kriegsrecht ausgerufen hatte. Trotzdem verteidigt Yoon diese Maßnahme als legitim und kündigt an, bis zum Ende zu kämpfen."
+  },
+  {
+   "sample_id": "s011",
+   "output_id": "inj-PredE-medium-1334-gpt3.5-20261116-121218-462d",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "dimension": "faithfulness",
+   "asked_severity": "medium",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "item_id": "1334",
+   "title": "",
+   "article": "Die Vogelart Dünnschnabel-Brachvogel ist ausgestorben. Das teilte der Naturschutzbund  (Nabu) in Niedersachsen mit. Es handele sich um die erste Vogelart auf europäischem Festland, die in der Neuzeit als ausgestorben gilt. Zuletzt war der Vogel aus der Familie der Schnepfenvögel den Angaben zufolge in den 1990er-Jahren gesichtet worden.\n\"Das Schicksal des Dünnschnabel-Brachvogels sollte uns alle dazu \nbewegen, den Wert unserer natürlichen Umwelt zu überdenken und die \nverbleibenden Arten mit aller Kraft zu schützen\", sagte Martin Rümmler,\n Vogelschutzexperte des Nabu. Nach Angaben des Naturschutzbundes sind die Hauptursachen für das\nAussterben des Dünnschnabel-Brachvogels vor allem die Zerstörung von\nKüstenfeuchtgebieten sowie die intensive Nutzung und das Trockenlegen von\nMooren und Sümpfen .\n\nKlimawandel gilt als Grund für das Aussterben\n\n\"Die Zerstörung intakter Ökosysteme entlang der Zugrouten\ndieser Art unterstreicht die Bedeutung internationaler Zusammenarbeit im\nNaturschutz\", teilte der Nabu mit. Der Verlust der Art zeige, dass das\nAussterben von Arten auch direkt vor unserer Haustür stattfinde, sagte der\nLandesvorsitzende des Nabu in Niedersachsen, Holger Buschmann. Der Nabu kritisierte die Klimapolitik der EU, die sich nicht ausreichend für den Umweltschutz einsetze.\nDer Dünnschnabel-Brachvogel war ursprünglich in den Mooren Westsibiriens\n entlang des Irtysch und Ob verbreitet. Die einzigen genau bekannten \nBrutgebiete lagen in der Region Tara, etwa 250 Kilometer nördlich von \nOmsk, wo die Vögel zwischen 1914 und 1924 brüteten. Die Zugrouten \nführten aus dieser Gegend in südwestlicher Richtung in den \nMittelmeerraum, wo die Vögel in einem Gebiet überwinterten, das bis nach \nMarokko reicht. Seit Ende des 20. Jahrhunderts galt der \nDünnschnabel-Brachvogel als akut vom Aussterben bedroht.",
+   "original_summary": "Der Naturschutzbund in Niedersachsen hat das Aussterben der Vogelart Dünnschnabel-Brachvogel bekannt gegeben, die als erste Vogelart auf europäischem Festland in der Neuzeit als ausgestorben gilt. Die Hauptursachen für das Aussterben sind die Zerstörung von Küstenfeuchtgebieten und die intensive Nutzung von Mooren und Sümpfen. Der Nabu betont die Bedeutung des Umweltschutzes und kritisiert die Klimapolitik der EU. Der Dünnschnabel-Brachvogel war ursprünglich in Westsibirien beheimatet und brütete zwischen 1914 und 1924 in der Region Tara.",
+   "modified_summary": "Der Naturschutzbund in Niedersachsen hat das Aussterben der Vogelart Dünnschnabel-Brachvogel bekannt gegeben, die als erste Vogelart auf europäischem Festland in der Neuzeit als ausgestorben gilt. Die Hauptursachen für das Aussterben sind die Zerstörung von Küstenfeuchtgebieten und die intensive Nutzung von Mooren und Sümpfen. Der Nabu betont die Bedeutung des Umweltschutzes und unterstützt die Klimapolitik der EU. Der Dünnschnabel-Brachvogel war ursprünglich in Westsibirien beheimatet und brütete zwischen 1914 und 1924 in der Region Tara."
+  },
+  {
+   "sample_id": "s012",
+   "output_id": "inj-LinkE-low-140-gpt3.5-20261118-121144-6143",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "dimension": "faithfulness",
+   "asked_severity": "low",
+   "annotators": [
+    "Malte",
+    "Mick"
+   ],
+   "item_id": "140",
+   "title": "",
+   "article": "Die Zahl der Toten durch eine unbekannte Krankheit in der Demokratischen\nRepublik Kongo ist gestiegen. Nach Angaben der örtlichen Gesundheitsbehörden starben\ninzwischen 131 Menschen.\nSeit Dienstag sind medizinische Teams in\nbetroffenen Ortschaften im Südwesten des Landes unterwegs. Sie hätten inzwischen zwei\nweitere Dörfer gefunden, in denen mindestens 60 Tote verzeichnet worden seien,\nteilte der Gesundheitsminister der Provinz Kwango, Apollinaire Yumba, mit.\nIn den vergangenen Tagen waren Epidemiologen in\ndie zu Kwango gehörende Region Panzi gereist. Sie sollen dort Ärzte bei der\nBehandlung der Patienten unterstützen und ermitteln, um was für eine Art\nvon Krankheit es sich handelt. Bisher wurden nach Angaben Yumbas 382 Menschen\nmit Symptomen der Krankheit registriert.\n\nFieber,\nKopfschmerzen, Atemprobleme und Anämie\n\nÜber die Krankheit ist derzeit nur wenig bekannt. Besonders\noft betroffen sind offenbar Kinder bis 15 Jahre. Zu den Symptomen zählen \nFieber,\nKopfschmerzen, Atemprobleme und Anämie\n.\nDer Minister kündigte die Entsendung weiterer Expertenteams an.\nSie sollen den Angaben zufolge Proben entnehmen und die\nBevölkerung zu Hygiene- und Abstandsmaßnahmen aufrufen. Ob die Krankheit nur\ndurch körperlichen Kontakt oder auch über andere Wege übertragen werden kann,\nist bisher nicht bekannt.",
+   "original_summary": "In der Demokratischen Republik Kongo ist die Zahl der Toten durch eine unbekannte Krankheit auf 131 gestiegen. Medizinische Teams sind in betroffenen Ortschaften im Südwesten des Landes im Einsatz und haben zwei weitere Dörfer mit mindestens 60 Toten entdeckt. Epidemiologen unterstützen Ärzte bei der Behandlung der Patienten und ermitteln die Art der Krankheit, von der bisher 382 Menschen betroffen sind. Besonders Kinder bis 15 Jahre sind betroffen, Symptome sind Fieber, Kopfschmerzen, Atemprobleme und Anämie. Expertenteams werden Proben entnehmen und die Bevölkerung zu Hygiene- und Abstandsmaßnahmen aufrufen, da die Übertragungswege der Krankheit noch unbekannt sind.",
+   "modified_summary": "In der Demokratischen Republik Kongo ist die Zahl der Toten durch eine unbekannte Krankheit auf 131 gestiegen. Medizinische Teams sind in betroffenen Ortschaften im Südwesten des Landes im Einsatz und haben zwei weitere Dörfer mit mindestens 60 Toten entdeckt. Epidemiologen unterstützen Ärzte bei der Behandlung der Patienten und ermitteln die Art der Krankheit, von der bisher 382 Menschen betroffen sind. Besonders Kinder bis 15 Jahre sind betroffen, Symptome sind Fieber, Kopfschmerzen, Atemprobleme und Anämie. Expertenteams werden Proben entnehmen und die Bevölkerung zu Hygiene- und Abstandsmaßnahmen aufrufen, obwohl die Übertragungswege der Krankheit noch unbekannt sind."
+  },
+  {
+   "sample_id": "s013",
    "output_id": "inj-add_in_domain_sentence-medium-1313-gpt3.5-C-IN-1313",
    "file": "add_in_domain_sentence.jsonl",
    "error_type": "add_in_domain_sentence",
-   "group": "C",
+   "dimension": "coverage",
+   "asked_severity": "medium",
    "annotators": [
-    "Ivan",
-    "Malte"
+    "Giuseppe",
+    "Anton"
    ],
-   "adjudicator": "Giuseppe"
+   "item_id": "1313",
+   "title": "Maul- und Klauenseuche verursacht bereits Milliardenschaden",
+   "article": "Der Ausbruch der Maul- und Klauenseuche hat bereits milliardenschwere wirtschaftliche Schäden verursacht. Das schätzt der Deutsche Raiffeisenverband. \"Entlang der Wertschöpfungskette gehen wir davon aus, dass bereits jetzt ein Umsatzverlust von mehr als einer Milliarde Euro existiert\", sagte der Hauptgeschäftsführer des Verbands, Jörg Migende.\nUnternehmen mieden demnach aus Unsicherheit Ware aus Deutschland, um den Import der Maul- und Klauenseuche, die in Brandenburg ausgebrochen war, zu verhindern. Der Verband geht deshalb davon aus, dass die wirtschaftlichen Einbußen noch deutlich höher werden.\nDer bisherige Schaden sei unter anderem dadurch entstanden, dass Länder wie Südkorea, Mexiko und Großbritannien die Einfuhr von Fleisch- und Milchprodukten aus Deutschland gestoppt haben. Innerhalb der Europäischen Union läuft der Handel nach einer Entscheidung der EU-Kommission vom Mittwoch mit kleineren Einschränkungen weiter. Doch auch Unternehmen innerhalb der EU würden gerade Ware aus ganz Deutschland meiden, sagte Verbandschef Migende.\nDie Maul- und Klauenseuche ist eine hochansteckende Viruserkrankung. Es erkranken vor allem Klauentiere wie Rinder, Schweine und Ziegen. Die Seuche war am Freitag auf einem Hof in Brandenburg festgestellt worden, nachdem es zuvor in Deutschland jahrzehntelang keine Fälle gegeben hatte. Fälle außerhalb von Brandenburg wurden bisher nicht bestätigt.",
+   "original_summary": "Der Ausbruch der Maul- und Klauenseuche in Brandenburg hat bereits wirtschaftliche Schäden von über einer Milliarde Euro verursacht, schätzt der Deutsche Raiffeisenverband. Unternehmen meiden Ware aus Deutschland, was zu einem Umsatzverlust entlang der Wertschöpfungskette führt. Länder wie Südkorea, Mexiko und Großbritannien haben die Einfuhr von Fleisch- und Milchprodukten gestoppt. Innerhalb der EU gibt es kleinere Einschränkungen im Handel, aber auch hier meiden Unternehmen Ware aus Deutschland. Bisher sind keine Fälle außerhalb von Brandenburg bestätigt.",
+   "modified_summary": "Der Ausbruch der Maul- und Klauenseuche in Brandenburg hat bereits wirtschaftliche Schäden von über einer Milliarde Euro verursacht, schätzt der Deutsche Raiffeisenverband. Unternehmen meiden Ware aus Deutschland, was zu einem Umsatzverlust entlang der Wertschöpfungskette führt. Länder wie Südkorea, Mexiko und Großbritannien haben die Einfuhr von Fleisch- und Milchprodukten gestoppt. Innerhalb der EU gibt es kleinere Einschränkungen im Handel, aber auch hier meiden Unternehmen Ware aus Deutschland. Bisher sind keine Fälle außerhalb von Brandenburg bestätigt. Der Verband fordert deshalb eine bundesweite Entschädigung für Betriebe, die ihre Milchproduktion vorsorglich drosseln."
   },
   {
-   "sample_id": "s054",
-   "output_id": "inj-OutE-high-5049-mistral-nemo-20261117-201354-5be8",
-   "file": "add_outE.jsonl",
-   "error_type": "OutE",
-   "group": "D",
+   "sample_id": "s014",
+   "output_id": "inj-add_in_domain_sentence-low-1083-llama-3b-C-IN-1083",
+   "file": "add_in_domain_sentence.jsonl",
+   "error_type": "add_in_domain_sentence",
+   "dimension": "coverage",
+   "asked_severity": "low",
    "annotators": [
     "Malte",
-    "Mick"
+    "Anton"
    ],
-   "adjudicator": "Anton"
+   "item_id": "1083",
+   "title": "AfD legt in Umfrage zu, Grüne vor SPD",
+   "article": "Die AfD kommt im ZDF- Politbarometer auf 21 Prozent. Das ist ein Plus von zwei\nProzentpunkten im Vergleich zur bisher letzten Umfrage im Dezember und der beste Umfragewert, den die Partei seit einem Jahr erreicht hat.\nKlar stärkste Kraft bleibt die Union, die aber einen Punkt\nverliert und auf 30 Prozent kommt. Die Grünen landen erstmals seit einem Jahr vor der SPD – mit einem Plus von einem Punkt auf 15 Prozent. Die Sozialdemokraten verlieren einen Prozentpunkt und kommen mit 14 Prozent nur noch auf Platz vier.\n\nKanzlerfrage: Habeck gleichauf mit Merz\n\nMit je vier Prozent würden die FDP (plus eins), die\nLinkspartei (unverändert) und das BSW (minus eins) nicht über die\nFünf-Prozent-Hürde kommen. Alle anderen Parteien schaffen es zusammen auf acht\nProzent.\nIn der Kanzlerfrage liegt Robert Habeck (Grüne) mit 27 Prozent gleichauf mit CDU-Kandidat Friedrich Merz. Bundeskanzler Olaf Scholz (SPD) erreicht nur noch 14 Prozent und liegt damit in der Umfrage hinter AfD-Kanzlerkandidatin Alice Weidel , die auf 15 Prozent kommt.\nIm Vergleich nur mit Merz schneidet Scholz deutlich besser ab. Er kommt dann auf 41 Prozent und Merz auf 44 Prozent.",
+   "original_summary": "Die AfD hat in der neuesten Umfrage des ZDF-Politbarometers einen überraschenden Aufschwung erlebt, mit 21 Prozent liegt die Partei nun an dritter Stelle. Die Union bleibt stärkste Kraft mit 30 Prozent, während die Grünen erstmals seit einem Jahr vor der SPD liegen und mit 15 Prozent ein Plus von einem Punkt auf den vierten Platz kommen. Die Kanzlerfrage ist jedoch ein weiterer Szenenjäger, in der Robert Habeck gleichauf mit Friedrich Merz liegt, während Olaf Scholz deutlich hinterherhinkt. Die AfD-Kanzlerkandidatin Alice Weidel schneidet dann aber mit 15 Prozent auf Platz zwei ab.",
+   "modified_summary": "Die AfD hat in der neuesten Umfrage des ZDF-Politbarometers einen überraschenden Aufschwung erlebt, mit 21 Prozent liegt die Partei nun an dritter Stelle. Die Union bleibt stärkste Kraft mit 30 Prozent, während die Grünen erstmals seit einem Jahr vor der SPD liegen und mit 15 Prozent ein Plus von einem Punkt auf den vierten Platz kommen. Die Kanzlerfrage ist jedoch ein weiterer Szenenjäger, in der Robert Habeck gleichauf mit Friedrich Merz liegt, während Olaf Scholz deutlich hinterherhinkt. Die AfD-Kanzlerkandidatin Alice Weidel schneidet dann aber mit 15 Prozent auf Platz zwei ab. Die nächste Erhebung des Politbarometers ist für die Woche nach der Bundestagswahl vorgesehen."
   },
   {
-   "sample_id": "s055",
+   "sample_id": "s015",
+   "output_id": "inj-delete_sentence-medium-116-mistral-nemo-C-DEL-14",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "dimension": "coverage",
+   "asked_severity": "medium",
+   "annotators": [
+    "Giuseppe",
+    "Malte"
+   ],
+   "item_id": "116",
+   "title": "Lkw-Fahrer verursacht Unfälle mit 50 Fahrzeugen – 19 Verletzte",
+   "article": "Ein Lkw-Fahrer, der vermutlich unter Alkohol oder Drogen stand, hat auf mehreren Autobahnen in Nordrhein-Westfalen eine Vielzahl an Unfällen verursacht. 26 Verkehrsteilnehmer wurden verletzt, acht davon schwer, wie die Polizei in Düsseldorf mitteilte. Ein Mensch befindet sich demnach in Lebensgefahr.\nDer 30 Jahre alte Lkw-Fahrer sei zunächst mit Verletzungen ins Krankenhaus gebracht worden und sollte so bald wie möglich vernommen werden. Inzwischen befindet er sich in einer psychiatrischen Einrichtung.\nInsgesamt sind der Polizei bislang 50 Fahrzeuge bekannt, die von den Unfällen betroffen waren. Die Fahrt des Mannes zog sich nach ersten Meldungen über etwa 60 Kilometer. Nach seiner Festnahme hatte bei dem Fahrer ein Alkohol- und Drogentest angeschlagen.\n\"Auffallend unsichere Fahrweise\"\nAm Samstagnachmittag sei den Beamten ein Lkw mit polnischem Kennzeichen gemeldet worden, der in auffallend unsicherer Fahrweise auf der A 46 im Bereich Neuss unterwegs gewesen sei, teilte die Polizei weiter mit. Der Fahrer habe die Anhaltezeichen der Autobahnpolizei missachtet und sei mit deutlich erhöhter Geschwindigkeit und in Schlangenlinien über die A 46 in den Wuppertaler Raum gefahren. Weitere Verkehrsteilnehmer wurden aufgefordert, die Autobahnen in dem Gebiet möglichst schnell zu verlassen.\nNachdem der Lkw in den Gegenverkehr geraten war, kam er laut Polizei nach der Kollision mit anderen Fahrzeugen quer zur Fahrbahn zum Stillstand. An dieser Unfallstelle sei der Fahrer dann verhaftet worden. Am Samstagabend errichtete die Polizei mehrere Sperrungen in dem Gebiet. Sie sollten voraussichtlich bis Sonntagmittag aufrechterhalten bleiben.",
+   "original_summary": "Ein betrunkener und/oder drogenbetäubter Lkw-Fahrer hat auf mehreren nordrhein-westfälischen Autobahnen eine Serie von Unfällen verursacht, bei denen 26 Menschen verletzt wurden, acht davon schwer. Ein Mensch schwebt in Lebensgefahr. Der 30-jährige Fahrer wurde festgenommen und befindet sich nun in einer psychiatrischen Einrichtung. Die Polizei geht von rund 50 betroffenen Fahrzeugen aus; die Strecke des Mannes erstreckte sich über etwa 60 Kilometer. Ein Alkohol- und Drogentest bei der Festnahme war positiv.",
+   "modified_summary": "Ein betrunkener und/oder drogenbetäubter Lkw-Fahrer hat auf mehreren nordrhein-westfälischen Autobahnen eine Serie von Unfällen verursacht, bei denen 26 Menschen verletzt wurden, acht davon schwer. Der 30-jährige Fahrer wurde festgenommen und befindet sich nun in einer psychiatrischen Einrichtung. Die Polizei geht von rund 50 betroffenen Fahrzeugen aus; die Strecke des Mannes erstreckte sich über etwa 60 Kilometer. Ein Alkohol- und Drogentest bei der Festnahme war positiv."
+  },
+  {
+   "sample_id": "s016",
+   "output_id": "inj-CircE-low-1220-gpt3.5-20261118-111630-f9c7",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "dimension": "faithfulness",
+   "asked_severity": "low",
+   "annotators": [
+    "Anton",
+    "Mick"
+   ],
+   "item_id": "1220",
+   "title": "",
+   "article": "Die Deutsche Fußball Liga (DFL) ist im Streit um eine Beteiligung der Dachorganisation an den Polizeikosten für Hochrisikospiele am Bundesverfassungsgericht gescheitert. Ihre Verfassungsbeschwerde gegen eine entsprechende Regelung aus Bremen blieb ohne Erfolg, wie der Erste Senat in Karlsruhe verkündete .\nDie Hansestadt hatte bereits 2014 beschlossen, dass sich die Veranstalter von Profifußballspielen an den Mehrkosten beteiligen müssen , die bei erhöhten Polizeieinsätzen bei Hochrisikospielen entstehen. Die Gebühr wird bei allen Großveranstaltungen fällig, die gewinnorientiert sind, mehr als 5.000 Teilnehmer haben und bei denen es erfahrungsgemäß zu Gewalt kommen kann.\nDer erste Kostenbescheid über 425.000 Euro war 2015 fällig geworden, für ein Spiel zwischen Werder Bremen und dem Hamburger SV. Inzwischen hat sich die insgesamt geforderte Summe durch andere Partien auf mehr als drei Millionen Euro erhöht, die die DFL aber nur unter Vorbehalt und teilweise bezahlte.\n\nWeitere Bundesländer könnten Gebühren erheben\n\nDer Ligaverband hatte vor mehreren Gerichtsinstanzen gegen die Bescheide geklagt, das Bundesverwaltungsgericht in Leipzig erklärte die Regelung aber schon 2019 für rechtmäßig . Die vom Bundesverfassungsgericht abgewiesene Verfassungsbeschwerde bezog sich auf die Entscheidung von 2019.\nDie DFL argumentierte, in dem Bremer Gesetz fehle es an einer abgrenzbaren Leistung der Stadt Bremen, die man ihr zurechnen könne – was verfassungsrechtliche Voraussetzung für eine Erhebung von Gebühren sei. Für den erforderlichen Polizeieinsatz seien zudem einzelne Störer verantwortlich und nicht die Fußballorganisation.\nOb andere Bundesländer dem Bremer Beispiel nun folgen werden, ist unklar. Auf die Profivereine kämen dann deutlich mehr Gebühren zu. Mehrere Bundesländer warteten bislang die Entscheidung des Verfassungsgerichts ab und könnten nun selbst Gebühren erheben.\n\nFassungslosigkeit beim Fanbündnis\n\nDas Fanbündnis Unsere Kurve äußerte sich bestürzt über das Urteil. In einer Stellungnahme warnte das Bündnis, dass die Entscheidung Deutschland langfristig erheblich schaden könnte. Die öffentliche Sicherheit sei eine staatliche Aufgabe. Gleichzeitig teilte das Bündnis mit, dass der Profifußball mit Steuereinnahmen von 1,6 Milliarden Euro einen wichtigen Beitrag zur Finanzierung dieser Aufgabe leiste.\nFür den Bündnisvorsitzenden Jost Peters ist es jetzt \"zwingend notwendig, dass den Clubs Entscheidungsbefugnisse in der polizeilichen Einsatzplanung eingeräumt werden und überdimensionierte Polizeieinsätze ein Ende finden\". Thomas Kessen, Sprecher von Unsere Kurve, forderte zudem, das Urteil müsse auf alle öffentlichen Großveranstaltungen ausgeweitet werden, etwa auf das Münchner Oktoberfest oder den Kölner Karneval.",
+   "original_summary": "Die Deutsche Fußball Liga ist vor dem Bundesverfassungsgericht mit ihrer Verfassungsbeschwerde gegen die Beteiligung an Polizeikosten für Hochrisikospiele gescheitert. Bremen verlangt seit 2014, dass Veranstalter von Profifußballspielen die Mehrkosten für erhöhte Polizeieinsätze tragen. Die DFL hatte gegen die Regelung geklagt, aber das Bundesverwaltungsgericht erklärte sie bereits 2019 für rechtmäßig. Die DFL argumentierte, dass die Gebühren nicht gerechtfertigt seien, da die Polizeieinsätze auf einzelne Störer zurückzuführen seien. Das Fanbündnis Unsere Kurve äußerte sich bestürzt über das Urteil und forderte, dass die Clubs mehr Entscheidungsbefugnisse in der polizeilichen Einsatzplanung erhalten sollten.",
+   "modified_summary": "Die Deutsche Fußball Liga ist vor dem Bundesverfassungsgericht mit ihrer Verfassungsbeschwerde gegen die Beteiligung an Polizeikosten für Hochrisikospiele gescheitert. Bremen verlangt seit 2014, dass Veranstalter von Profifußballspielen die Mehrkosten für erhöhte Polizeieinsätze tragen. Die DFL hatte gegen die Regelung geklagt, aber das Bundesverwaltungsgericht erklärte sie bereits 2020 für rechtmäßig. Die DFL argumentierte, dass die Gebühren nicht gerechtfertigt seien, da die Polizeieinsätze auf einzelne Störer zurückzuführen seien. Das Fanbündnis Unsere Kurve äußerte sich bestürzt über das Urteil und forderte, dass die Clubs mehr Entscheidungsbefugnisse in der polizeilichen Einsatzplanung erhalten sollten."
+  },
+  {
+   "sample_id": "s017",
+   "output_id": "inj-PredE-low-1242-gpt3.5-20261116-120749-b851",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "dimension": "faithfulness",
+   "asked_severity": "low",
+   "annotators": [
+    "Giuseppe",
+    "Mick"
+   ],
+   "item_id": "1242",
+   "title": "SPD-Politiker werfen Olaf Scholz Blockade der Ukrainehilfen vor",
+   "article": "Mehrere SPD-Politiker haben Bundeskanzler Olaf Scholz' Weigerung kritisiert, noch vor der Bundestagswahl weitere Unterstützung für die Ukraine in Höhe von drei Milliarden Euro für Waffenlieferungen auf den Weg zu bringen. Kriege richteten sich nicht nach Wahlen, zitiert der Spiegel den SPD -Haushalts- und Verteidigungspolitiker Andreas Schwarz: \"Wenn es unter den demokratischen Kräften im Bundestag eine Mehrheit gibt für ein zusätzliches Hilfspaket für die Ukraine, sollten wir das noch vor der Bundestagswahl beschließen.\"\nSchwarz forderte einen Schulterschluss im Parlament auch mit CDU und CSU: \"Allerdings sollte sich dann auch die Union klar dazu bekennen, die überplanmäßige Ausgabe von drei Milliarden Euro mitzutragen\", sagte er. Schwarz ist im Haushaltsausschuss Berichterstatter für den Etat des Verteidigungsministeriums und das Sondervermögen Bundeswehr und gehört als stellvertretendes Mitglied dem Verteidigungsausschuss an.\nScholz lehnt Einsparungen an anderer Stelle für die Finanzierung weiterer Waffenlieferungen in die Ukraine ab.\nSchäfer: Nicht auf Zeit spielen\nDer SPD-Verteidigungspolitiker Kristian Klinck sagte dem Magazin, nur die Kombination aus Unterstützung der Ukraine und Diplomatie werde einen stabilen Waffenstillstand näherbringen. \"Ich rate dazu, das Hilfspaket auf den Weg zu bringen.\" Ob dies durch eine außerplanmäßige Ausgabe aus dem Bundeshaushalt geschehe oder durch die Nutzung des von den G7-Staaten zur Verfügung gestellten Kredits geschehe, \"sollte aufgrund rein sachlicher Erwägungen entschieden werden\".\nDer Grünenpolitiker Sebastian Schäfer forderte Scholz und den SPD-Fraktionsvorsitzenden Rolf Mützenich auf, ihre Blockadehaltung zu überdenken. \"In dieser Frage auf Zeit zu spielen, ist angesichts der Lage in der Ukraine schlicht verantwortungslos\", sagte Schäfer, der Mitglied im Haushaltsausschuss und stellvertretender Vorsitzender des Gremiums zum Sondervermögen für die Bundeswehr ist.\nVerteidigungsminister Boris Pistorius nahm seinen Parteifreund Scholz hingegen in Schutz. \"Ich sehe keinerlei Grund anzunehmen, dass der Bundeskanzler hier bremst\", sagte er in den ARD- Tagesthemen . Pistorius verwies darauf, dass es für 2025 noch keinen regulären Bundeshaushalt gebe und der Bund daher mit einer vorläufigen Haushaltsführung agiere. \"Es ist nicht trivial, das Geld aufzutreiben\", sagte er im heute-journal des ZDF. Zudem zeigte Pistorius sich zuversichtlich, dass zeitnah eine Lösung gefunden werde. Er hoffe darauf in den nächsten Tagen, sagte er.",
+   "original_summary": "Mehrere SPD-Politiker kritisieren Bundeskanzler Olaf Scholz' Weigerung, vor der Bundestagswahl weitere Unterstützung in Höhe von drei Milliarden Euro für Waffenlieferungen an die Ukraine zu leisten. Andreas Schwarz fordert eine Entscheidung im Parlament und einen Schulterschluss mit CDU und CSU. Kristian Klinck betont die Bedeutung von Unterstützung und Diplomatie für einen stabilen Waffenstillstand. Grünenpolitiker Sebastian Schäfer fordert Scholz auf, seine Blockadehaltung zu überdenken. Verteidigungsminister Boris Pistorius verteidigt Scholz und betont die Schwierigkeiten bei der Finanzierung, zeigt sich aber zuversichtlich, dass eine Lösung gefunden wird.",
+   "modified_summary": "Mehrere SPD-Politiker kritisieren Bundeskanzler Olaf Scholz' Weigerung, vor der Bundestagswahl weitere Unterstützung in Höhe von drei Milliarden Euro für Waffenlieferungen an die Ukraine zu leisten. Andreas Schwarz fordert eine Entscheidung im Parlament und einen Schulterschluss mit CDU und CSU. Kristian Klinck betont die Bedeutung von Unterstützung und Diplomatie für einen stabilen Waffenstillstand. Grünenpolitiker Sebastian Schäfer fordert Scholz auf, seine Blockadehaltung zu überdenken. Verteidigungsminister Boris Pistorius verteidigt Scholz und betont die Schwierigkeiten bei der Finanzierung, zeigt sich aber nicht zuversichtlich, dass eine Lösung gefunden wird."
+  },
+  {
+   "sample_id": "s018",
+   "output_id": "inj-add_definition-low-1239-gpt3.5-20261116-114054-6676",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "dimension": "coverage",
+   "asked_severity": "low",
+   "annotators": [
+    "Malte",
+    "Anton"
+   ],
+   "item_id": "1239",
+   "title": "",
+   "article": "Nach der Ankündigung eines US-Regierungsvertreters, Kuba von der US-Terrorliste zu streichen , hat die Regierung in Havanna die Freilassung von mehr als 550 Gefangenen in Aussicht gestellt.\nDie Entscheidung der Vereinigten Staaten sei ein Schritt in die richtige\n Richtung, komme aber zu spät, kritisierte Außenminister Bruno Rodríguez in einer Mitteilung . \nGleichzeitig forderte er ein Ende des US-Handelsembargos gegen Kuba , das seit 1962 in Kraft ist.\nWie der US-Regierungsvertreter mitgeteilt hatte, soll \ndiese \"Geste des guten Willens\" die Verhandlungen über die Freilassung \neiner \"bedeutenden Zahl politischer Gefangener\" befördern. Es bestehe die\n Hoffnung, dass die Freilassung noch vor dem Amtsantritt von Donald \nTrump am kommenden Montag erfolgen könne, dessen Republikanische Partei \ngegenüber den Behörden im kommunistischen Kuba traditionell eine harte \nLinie verfolgt.\nDie katholische Kirche treibe das Abkommen voran, das \nvor allem Menschen betrifft, die bei den regierungskritischen Protesten \nim Sommer 2021 in Kuba festgenommen wurden.\n\nTrump könnte die Entscheidung von Biden zurücknehmen\n\nVor vier Jahren hatte Trump \nKuba auf die US-Liste der Terrorunterstützer gesetzt, auf der auch \nSyrien, der Iran und Nordkorea verzeichnet sind. Nach seinem Amtsantritt\n könnte er die Entscheidung Bidens sofort wieder rückgängig machen.\n\"Kuba hätte niemals in die \nwillkürliche Liste der staatlichen Sponsoren des Terrorismus aufgenommen\n werden dürfen\", schrieb Rodríguez auf der Plattform X. Die US-Politik \nder harten Sanktionen gegen Kuba habe schwerwiegende Folgen für die \nBevölkerung von elf Millionen Menschen, schade der Wirtschaft des \nInselstaates und fördere die Migration in die USA.\n\nKuba hatte Hunderte Menschen nach friedlichen Protesten verhaftet\n\nDie\n geplante Freilassung von Häftlingen, die wegen verschiedener Straftaten\n verurteilt worden waren, soll nach Angaben des kubanischen \nAußenministeriums schrittweise erfolgen. Wegen ihrer Teilnahme an \nfriedlichen Protesten sind Hunderte Menschen auf Kuba inhaftiert, unter ihnen auch der deutsche Staatsbürger Luis Frómeta Compte. Wer \nfreikommen dürfte, war zunächst unklar.\nNach offiziellen Angaben wurden in Kuba rund 500 Menschen wegen ihrer \nTeilnahme an den Protesten im Juli 2021 zu Haftstrafen \nverurteilt, die teils bis zu 25 Jahre betrugen. Es waren die größten \nProteste gegen die Regierung in Havanna seit der Kubanischen Revolution \n1959.\nAnfang Januar habe \nStaatspräsident Miguel Díaz-Canel Papst Franziskus in einem Schreiben \nüber die Entscheidung informiert, teilte die kubanische Regierung mit. \nDie Freilassungen seien im Geiste des von der katholischen Kirche \nausgerufenen Jubeljahres 2025 beschlossen worden. Zuvor habe Díaz-Canel \nim Juni 2023 bei einem Besuch im Vatikan mit dem Papst über die \nSituation der Häftlinge und die Auswirkungen der US-Sanktionen \ngesprochen.",
+   "original_summary": "Die Regierung in Havanna hat die Freilassung von mehr als 550 Gefangenen in Aussicht gestellt, nachdem die USA angekündigt haben, Kuba von der Terrorliste zu streichen. Außenminister Rodríguez kritisierte die Entscheidung als zu spät und forderte ein Ende des US-Handelsembargos. Die Freilassung soll politische Gefangene betreffen, die bei regierungskritischen Protesten festgenommen wurden. Die katholische Kirche treibt das Abkommen voran, während Trump die Entscheidung von Biden rückgängig machen könnte. In Kuba wurden Hunderte Menschen nach friedlichen Protesten verhaftet, darunter auch der deutsche Staatsbürger Luis Frómeta Compte.",
+   "modified_summary": "Die Regierung in Havanna hat die Freilassung von mehr als 550 Gefangenen in Aussicht gestellt, nachdem die USA angekündigt haben, Kuba von der Terrorliste zu streichen. Außenminister Rodríguez kritisierte die Entscheidung als zu spät und forderte ein Ende des US-Handelsembargos. Ein Handelsembargo ist ein staatliches Handelsverbot gegen ein anderes Land. Die Freilassung soll politische Gefangene betreffen, die bei regierungskritischen Protesten festgenommen wurden. Die katholische Kirche treibt das Abkommen voran, während Trump die Entscheidung von Biden rückgängig machen könnte. In Kuba wurden Hunderte Menschen nach friedlichen Protesten verhaftet, darunter auch der deutsche Staatsbürger Luis Frómeta Compte."
+  },
+  {
+   "sample_id": "s019",
+   "output_id": "inj-LinkE-medium-1077-llama-3b-20261118-121620-0c3f",
+   "file": "add_linkE.jsonl",
+   "error_type": "LinkE",
+   "dimension": "faithfulness",
+   "asked_severity": "medium",
+   "annotators": [
+    "Mick",
+    "Ivan"
+   ],
+   "item_id": "1077",
+   "title": "",
+   "article": "Im Kampf gegen\ndie schwersten Waldbrände in der Geschichte Kaliforniens hat die Feuerwehr offenbar erste Erfolge erzielt. Eigenen Angaben zufolge kam den Rettungskräften dabei eine\nPause bei den heftigen Winden zugute, die die Feuer angefacht\nhatten. Meteorologen warnen jedoch davor, dass starke Böen am\nWochenende zurückkehren könnten.\nDie Windverhältnisse im Gebiet\nvon Los Angeles werden sich nach Angaben des Nationalen\nWetterdienstes bis zum Wochenende verbessern. \"Es\nist nicht mehr so böig, was den Feuerwehrleuten hoffentlich\nhelfen wird\", sagte die NWS-Meteorologin Allison Santorelli. Die\nBedingungen mit niedriger Luftfeuchtigkeit und trockener\nVegetation seien aber immer noch kritisch.\nEine Abschwächung der Winde dürfte den Feuerwehrleuten am\nBoden entscheidende Unterstützung aus der Luft bringen, da die\nFlugzeuge Wasser und Löschmittel auf die brennenden Hügel\nabwerfen können. \"Es gibt ein paar gute Nachrichten, wenn\nüberhaupt\", sagte Santorelli.\nAm Vormittag gab es in Los\nAngeles noch drei größere Brände. Insgesamt hatten fünf\nBrandherde im Bezirk Los Angeles auf einer Fläche von rund\n13.750 Hektar – so groß wie rund 19.000 Fußballfelder – gewütet. Bislang wurden fast 10.000 Gebäude zerstört , 180.000 Personen\nmussten die gefährdeten Gebiete verlassen. Inzwischen sind\nmindestens zehn Menschen bei den Bränden ums Leben gekommen. Der\nprivate Wetter-Vorhersagedienst AccuWeather schätzte den Schaden\nund den wirtschaftlichen Verlust durch die Brände auf 135 bis\n150 Milliarden Dollar.\n\nAusgangssperren wegen Plünderungen\n\nIn den Brandgebieten im Großraum Los Angeles mussten Menschen auf \nBehördenanordnung ihre Häuser verlassen. Das Eigentum ist nicht nur \nvom Feuer bedroht, sondern auch von Plünderern. Deshalb haben die \nBehörden teilweise für die Abend- und Nachtstunden eine Ausgangssperre verhängt. Die Ausgangssperren gelten für\n zwei Gebiete. \"Sie dürfen sich nicht in diesen \nbetroffenen Gebieten aufhalten. Wenn Sie es doch tun, werden Sie \nverhaftet\", sagte Sheriff Robert Luna bei einer Pressekonferenz. \"Wir \ntun das, um die Strukturen und die Häuser zu schützen, die Menschen auf unsere \nAnordnung hin verlassen haben.\"\nDie Ausgangssperre \nsei bereits in der vergangenen Nacht in Kraft gewesen und gelte auch \nheute von 18 Uhr bis 6 Uhr (Ortszeit), sagte Luna. Angeordnet ist \nsie für Gebiete, die vom Palisades Fire und Eaton Fire betroffen \nsind.",
+   "original_summary": "Die Feuerwehr in Kalifornien hat nach langen und heftigen Waldbränden erste Erfolge erzielt, aber Meteorologen warnen vor weiteren Böen am Wochenende.\n\nUnd hier sind die nächsten vier Sätze:\n\nDie Rettungskräfte haben offenbar eine Pause bei den heftigen Winden genutzt, die die Brände angefacht hatten. Meteorologen warnen jedoch davor, dass starke Böen zurückkehren könnten und die Situation weiter verschlimmern. Die Bedingungen mit niedriger Luftfeuchtigkeit und trockener Vegetation sind immer noch kritisch, aber eine Abschwächung der Winde könnte den Feuerwehrleuten entscheidende Unterstützung aus der Luft bringen. Insgesamt haben fünf Brandherde im Bezirk Los Angeles auf einer Fläche von rund 13.750 Hektar gewütet, bei denen fast 10.000 Gebäude zerstört und mindestens zehn Menschen ums Leben gekommen sind.",
+   "modified_summary": "Die Feuerwehr in Kalifornien hat nach langen und heftigen Waldbränden erste Erfolge erzielt, aber Meteorologen warnen vor weiteren Böen am Wochenende.\n\nUnd hier sind die nächsten vier Sätze:\n\nDie Rettungskräfte haben offenbar eine Pause bei den heftigen Winden genutzt, die die Brände angefacht hatten. Meteorologen warnen deshalb davor, dass starke Böen zurückkehren könnten und die Situation weiter verschlimmern. Die Bedingungen mit niedriger Luftfeuchtigkeit und trockener Vegetation sind immer noch kritisch, aber eine Abschwächung der Winde könnte den Feuerwehrleuten entscheidende Unterstützung aus der Luft bringen. Insgesamt haben fünf Brandherde im Bezirk Los Angeles auf einer Fläche von rund 13.750 Hektar gewütet, bei denen fast 10.000 Gebäude zerstört und mindestens zehn Menschen ums Leben gekommen sind."
+  },
+  {
+   "sample_id": "s020",
+   "output_id": "inj-add_definition-medium-5847-gpt3.5-20261116-115943-dd89",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "dimension": "coverage",
+   "asked_severity": "medium",
+   "annotators": [
+    "Giuseppe",
+    "Malte"
+   ],
+   "item_id": "5847",
+   "title": "Chefs von Siemens und SAP fordern Umbau europäischer KI-Gesetze",
+   "article": "Die Chefs der deutschen Technologiekonzerne SAP und Siemens fordern eine grundlegende Überarbeitung der europäischen Gesetze zur künstlichen Intelligenz . In einem gemeinsamen Interview mit der Frankfurter Allgemeinen Zeitung plädieren Christian Klein von SAP und Roland Busch von Siemens für ein neues Rahmenwerk. Dieses solle Innovationen fördern, anstatt sie zu behindern.\nDie europäische KI-Verordnung (AI Act) sei einer der Gründe, \"warum wir hier nicht Vollgas geben können\", sagte Busch einem Vorabbericht zufolge. Die Regularien seien teilweise widersprüchlich und überschnitten sich mit bestehenden Gesetzen. Die im September dieses Jahres in Kraft tretende Datenverordnung (Data Act) bezeichnete Busch als \"toxisch für die Entwicklung digitaler Geschäftsmodelle\".\nEr habe einen Brandbrief von Industrievertretern an die EU-Kommission, der ein Moratorium der Regeln fordert, bewusst nicht unterzeichnet, sagte Busch, \"weil er mir nicht weit genug ging\". Er plädiert dafür, das Gesetz substanziell zu verändern, anstatt nur für eine Weile auszusetzen. Neue Datenregeln sollten dabei Vorrang vor Investitionen in \nRechenzentren haben. \"Wir sitzen in Europa auf einem Datenschatz, \nkriegen den aber noch nicht gehoben\", sagte Busch.\nSAP-Chef Klein warnte zudem davor, die Strategie der USA zu \nkopieren und primär in Infrastruktur zu investieren. Bislang sei kein \nKI-Projekt an fehlender Rechenkapazität gescheitert.\n\nUS-Konzerne kritisieren fehlende Leitlinien\n\nDas EU-Parlament hatte den AI Act, Europas Rechtsrahmen für künstliche Intelligenz, im Jahr 2024 verabschiedet. Er ordnet KI-Anwendungen in Risikoklassen ein, wonach Anbieter bestimmte Sicherheits- und Transparenzanforderungen erfüllen müssen. Nun geht es um die Umsetzung der Verordnung. Doch US-Konzerne wie Alphabet und Meta sowie die europäischen Unternehmen Mistral und ASML hatten zuletzt eine Aufschiebung gefordert und dies mit fehlenden Leitlinien begründet.\nDie EU-Kommission teilte zwar Anfang Juli mit, dass sich die Veröffentlichung eines entsprechenden Verhaltenskodex bis Ende 2025 verzögern könnte. Eine Verschiebung der Einführung des gesamten Gesetzes lehnte die Brüsseler Behörde jedoch ab. Eine Stellungnahme der EU-Kommission zu den Forderungen von Siemens und SAP lag zunächst nicht vor.",
+   "original_summary": "Die Chefs von SAP und Siemens fordern eine Überarbeitung der europäischen KI-Gesetze, um Innovationen zu fördern. Die KI-Verordnung wird als hinderlich kritisiert, da sie mit bestehenden Gesetzen kollidiert. Siemens plädiert für eine substanzielle Veränderung anstatt eines Moratoriums. US-Konzerne kritisieren fehlende Leitlinien im AI Act. Die EU-Kommission verzögert die Veröffentlichung eines Verhaltenskodex, lehnt jedoch eine Verschiebung des Gesetzes ab.",
+   "modified_summary": "Die Chefs von SAP und Siemens fordern eine Überarbeitung der europäischen KI-Gesetze, um Innovationen zu fördern. Die KI-Verordnung wird als hinderlich kritisiert, da sie mit bestehenden Gesetzen kollidiert. Siemens plädiert für eine substanzielle Veränderung anstatt eines Moratoriums. Ein Moratorium ist das zeitlich begrenzte Aussetzen von Gesetzen oder Regeln. US-Konzerne kritisieren fehlende Leitlinien im AI Act. Die EU-Kommission verzögert die Veröffentlichung eines Verhaltenskodex, lehnt jedoch eine Verschiebung des Gesetzes ab."
+  },
+  {
+   "sample_id": "s021",
+   "output_id": "inj-delete_sentence-high-1242-gpt3.5-C-DEL-20",
+   "file": "delete_sentence.jsonl",
+   "error_type": "delete_sentence",
+   "dimension": "coverage",
+   "asked_severity": "high",
+   "annotators": [
+    "Malte",
+    "Anton"
+   ],
+   "item_id": "1242",
+   "title": "SPD-Politiker werfen Olaf Scholz Blockade der Ukrainehilfen vor",
+   "article": "Mehrere SPD-Politiker haben Bundeskanzler Olaf Scholz' Weigerung kritisiert, noch vor der Bundestagswahl weitere Unterstützung für die Ukraine in Höhe von drei Milliarden Euro für Waffenlieferungen auf den Weg zu bringen. Kriege richteten sich nicht nach Wahlen, zitiert der Spiegel den SPD -Haushalts- und Verteidigungspolitiker Andreas Schwarz: \"Wenn es unter den demokratischen Kräften im Bundestag eine Mehrheit gibt für ein zusätzliches Hilfspaket für die Ukraine, sollten wir das noch vor der Bundestagswahl beschließen.\"\nSchwarz forderte einen Schulterschluss im Parlament auch mit CDU und CSU: \"Allerdings sollte sich dann auch die Union klar dazu bekennen, die überplanmäßige Ausgabe von drei Milliarden Euro mitzutragen\", sagte er. Schwarz ist im Haushaltsausschuss Berichterstatter für den Etat des Verteidigungsministeriums und das Sondervermögen Bundeswehr und gehört als stellvertretendes Mitglied dem Verteidigungsausschuss an.\nScholz lehnt Einsparungen an anderer Stelle für die Finanzierung weiterer Waffenlieferungen in die Ukraine ab.\nSchäfer: Nicht auf Zeit spielen\nDer SPD-Verteidigungspolitiker Kristian Klinck sagte dem Magazin, nur die Kombination aus Unterstützung der Ukraine und Diplomatie werde einen stabilen Waffenstillstand näherbringen. \"Ich rate dazu, das Hilfspaket auf den Weg zu bringen.\" Ob dies durch eine außerplanmäßige Ausgabe aus dem Bundeshaushalt geschehe oder durch die Nutzung des von den G7-Staaten zur Verfügung gestellten Kredits geschehe, \"sollte aufgrund rein sachlicher Erwägungen entschieden werden\".\nDer Grünenpolitiker Sebastian Schäfer forderte Scholz und den SPD-Fraktionsvorsitzenden Rolf Mützenich auf, ihre Blockadehaltung zu überdenken. \"In dieser Frage auf Zeit zu spielen, ist angesichts der Lage in der Ukraine schlicht verantwortungslos\", sagte Schäfer, der Mitglied im Haushaltsausschuss und stellvertretender Vorsitzender des Gremiums zum Sondervermögen für die Bundeswehr ist.\nVerteidigungsminister Boris Pistorius nahm seinen Parteifreund Scholz hingegen in Schutz. \"Ich sehe keinerlei Grund anzunehmen, dass der Bundeskanzler hier bremst\", sagte er in den ARD- Tagesthemen . Pistorius verwies darauf, dass es für 2025 noch keinen regulären Bundeshaushalt gebe und der Bund daher mit einer vorläufigen Haushaltsführung agiere. \"Es ist nicht trivial, das Geld aufzutreiben\", sagte er im heute-journal des ZDF. Zudem zeigte Pistorius sich zuversichtlich, dass zeitnah eine Lösung gefunden werde. Er hoffe darauf in den nächsten Tagen, sagte er.",
+   "original_summary": "Mehrere SPD-Politiker kritisieren Bundeskanzler Olaf Scholz' Weigerung, vor der Bundestagswahl weitere Unterstützung in Höhe von drei Milliarden Euro für Waffenlieferungen an die Ukraine zu leisten. Andreas Schwarz fordert eine Entscheidung im Parlament und einen Schulterschluss mit CDU und CSU. Kristian Klinck betont die Bedeutung von Unterstützung und Diplomatie für einen stabilen Waffenstillstand. Grünenpolitiker Sebastian Schäfer fordert Scholz auf, seine Blockadehaltung zu überdenken. Verteidigungsminister Boris Pistorius verteidigt Scholz und betont die Schwierigkeiten bei der Finanzierung, zeigt sich aber zuversichtlich, dass eine Lösung gefunden wird.",
+   "modified_summary": "Andreas Schwarz fordert eine Entscheidung im Parlament und einen Schulterschluss mit CDU und CSU. Kristian Klinck betont die Bedeutung von Unterstützung und Diplomatie für einen stabilen Waffenstillstand. Grünenpolitiker Sebastian Schäfer fordert Scholz auf, seine Blockadehaltung zu überdenken. Verteidigungsminister Boris Pistorius verteidigt Scholz und betont die Schwierigkeiten bei der Finanzierung, zeigt sich aber zuversichtlich, dass eine Lösung gefunden wird."
+  },
+  {
+   "sample_id": "s022",
+   "output_id": "inj-PredE-high-1438-gpt3.5-20261116-114858-9f3d",
+   "file": "PredE.jsonl",
+   "error_type": "PredE",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
+   "annotators": [
+    "Giuseppe",
+    "Anton"
+   ],
+   "item_id": "1438",
+   "title": "",
+   "article": "US-Präsident Donald Trump hat den Start eines Infrastrukturprojekts zur künstlichen Intelligenz (KI) namens Stargate bekannt gegeben, das Investitionen von \"mindestens 500 Milliarden Dollar\" (479,6 Milliarden Euro) in den USA nach sich ziehen soll. Das Geld werde in \"KI-Infrastruktur in den USA investiert\", sagte Trump. Auf diese Weise würden mehr als 100.000 Arbeitsplätze geschaffen.\nDer Republikaner machte die Ankündigung im Beisein der Chefs des KI-Entwicklers OpenAI, des japanischen Softbank-Konzerns sowie des US-Software- und Hardware-Herstellers Oracle. Die drei Unternehmen sollen das Stargate-Projekt tragen. \"Dieses monumentale Unterfangen ist eine überwältigende Vertrauenserklärung in Amerikas Potenzial unter einem neuen Präsidenten\", sagte Trump.\nStargate werde die Infrastruktur aufbauen, darunter \"kolossale Datenzentren\", um die Fortschritte bei der Weiterentwicklung von KI-Anwendungen voranzutreiben, sagte der Präsident. Medienberichten zufolge wollen die drei Unternehmen Mittel in das Projekt einbringen, das mit einem ersten Rechenzentrum in Texas beginnen solle.\n\nUSA haben keine KI-Regulierung mehr\n\nTrump hatte zuvor ein Dekret seines Vorgängers Joe Biden zur Regulierung von künstlicher Intelligenz aufgehoben. Die USA, in denen die bedeutendsten KI-Entwickler tätig sind, haben somit keine gültigen staatlichen Richtlinien zur Entwicklung von KI-Modellen mehr.\nDas US-Regelwerk sah vor, dass große KI-Entwickler wie OpenAI und Google ihre Sicherheitsbewertungen und weitere zentrale Informationen an Bundesbehörden weitergeben. Es beruhte jedoch weitgehend auf der freiwilligen Mitarbeit der Unternehmen. Große Technologiekonzerne unterstützten die Regelung, kleinere KI-Firmen – von denen viele Trump unterstützten – waren dagegen.",
+   "original_summary": "US-Präsident Donald Trump kündigte das Stargate-Projekt an, ein Infrastrukturprojekt zur künstlichen Intelligenz, das Investitionen von mindestens 500 Milliarden Dollar in den USA anziehen soll. Mehr als 100.000 Arbeitsplätze sollen geschaffen werden, während OpenAI, Softbank und Oracle das Projekt tragen. Trump hob zudem ein Dekret seines Vorgängers Joe Biden zur Regulierung von KI auf, wodurch die USA nun keine staatlichen Richtlinien zur Entwicklung von KI-Modellen mehr haben.",
+   "modified_summary": "US-Präsident Donald Trump kündigte das Stargate-Projekt an, ein Infrastrukturprojekt zur künstlichen Intelligenz, das Investitionen von mindestens 500 Milliarden Dollar in den USA anziehen soll. Mehr als 100.000 Arbeitsplätze sollen abgebaut werden, während OpenAI, Softbank und Oracle das Projekt tragen. Trump hob zudem ein Dekret seines Vorgängers Joe Biden zur Regulierung von KI auf, wodurch die USA nun keine staatlichen Richtlinien zur Entwicklung von KI-Modellen mehr haben."
+  },
+  {
+   "sample_id": "s023",
+   "output_id": "inj-CorefE-medium-1008-mistral-nemo-20261118-115728-3327",
+   "file": "add_corefE.jsonl",
+   "error_type": "CorefE",
+   "dimension": "faithfulness",
+   "asked_severity": "medium",
+   "annotators": [
+    "Giuseppe",
+    "Mick"
+   ],
+   "item_id": "1008",
+   "title": "CDU plant Steuerentlastungen mit Wirtschaftsprogramm \"Agenda 2030\"",
+   "article": "Die CDU will mit einem Wirtschaftsprogramm namens \"Agenda 2030\" in die Bundestagswahl ziehen. Darin verspricht die Partei nach übereinstimmenden Berichten Firmen und Bürgern Steuererleichterungen\nund in der Folge höhere Wachstumsquoten.\n\"Mit dieser Agenda 2030 setzen wir uns für\nDeutschland ein wirtschaftspolitisches Zwei-Prozent-Ziel: Wir wollen wieder\nWachstumsraten von mindestens zwei Prozent erreichen\", heißt es in dem\nzwölfseitigen Entwurf, der auf der Klausurtagung des CDU-Bundesvorstands in\nHamburg beschlossen werden soll. Die Nachrichtenagenturen dpa und Reuters sowie das Portal table.news zitierten aus dem Papier.\nDie Partei schlägt eine große Steuerreform in vier\nJahresschritten vor, die Anfang 2026 starten soll. Zudem soll die Einkommensteuerbelastung sinken, der Spitzensteuersatz erst ab 80.000 Euro greifen, der\nGrundfreibetrag jährlich steigen.\n\nKeine täglichen Höchstarbeitszeiten mehr\n\nDie Partei will das Arbeitszeitgesetz flexibler gestalten. Statt einer täglichen soll es nur noch eine wöchentliche Höchstarbeitszeit geben. Der Solidaritätszuschlag\nsoll komplett abgeschafft werden, das Bürgergeld in eine \"Neue Grundsicherung\"\nüberführt werden, diese Forderung findet sich auch im gemeinsamen Wahlprogramm\nvon CDU und CSU.\nÜberstundenzuschläge sollen bei Vollzeitbeschäftigung\nsteuerfrei gestellt werden. Für Rentner, die freiwillig weiterarbeiten, sollen\nVerdienste bis 2.000 Euro im Monat steuerfrei bleiben. Zur Anwerbung ausländischer Fachkräfte soll eine digitale Bundesagentur für\nFachkräfteeinwanderung geschaffen werden.\n\nPartei will Verbrennerverbot rückgängig machen\n\nBei den Strompreisen fordert die CDU eine Entlastung von mindestens fünf Cent je\nKilowattstunde. Stromsteuer und Netzentgelte sollen sinken. Um die\nAutomobilindustrie zu stärken, will die Partei das Verbrenneraus rückgängig\nmachen . Die CDU will Gründer in der Startphase weitgehend von Bürokratie\nentlasten sowie Digitalisierung und KI-Anwendungen vorantreiben. Forschung und\nEntwicklung sollen vorangetrieben werden, als Ziel nennt die CDU jährlich 3,5\nProzent des Bruttoinlandsprodukts bis 2030.\nFesthalten will die Partei zudem an der Schuldenbremse. Laut dem Papier will die CDU alle Bundesausgaben und die unter der Ampelkoalition gestiegenen Subventionen prüfen. Auf dem Parteitag am 3. Februar will die CDU Maßnahmen\nbeschließen, die im Fall einer Regierungsverantwortung unmittelbar umgesetzt werden sollen.\nDer Name \"Agenda 2030\" erinnert an Reformpläne des früheren SPD-Bundeskanzlers Gerhard Schröder für den Sozial- und Arbeitsmarkt. Mit seiner Agenda 2010 wurden später vor allem die umstrittenen Hartz-IV-Reformen verbunden.\nTransparenzhinweis: In einer früheren Version der Meldung stand im Teaser, die CDU wolle den Spitzensteuersatz anheben. Sie will ihn jedoch erst bei höheren Einkommen greifen lassen. Wir haben das korrigiert und bitten den Fehler zu entschuldigen.",
+   "original_summary": "Die CDU präsentiert mit \"Agenda 2030\" ein Wirtschaftsprogramm für die Bundestagswahl, das Firmen und Bürgern Steuererleichterungen verspricht, um Wachstumsquoten zu erhöhen; das Programm sieht eine große Steuerreform in vier Schritten vor, die Einkommensteuerbelastung soll sinken und der Spitzensteuersatz erst ab 80.000 Euro greifen; zudem will die Partei das Arbeitszeitgesetz flexibilisieren, den Solidaritätszuschlag abschaffen und das Bürgergeld in eine \"Neue Grundsicherung\" überführen.",
+   "modified_summary": "Die CDU präsentiert mit \"Agenda 2030\" ein Wirtschaftsprogramm für die Bundestagswahl, die Firmen und Bürgern Steuererleichterungen verspricht, um Wachstumsquoten zu erhöhen; das Programm sieht eine große Steuerreform in vier Schritten vor, die Einkommensteuerbelastung soll sinken und der Spitzensteuersatz erst ab 80.000 Euro greifen; zudem will die Partei das Arbeitszeitgesetz flexibilisieren, den Solidaritätszuschlag abschaffen und das Bürgergeld in eine \"Neue Grundsicherung\" überführen."
+  },
+  {
+   "sample_id": "s024",
+   "output_id": "inj-EntE-medium-1411-gpt3.5-20261117-125937-cd75",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "dimension": "faithfulness",
+   "asked_severity": "medium",
+   "annotators": [
+    "Giuseppe",
+    "Ivan"
+   ],
+   "item_id": "1411",
+   "title": "Anführer ultrarechter Gruppen aus Gefängnissen entlassen",
+   "article": "Donald Trump hat seinen Amtseid als 47. Präsident der Vereinigten Staaten abgelegt. Es ist bereits seine zweite Amtszeit, er war auch von 2017 bis 2021 US-Präsident.\nDie Zeremonie fand wegen frostiger Temperaturen im Kapitol statt. Den Sitz des US-Kongresses hatten wütende Trump-Anhänger vor vier Jahren gestürmt.\nKurz nach seinem Amtsantritt unterzeichnete Trump zahlreiche Dekrete , die unter anderem eine Begnadigung der Kapitolstürmer, eine Abschaffung des Birthrights und einen Austritt aus dem Pariser Klimaabkommen vorsehen.\nAlle Artikel zum Thema finden Sie auf unserer Themenseite zum neuen US-Präsidenten .\nNeben eigenen Recherchen verwenden wir auch Material der Nachrichtenagenturen dpa, AP, AFP, KNA und Reuters.",
+   "original_summary": "Donald Trump hat seine zweite Amtszeit als 47. Präsident der Vereinigten Staaten angetreten, nachdem er zuvor von 2017 bis 2021 im Amt war. Die Amtseinführung fand im Kapitol statt, wo vor vier Jahren wütende Trump-Anhänger eingedrungen waren. Trump unterzeichnete kurz nach Amtsantritt Dekrete, die unter anderem eine Begnadigung der Kapitolstürmer, die Abschaffung des Birthrights und den Austritt aus dem Pariser Klimaabkommen vorsehen. Weitere Informationen zum neuen US-Präsidenten finden sich auf unserer Themenseite.",
+   "modified_summary": "Donald Trump hat seine zweite Amtszeit als 47. Präsident der Vereinigten Staaten angetreten, nachdem er zuvor von 2017 bis 2021 im Amt war. Die Amtseinführung fand im Kapitol statt, wo vor vier Jahren wütende Biden-Anhänger eingedrungen waren. Trump unterzeichnete kurz nach Amtsantritt Dekrete, die unter anderem eine Begnadigung der Kapitolstürmer, die Abschaffung des Birthrights und den Austritt aus dem Pariser Klimaabkommen vorsehen. Weitere Informationen zum neuen US-Präsidenten finden sich auf unserer Themenseite."
+  },
+  {
+   "sample_id": "s025",
+   "output_id": "inj-OutE-medium-1236-mistral-nemo-20261117-200906-6da3",
+   "file": "add_outE.jsonl",
+   "error_type": "OutE",
+   "dimension": "faithfulness",
+   "asked_severity": "medium",
+   "annotators": [
+    "Mick",
+    "Ivan"
+   ],
+   "item_id": "1236",
+   "title": "",
+   "article": "Südkoreas Polizei und Mitarbeiter der Antikorruptionsbehörde (CIO) haben den suspendierten Präsidenten Yoon Suk Yeol festgenommen. Yoon sei am \nMittwochmorgen aus seinem Wohnsitz abgeführt worden, um ihn zur Staatsanwaltschaft zu \nbringen, berichtete Südkoreas amtliche Nachrichtenagentur Yonhap. Damit ist Yoon das erste amtierende Staatsoberhaupt des Landes, das in Haft genommen wurde.\nYoon soll wegen der kurzzeitigen Verhängung des Kriegsrechts Anfang Dezember vernommen werden, hatte sich bisher aber geweigert, zur Vernehmung zu erscheinen. Ein erster Versuch, einen Haftbefehl umzusetzen, war Anfang Januar am Widerstand des militärischen Sicherheitsdienstes gescheitert . An der nun erfolgreichen Festnahme waren Tausende Einsatzkräfte beteiligt.\n\nMit Leitern in Yoons Residenz\n\nEinigen Polizisten gelang es Beobachtern zufolge, mithilfe von Leitern in die Residenz einzudringen. Zunächst kam es zu gewalttätigen Auseinandersetzungen, wie die südkoreanische Nachrichtenagentur Yonhap berichtete.\nYoons Anwälte hatten bekannt gegeben, dieser sei bereit, bei der Behörde zu erscheinen. \"Präsident Yoon hat entschieden, \nheute persönlich bei der Korruptionsermittlungsbehörde zu erscheinen\", schrieb Yoons Anwalt Seok Dong Hyeon auf Facebook. Yoon werde überdies später \nam Tag eine Rede halten, schrieb Seok weiter.\nGegen Yoon Suk Yeol wird wegen Machtmissbrauchs und Aufruhrs ermittelt, nachdem er am 3. Dezember im Zuge eines Haushaltsstreits mit der Opposition kurzzeitig das Kriegsrecht ausgerufen hatte. Das Parlament stimmte daraufhin für seine Amtsenthebung. In den kommenden Wochen prüft das Verfassungsgericht nun diese Entscheidung.\nYoon, der sich wochenlang in seiner Residenz verschanzt hatte, verteidigte die Ausrufung des Kriegsrechts als legitime Maßnahme, nachdem die Opposition in einem Haushaltsstreit Yoons politische Pläne im Parlament verhindert hatte. Er werde gegen die Versuche, ihn aus dem Amt zu drängen, \"bis zum Ende kämpfen\", sagte Yoon. Als Reaktion auf die Ausrufung des Kriegsrechts demonstrierten Zehntausende Menschen gegen Yoon und für den Erhalt der Demokratie in Südkorea, aber auch Unterstützer Yoons organisierten Proteste.",
+   "original_summary": "Südkoreas Polizei hat den suspendierten Präsidenten Yoon Suk Yeol festgenommen, der sich weigerte, zu einer Vernehmung im Zusammenhang mit der kurzzeitigen Verhängung des Kriegsrechts Anfang Dezember zu erscheinen. Tausende Einsatzkräfte waren an der erfolgreichen Festnahme beteiligt, nachdem ein erster Versuch Anfang Januar am Widerstand des militärischen Sicherheitsdienstes gescheitert war. Die Polizei drang unter Einsatz von Leitern in die Residenz des Präsidenten ein und es kam zu gewalttätigen Auseinandersetzungen. Yoon Suk Yeol soll wegen Machtmissbrauchs und Aufruhrs angeklagt werden.",
+   "modified_summary": "Südkoreas Polizei hat den suspendierten Präsidenten Yoon Suk Yeol festgenommen, der sich weigerte, zu einer Vernehmung im Zusammenhang mit der kurzzeitigen Verhängung des Kriegsrechts Anfang Dezember zu erscheinen. Tausende Einsatzkräfte waren an der erfolgreichen Festnahme beteiligt, nachdem ein erster Versuch Anfang Januar am Widerstand des militärischen Sicherheitsdienstes gescheitert war. Der Haftbefehl war am 5. Januar erlassen worden. Die Polizei drang unter Einsatz von Leitern in die Residenz des Präsidenten ein und es kam zu gewalttätigen Auseinandersetzungen. Yoon Suk Yeol soll wegen Machtmissbrauchs und Aufruhrs angeklagt werden."
+  },
+  {
+   "sample_id": "s026",
+   "output_id": "inj-EntE-low-1082-mistral-nemo-20261117-125426-743c",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "dimension": "faithfulness",
+   "asked_severity": "low",
+   "annotators": [
+    "Anton",
+    "Mick"
+   ],
+   "item_id": "1082",
+   "title": "",
+   "article": "Bei den verheerenden Waldbränden in Kalifornien bleibt die\nLage trotz nachlassender Winde angespannt. Behörden melden einen weiteren Toten,\ndamit sind bisher mindestens elf Menschen durch die Feuerkatastrophe umgekommen.\nSoldaten stehen bereit, um im Kampf gegen die Flammen zu helfen. Gleichzeitig\nstellt sich die Frage, wer für die Schäden aufkommt, die das Feuer hinterlässt.\nAm Freitagmittag (Ortszeit) überbrachte US-Präsident Joe\nBiden aber auch positive Nachrichten: Es gebe Fortschritte bei den Löscharbeiten. Kaliforniens\nGouverneur Gavin Newsom äußerte die Hoffnung, dass die Einsatzkräfte im\nTagesverlauf weitere Erfolge erzielen.\nGleichzeitig warnte die Chefin des US-Katastrophenschutzes\nFema, Deanne Criswell, dass die Gefahr keineswegs gebannt sei: \"Die Situation\nist weiterhin sehr gefährlich.\" Zwar sei der Wind aktuell schwächer , doch werde\nin den kommenden Tagen wieder mit stärkeren Böen gerechnet.\n\nFast 10.000 Gebäude zerstört\n\nIm Großraum Los Angeles brennen weiterhin mehrere Feuer, die\nbislang kaum eingedämmt sind. Insgesamt hatten fünf Brandherde auf einer Fläche von rund 13.750 Hektar (137,5 Quadratkilometer) gewütet. Das ist fast so groß wie die Stadt Kaiserslautern. Die Flammen haben fast 10.000 Gebäude zerstört, rund\n180.000 Menschen mussten fliehen.\nTausende Einsatzkräfte kämpfen gegen die Flammen. Laut\nVerteidigungsministerium stehen auch 500 in Kalifornien stationierte Soldaten\nfür Einsätze bereit. Sie könnten auf Anforderung der kalifornischen Behörden\nunter anderem bei Such- und Rettungseinsätzen oder beim Räumen von Straßen\nhelfen, sagte eine Sprecherin. Zudem seien zehn Helikopter sowie\nvier spezielle Brandbekämpfungssysteme verfügbar, die in Militärflugzeuge\neingebaut werden können und teilweise am Wochenende zum Einsatz kommen sollen.\n\nSorgen um Versicherungsschutz\n\nNeben der akuten Katastrophe ist auch die Rolle von\nVersicherern in den Fokus gerückt: Die Brände könnten laut Analysten zu den\nkostspieligsten in der Geschichte der USA werden. Kaliforniens\nVersicherungsbeauftragter Ricardo Lara forderte eine schnelle Auszahlung von\nVersicherungsleistungen für die Betroffenen. Zudem seien eine Modernisierung\ndes Versicherungssystems und eine bessere Katastrophenvorsorge dringend\nnotwendig.\nViele Häuser in den USA bestehen aus Holz, was die Ausbreitung von\nBränden begünstigt. Wegen steigender Risiken durch Fluten, Stürme und Brände durch den Klimawandel wird es zudem immer schwieriger, tragfähige Versicherungspolicen anzubieten.",
+   "original_summary": "Die verheerenden Waldbrände in Kalifornien fordern weitere Opfer und zerstören tausende Gebäude, während Einsatzkräfte und Soldaten im Kampf gegen die Flammen Unterstützung leisten.",
+   "modified_summary": "Die verheerenden Waldbrände in Kalifornien fordern weitere Opfer und zerstören tausende Gebäude, während Einsatzkräfte und Deutsche Soldaten im Kampf gegen die Flammen Unterstützung leisten."
+  },
+  {
+   "sample_id": "s027",
+   "output_id": "inj-add_definition-low-1000-gpt3.5-20261116-115730-1259",
+   "file": "add_definition.jsonl",
+   "error_type": "add_definition",
+   "dimension": "coverage",
+   "asked_severity": "low",
+   "annotators": [
+    "Malte",
+    "Anton"
+   ],
+   "item_id": "1000",
+   "title": "Podcast \"Alles gesagt?\": Stefanie Stahl, was will das Kind in uns?",
+   "article": "Die bekannteste Psychologin Deutschlands, die Bestsellerautorin und Podcasterin Stefanie Stahl ist zu Gast bei Alles gesagt?, dem unendlichen Podcast.\nStefanie Stahl spricht über Neurosen und Einsamkeit, Selbstreflexion und Rechtspopulismus, Hausgeister und Psychotainment, über ihre, wie sie sagt, \"unspießigen Eltern\" – und über ihre glückliche Kindheit, die schlagartig vorbei war, als das Haus ihrer Eltern abbrannte.\nStefanie Stahl wurde 1963 in Hamburg geboren, sie heißt mit zweitem Vornamen Desiree, \"weil ich ein Wunschkind war\". Stahl lebt seit ihrem Studium in den 1980er-Jahren in Trier. Seit 1994 führt sie dort eine Praxis für Psychotherapie. Ihr Buch Das Kind in dir muss Heimat finden erschien 2015 und wurde zu einem der erfolgreichsten Sachbücher der vergangenen zehn Jahre, es hat sich bis mehr als 3,8 Millionen mal verkauft und wurde in 36 Ländern veröffentlicht. Seit 2021 ist sie auch Gastgeberin des Podcast Stahl aber herzlich .\nIm Podcast erzählt Stefanie Stahl von ihren Erfahrungen mit Patientinnen und Patienten, den psychologischen Folgen der Pandemie, gestressten Kindern und jungen Eltern, von ihrer Analyse der Gesellschaft in Deutschland, und sie beantwortet die Frage, ob wir in unserem Leben immer dieselbe Person sind. Ihre schwierigste Zielgruppe? \"Männer.\" Nach 4 Stunden und 40 Minuten beendet Stefanie Stahl das Gespräch, denn das kann bei Alles gesagt? nur die Gästin.\nProduktion: Pool Artists Redaktion: Hannah Schraven, Vincent Mank, Sophie Hübner, Sophia Hubel Gästemanagement: Anna Vahldick\nAlle Folgen unseres Podcasts finden Sie hier . Fragen, Kritik, Anregungen? Schreiben Sie eine Mail an allesgesagt@zeit.de .",
+   "original_summary": "Die bekannte Psychologin Stefanie Stahl ist zu Gast bei Alles gesagt?, dem unendlichen Podcast, wo sie über Neurosen, Einsamkeit, Selbstreflexion, Rechtspopulismus und mehr spricht. Stahl, geboren 1963 in Hamburg, ist Autorin des Bestsellers \"Das Kind in dir muss Heimat finden\" und Gastgeberin des Podcasts \"Stahl aber herzlich\". In der 4-stündigen Folge teilt sie ihre Erfahrungen mit Patienten, analysiert die Gesellschaft in Deutschland und betont, dass Männer ihre schwierigste Zielgruppe sind.",
+   "modified_summary": "Die bekannte Psychologin Stefanie Stahl ist zu Gast bei Alles gesagt?, dem unendlichen Podcast, wo sie über Neurosen, Einsamkeit, Selbstreflexion, Rechtspopulismus und mehr spricht. Ein Podcast ist ein digitales Audioformat. Stahl, geboren 1963 in Hamburg, ist Autorin des Bestsellers \"Das Kind in dir muss Heimat finden\" und Gastgeberin des Podcasts \"Stahl aber herzlich\". In der 4-stündigen Folge teilt sie ihre Erfahrungen mit Patienten, analysiert die Gesellschaft in Deutschland und betont, dass Männer ihre schwierigste Zielgruppe sind."
+  },
+  {
+   "sample_id": "s028",
+   "output_id": "inj-EntE-high-1160-gpt3.5-20261117-130529-15f8",
+   "file": "EntE.jsonl",
+   "error_type": "EntE",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
+   "annotators": [
+    "Giuseppe",
+    "Ivan"
+   ],
+   "item_id": "1160",
+   "title": "Papst ernennt erstmals eine Frau zur Leiterin einer Vatikanbehörde",
+   "article": "Erstmals in der Geschichte des Vatikans ist eine Frau zur Leiterin einer großen Vatikanbehörde ernannt worden. Papst Franziskus beauftragte die italienische Ordensschwester Simona Brambilla mit der Leitung des Dikasteriums für die Institute des gottgeweihten Lebens und Gesellschaften des apostolischen Lebens. Das Amt lässt sich mit der Verantwortung einer Ministerin vergleichen.\nDie 59-Jährige ist laut Angaben des Presseamts die erste Präfektin des katholischen Kirchenstaates. In ihrem Dikasterium hatte sie zuvor bereits als Sekretärin die zweithöchste Position inne, seit 2019 gehörte sie der Behörde an. Das Dikasterium strukturiert, fördert und verwaltet die Institutionen in der katholischen Kirche, die sich dem \"geweihten\" und dem apostolischen Leben innerhalb der Gemeinschaft widmen.\n\nMissionarin, Krankenschwester und Doktorin der Psychologie\n\nBrambilla ist Teil der Consolata-Missionsschwestern und war früher als Krankenschwester und Missionarin in dem westafrikanischen Staat Mosambik tätig. Zudem hat sie einen Doktortitel in Psychologie. Von 2011 bis Mai 2023 war sie Generalsuperiorin ihrer Ordensgemeinschaft.\nDie Dikasterien im Vatikan sind mit den Ministerien in einer Regierung vergleichbar. Sie werden nicht von einem Minister, sondern von einem Präfekten geleitet. Der zweite Rang, der in einem Ministerium von einem Staatssekretär bekleidet wird, heißt im Vatikan Sekretär. In seiner Arbeit wird dieser von Untersekretären unterstützt.\nIn der Katholischen Kirche gibt es immer wieder Diskussionen darüber, Frauen mehr an Kirchenämtern zu beteiligen, insbesondere über die Weihe von Frauen zu Diakoninnen oder später einmal auch zu Priesterinnen. Dazu brachte auch die jüngste Weltsynode unter Leitung des Papstes keinen Durchbruch.\n\nKurienreform 2022 öffnete Spitzenämter für Frauen\n\nFranziskus vergab in seinem mittlerweile zwölf Jahre andauernden Pontifikat bisher zweimal hochrangige Ämter an Frauen. 2016 ernannte er die italienische Kunsthistorikerin Barbara Jatta zur Direktorin der Vatikanischen Museen, einer der wichtigsten Einnahmequellen des Kirchenstaats. 2022 wurde die italienische Ordensschwester Raffaella Petrini im Vatikan Generalsekretärin – ein Amt, das üblicherweise ein Bischof innehatte.\nBis 2022 war es nur Bischöfen – und somit nur Männern – möglich, die Leitung einer Vatikanbehörde zu übernehmen. Mit seiner Kurienreform vor zwei Jahren öffnete der Papst diese Ämter dann auch für Katholikinnen und Katholiken ohne Bischofstitel. Die Katholische Kirche zählt weltweit rund 1,4 Milliarden Mitglieder.",
+   "original_summary": "Erstmals in der Geschichte des Vatikans wurde eine Frau, die italienische Ordensschwester Simona Brambilla, zur Leiterin einer großen Vatikanbehörde ernannt. Papst Franziskus beauftragte sie mit der Leitung des Dikasteriums für die Institute des gottgeweihten Lebens und Gesellschaften des apostolischen Lebens, was mit der Verantwortung einer Ministerin vergleichbar ist. Brambilla, eine Missionarin, Krankenschwester und Doktorin der Psychologie, ist die erste Präfektin des katholischen Kirchenstaates. Diese Ernennung ist Teil von Franziskus' Bemühungen, Frauen stärker in Kirchenämter einzubeziehen, und folgt auf die Öffnung von Spitzenämtern für Frauen im Vatikan im Jahr 2022.",
+   "modified_summary": "Erstmals in der Geschichte des Vatikans wurde eine Frau, die italienische Ordensschwester Simona Brambilla, zur Leiterin einer großen Vatikanbehörde ernannt. Papst Franziskus beauftragte sie mit der Leitung des Dikasteriums für die Kommunikation, was mit der Verantwortung einer Ministerin vergleichbar ist. Brambilla, eine Missionarin, Krankenschwester und Doktorin der Psychologie, ist die erste Präfektin des katholischen Kirchenstaates. Diese Ernennung ist Teil von Franziskus' Bemühungen, Frauen stärker in Kirchenämter einzubeziehen, und folgt auf die Öffnung von Spitzenämtern für Frauen im Vatikan im Jahr 2022."
+  },
+  {
+   "sample_id": "s029",
    "output_id": "inj-OutE-high-109-mistral-nemo-20261117-201354-5be8",
    "file": "add_outE.jsonl",
    "error_type": "OutE",
-   "group": "D",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
    "annotators": [
     "Malte",
-    "Mick"
+    "Ivan"
    ],
-   "adjudicator": "Anton"
+   "item_id": "109",
+   "title": "",
+   "article": "FDP-Generalsekretär Bijan Djir-Sarai hat in Folge des Skandals um den Austritt der FDP aus der Ampelkoalition sein Amt niedergelegt. Er habe von dem am Donnerstag veröffentlichten Strategiepapier \"keine Kenntnis\" gehabt und die Öffentlichkeit infolgedessen \"unwissentlich falsch informiert\", sagte er in einer kurzen Stellungnahme in der FDP-Parteizentrale in Berlin. Für einen solchen Vorgang der der Generalsekretär verantwortlich. Um Schaden von seiner Partei und seiner Glaubwürdigkeit abzuwenden, habe er die Parteiführung daher über seinen Rücktritt informiert.\nDjir-Sarai zieht damit letztlich die Konsequenzen aus den \"D-Day\"-Enthüllungen, wonach die Partei gezielt und länger vorbereitet den Austritt aus der Ampelkoalition geplant hatte. Nachdem eine Recherche der ZEIT die Planung des Regierungsbruches durch die FDP öffentlich gemacht hatte, hatte die FDP am Donnerstag selbst Dateien zu besagter Planung veröffentlicht. Darin ist von einem \"D-Day\" die Rede, an dem die FDP aus der Koalition austritt. In der Folge wird von einer \"Feldschlacht\" gesprochen, um den Schritt offensiv zu kommunizieren.\nDie FDP hatte nach der ZEIT-Veröffentlichung versucht, die Enthüllungen herunterzuspielen, die Berichte aber grundsätzlich nicht dementiert. Djir-Sarai hatte allerdings in einem TV-Interview dementiert, dass in dem Zusammenhang der Begriff \"D-Day\" verwendet wurde, den die Alliierten im Zweiten Weltkrieg für den Tag der Landung in der Normandie verwendet hatten. Kritiker hatten der FDP daraufhin vorgeworfen, Olaf Scholz indirekt mit Adolf Hitler verglichen zu haben. Auch andere Liberale hatten das Vorgehen der Partei zunächst verteidigt.\nNach den Veröffentlichungen von Donnerstag war allerdings auch aus der Partei Kritik an dem Vorgehen gekommen. Die Vorsitzende der Jungen Liberalen hatte Djir-Sarai daraufhin zum Rücktritt aufgefordert. \"Als Generalsekretär trägt Bijan Djir-Sarai die politische Verantwortung für die Inhalte und die Ausrichtung der Partei. Um weiteren Schaden von der Partei abzuwenden, habe ich Bijan Djir-Sarai als JuLi-Bundesvorsitzende dazu aufgefordert, von seinem Amt zurückzutreten\", hatte die Vorsitzende der Jungen Liberalen, Franziska Brandmann, auf X geschrieben.\nKnapp drei Monate vor der Bundestagswahl steht die FDP somit ohne Generalsekretär da, der üblicherweise für die Organisation des Wahlkampfs zuständig ist. Als möglicher Nachfolger wird der ehemalige Bundesjustizminister Marco Buschmann gehandelt. Djir-Sarai hatte das Amt im April 2022 offiziell von Volker Wissing übernommen, der in der Ampelkoalition Verkehrsminister geworden war. Seit Amtsübernahme der Ampel hatte Djir-Sarai das Amt bereits kommissarisch übernommen.\nDieser Artikel wird weiter aktualisiert.",
+   "original_summary": "FDP-Generalsekretär Bijan Djir-Sarai tritt nach Skandal um Ampelkoalitions-Austritt zurück; er habe von Strategiepapier keine Kenntnis gehabt und die Öffentlichkeit unwissentlich falsch informiert.",
+   "modified_summary": "FDP-Generalsekretär Bijan Djir-Sarai tritt nach Skandal um Ampelkoalitions-Austritt mit sofortiger Wirkung zurück; er habe von Strategiepapier keine Kenntnis gehabt und die Öffentlichkeit unwissentlich falsch informiert."
+  },
+  {
+   "sample_id": "s030",
+   "output_id": "inj-CircE-high-1160-gpt3.5-20261117-131724-80c6",
+   "file": "CircE.jsonl",
+   "error_type": "CircE",
+   "dimension": "faithfulness",
+   "asked_severity": "high",
+   "annotators": [
+    "Mick",
+    "Ivan"
+   ],
+   "item_id": "1160",
+   "title": "Papst ernennt erstmals eine Frau zur Leiterin einer Vatikanbehörde",
+   "article": "Erstmals in der Geschichte des Vatikans ist eine Frau zur Leiterin einer großen Vatikanbehörde ernannt worden. Papst Franziskus beauftragte die italienische Ordensschwester Simona Brambilla mit der Leitung des Dikasteriums für die Institute des gottgeweihten Lebens und Gesellschaften des apostolischen Lebens. Das Amt lässt sich mit der Verantwortung einer Ministerin vergleichen.\nDie 59-Jährige ist laut Angaben des Presseamts die erste Präfektin des katholischen Kirchenstaates. In ihrem Dikasterium hatte sie zuvor bereits als Sekretärin die zweithöchste Position inne, seit 2019 gehörte sie der Behörde an. Das Dikasterium strukturiert, fördert und verwaltet die Institutionen in der katholischen Kirche, die sich dem \"geweihten\" und dem apostolischen Leben innerhalb der Gemeinschaft widmen.\n\nMissionarin, Krankenschwester und Doktorin der Psychologie\n\nBrambilla ist Teil der Consolata-Missionsschwestern und war früher als Krankenschwester und Missionarin in dem westafrikanischen Staat Mosambik tätig. Zudem hat sie einen Doktortitel in Psychologie. Von 2011 bis Mai 2023 war sie Generalsuperiorin ihrer Ordensgemeinschaft.\nDie Dikasterien im Vatikan sind mit den Ministerien in einer Regierung vergleichbar. Sie werden nicht von einem Minister, sondern von einem Präfekten geleitet. Der zweite Rang, der in einem Ministerium von einem Staatssekretär bekleidet wird, heißt im Vatikan Sekretär. In seiner Arbeit wird dieser von Untersekretären unterstützt.\nIn der Katholischen Kirche gibt es immer wieder Diskussionen darüber, Frauen mehr an Kirchenämtern zu beteiligen, insbesondere über die Weihe von Frauen zu Diakoninnen oder später einmal auch zu Priesterinnen. Dazu brachte auch die jüngste Weltsynode unter Leitung des Papstes keinen Durchbruch.\n\nKurienreform 2022 öffnete Spitzenämter für Frauen\n\nFranziskus vergab in seinem mittlerweile zwölf Jahre andauernden Pontifikat bisher zweimal hochrangige Ämter an Frauen. 2016 ernannte er die italienische Kunsthistorikerin Barbara Jatta zur Direktorin der Vatikanischen Museen, einer der wichtigsten Einnahmequellen des Kirchenstaats. 2022 wurde die italienische Ordensschwester Raffaella Petrini im Vatikan Generalsekretärin – ein Amt, das üblicherweise ein Bischof innehatte.\nBis 2022 war es nur Bischöfen – und somit nur Männern – möglich, die Leitung einer Vatikanbehörde zu übernehmen. Mit seiner Kurienreform vor zwei Jahren öffnete der Papst diese Ämter dann auch für Katholikinnen und Katholiken ohne Bischofstitel. Die Katholische Kirche zählt weltweit rund 1,4 Milliarden Mitglieder.",
+   "original_summary": "Erstmals in der Geschichte des Vatikans wurde eine Frau, die italienische Ordensschwester Simona Brambilla, zur Leiterin einer großen Vatikanbehörde ernannt. Papst Franziskus beauftragte sie mit der Leitung des Dikasteriums für die Institute des gottgeweihten Lebens und Gesellschaften des apostolischen Lebens, was mit der Verantwortung einer Ministerin vergleichbar ist. Brambilla, eine Missionarin, Krankenschwester und Doktorin der Psychologie, ist die erste Präfektin des katholischen Kirchenstaates. Diese Ernennung ist Teil von Franziskus' Bemühungen, Frauen stärker in Kirchenämter einzubeziehen, und folgt auf die Öffnung von Spitzenämtern für Frauen im Vatikan im Jahr 2022.",
+   "modified_summary": "Erstmals in der Geschichte des Vatikans wurde eine Frau, die italienische Ordensschwester Simona Brambilla, zur Leiterin einer großen Vatikanbehörde ernannt. Papst Franziskus beauftragte sie mit der Leitung des Dikasteriums für die Institute des gottgeweihten Lebens und Gesellschaften des apostolischen Lebens, was mit der Verantwortung einer Ministerin vergleichbar ist. Brambilla, eine Missionarin, Krankenschwester und Doktorin der Psychologie, ist die erste Präfektin des katholischen Kirchenstaates. Diese Ernennung ist Teil von Franziskus' Bemühungen, Frauen stärker in Kirchenämter einzubeziehen, und folgt auf die Öffnung von Spitzenämtern für Frauen im Vatikan im Jahr 2020."
   }
  ]
 }

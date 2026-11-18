@@ -1,66 +1,97 @@
-"""Agreement between the two annotators of each output.
+"""Agreement between annotators and first results.
 
-Reads data/annotation/sample.json and data/annotation/answers/<name>.json, prints percent agreement
-and Cohen's kappa per question, and writes data/annotation/disagreements.csv.
+Reads data/annotation/sample.json and data/annotation/answers/<name>.json. Prints, per dimension
+(faithfulness, coverage): Krippendorff's alpha (interval, as in SummEval), how often the two ratings
+are equal or at most 1 apart, and the mean rating per asked severity and per error dimension.
+Writes data/annotation/ratings.csv: one row per output with both ratings and their mean.
 Usage: python scripts/annotation/agreement.py
 """
 import csv
 import json
-from collections import Counter
+from collections import defaultdict
+from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DIR = ROOT / "data" / "annotation"
-QUESTIONS = {"q1": "number of changes", "q2": "asked error type", "q3": "correct German", "q4": "severity"}
+DIMS = ["faithfulness", "coverage"]
 
 
-def cohen_kappa(pairs):
-    n = len(pairs)
-    observed = sum(a == b for a, b in pairs) / n
-    first, second = Counter(a for a, _ in pairs), Counter(b for _, b in pairs)
-    expected = sum(first[c] * second[c] for c in first) / (n * n)
-    return 1.0 if expected == 1 else (observed - expected) / (1 - expected)
+def krippendorff_interval(units):
+    """units: list of lists of ratings (one list per output, any number of raters, >= 2 used)."""
+    units = [u for u in units if len(u) >= 2]
+    values = [v for u in units for v in u]
+    n = len(values)
+    if n < 2:
+        return float("nan")
+    d_o = sum(sum((a - b) ** 2 for a, b in combinations(u, 2)) * 2 / (len(u) - 1) for u in units) / n
+    d_e = sum((a - b) ** 2 for a, b in combinations(values, 2)) * 2 / (n * (n - 1))
+    return 1.0 if d_e == 0 else 1 - d_o / d_e
+
+
+def mean(xs):
+    return sum(xs) / len(xs) if xs else float("nan")
 
 
 def main():
-    samples = json.load(open(DIR / "sample.json", encoding="utf-8"))["samples"]
+    sample = json.load(open(DIR / "sample.json", encoding="utf-8"))
+    samples = sample["samples"]
     answers = {}
     for path in sorted((DIR / "answers").glob("*.json")):
         data = json.load(open(path, encoding="utf-8"))
+        if data.get("sample") != sample["tag"]:
+            print(f"skipped {path.name}: made for another sample ({data.get('sample')}, now {sample['tag']})")
+            continue
         answers[data["annotator"]] = data["answers"]
     print("answers from:", ", ".join(answers) or "nobody yet")
 
-    pairs = {q: [] for q in QUESTIONS}
-    disagreements, missing = [], 0
+    rows, units, missing = [], {d: [] for d in DIMS}, 0
+    by_sev, by_dim = defaultdict(lambda: defaultdict(list)), defaultdict(lambda: defaultdict(list))
     for s in samples:
-        a, b = s["annotators"]
-        ra, rb = answers.get(a, {}).get(s["sample_id"]), answers.get(b, {}).get(s["sample_id"])
-        if not ra or not rb:
+        given = [answers.get(n, {}).get(s["sample_id"]) for n in s["annotators"]]
+        given = [g if g and all(d in g for d in DIMS) else None for g in given]  # only complete answers count
+        if any(g is None for g in given):
             missing += 1
-            continue
-        for q in QUESTIONS:
-            if ra.get(q) and rb.get(q):  # a question both answered (q2-q4 are skipped when q1 is "none")
-                pairs[q].append((ra[q], rb[q]))
-                if ra[q] != rb[q]:
-                    disagreements.append([s["sample_id"], s["group"], s["error_type"], q, QUESTIONS[q], a, ra[q], b, rb[q], s["adjudicator"]])
+        row = {"sample_id": s["sample_id"], "output_id": s["output_id"], "error_type": s["error_type"],
+               "error_dimension": s["dimension"], "asked_severity": s["asked_severity"]}
+        for k, name in enumerate(s["annotators"], 1):
+            g = given[k - 1] or {}
+            row[f"annotator_{k}"] = name
+            for d in DIMS:
+                row[f"{d}_{k}"] = g.get(d, "")
+        for d in DIMS:
+            vals = [g[d] for g in given if g and d in g]
+            row[f"{d}_mean"] = round(mean(vals), 2) if vals else ""
+            units[d].append(vals)
+            if vals:
+                by_sev[d][s["asked_severity"]].append(mean(vals))
+                by_dim[d][s["dimension"]].append(mean(vals))
+        rows.append(row)
     if missing:
-        print(f"{missing} of {len(samples)} outputs don't have both annotations yet")
+        print(f"{missing} of {len(samples)} outputs don't have both ratings yet")
 
-    print(f"\n{'question':<24}{'outputs':>8}{'agree':>8}{'kappa':>8}")
-    for q, label in QUESTIONS.items():
-        p = pairs[q]
-        if not p:
-            print(f"{q + ' ' + label:<24}{0:>8}")
+    print(f"\n{'rating':<14}{'pairs':>6}{'alpha':>8}{'equal':>8}{'±1':>8}")
+    for d in DIMS:
+        pairs = [u for u in units[d] if len(u) == 2]
+        if not pairs:
+            print(f"{d:<14}{0:>6}")
             continue
-        agree = sum(x == y for x, y in p) / len(p)
-        print(f"{q + ' ' + label:<24}{len(p):>8}{agree:>8.0%}{cohen_kappa(p):>8.2f}")
+        equal = mean([u[0] == u[1] for u in pairs])
+        near = mean([abs(u[0] - u[1]) <= 1 for u in pairs])
+        print(f"{d:<14}{len(pairs):>6}{krippendorff_interval(pairs):>8.2f}{equal:>8.0%}{near:>8.0%}")
 
-    with open(DIR / "disagreements.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["sample_id", "group", "error_type", "question", "question_text", "annotator_1", "answer_1",
-                    "annotator_2", "answer_2", "adjudicator", "settled_answer"])
-        w.writerows(row + [""] for row in disagreements)
-    print(f"\n{len(disagreements)} disagreements -> data/annotation/disagreements.csv")
+    print("\nmean rating by asked severity (low / medium / high)")
+    for d in DIMS:
+        print(f"  {d:<14}" + "  ".join(f"{sev} {mean(by_sev[d][sev]):.2f} (n={len(by_sev[d][sev])})" for sev in ("low", "medium", "high")))
+    print("mean rating by kind of injected error (faithfulness / coverage)")
+    for d in DIMS:
+        print(f"  {d:<14}" + "  ".join(f"{k} {mean(by_dim[d][k]):.2f} (n={len(by_dim[d][k])})" for k in ("faithfulness", "coverage")))
+
+    with open(DIR / "ratings.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+    print("\n-> data/annotation/ratings.csv")
 
 
 if __name__ == "__main__":
