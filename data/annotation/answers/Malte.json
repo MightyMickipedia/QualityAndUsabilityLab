@@ -1,0 +1,55 @@
+{
+ "annotator": "Malte",
+ "sample": "b51867da",
+ "saved": "2026-11-24T16:51:57.503Z",
+ "answers": {
+  "s021": {
+   "faithfulness": 7,
+   "coverage": 3
+  },
+  "s027": {
+   "faithfulness": 6,
+   "coverage": 4
+  },
+  "s014": {
+   "faithfulness": 2,
+   "coverage": 3
+  },
+  "s003": {
+   "faithfulness": 6,
+   "coverage": 6
+  },
+  "s018": {
+   "faithfulness": 5,
+   "coverage": 5
+  },
+  "s020": {
+   "faithfulness": 5,
+   "coverage": 4
+  },
+  "s009": {
+   "faithfulness": 4,
+   "coverage": 5
+  },
+  "s012": {
+   "faithfulness": 5,
+   "coverage": 7
+  },
+  "s029": {
+   "faithfulness": 4,
+   "coverage": 2
+  },
+  "s004": {
+   "faithfulness": 3,
+   "coverage": 6
+  },
+  "s015": {
+   "faithfulness": 6,
+   "coverage": 4
+  },
+  "s002": {
+   "faithfulness": 7,
+   "coverage": 7
+  }
+ }
+}
