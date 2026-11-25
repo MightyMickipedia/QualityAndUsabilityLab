@@ -1,8 +1,22 @@
 # Annotation task
 
-Everybody rates 12 summaries. It takes about 1 hour (up to 5 minutes per summary). Why we do it is in `annotation_proposal.md`.
+Everybody rates 12 summaries per batch. One batch takes about 1 hour (up to 5 minutes per summary). Why we do it is in `annotation_proposal.md`.
 
 ## Who rates what
+
+Batch 2 works exactly like batch 1, with 12 new summaries each. None of them was in batch 1.
+
+**Batch 2**
+
+| Person | Page | Answers file |
+|---|---|---|
+| Giuseppe | `data/annotation/batch2/pages/Giuseppe.html` | `data/annotation/batch2/answers/Giuseppe.json` |
+| Malte | `data/annotation/batch2/pages/Malte.html` | `data/annotation/batch2/answers/Malte.json` |
+| Anton | `data/annotation/batch2/pages/Anton.html` | `data/annotation/batch2/answers/Anton.json` |
+| Mick | `data/annotation/batch2/pages/Mick.html` | `data/annotation/batch2/answers/Mick.json` |
+| Ivan | `data/annotation/batch2/pages/Ivan.html` | `data/annotation/batch2/answers/Ivan.json` |
+
+**Batch 1** (done)
 
 | Person | Page | Answers file |
 |---|---|---|
@@ -23,7 +37,7 @@ Your 12 summaries are drawn at random and in random order. You don't get the err
    3. Rate **faithfulness** from 1 to 7: is everything in the summary correct according to the article?
    4. Rate **coverage** from 1 to 7: does the summary contain the key information of the article?
    5. Press **Next**.
-3. When all 12 are done, press **Save answers file**. Put the downloaded `<name>.json` into `data/annotation/answers/`, then commit and push it.
+3. When all 12 are done, press **Save answers file**. Put the downloaded `<name>.json` into the answers folder of the batch (see the table; the page also shows the path), then commit and push it.
 
 ## How to rate
 
@@ -35,8 +49,8 @@ Your 12 summaries are drawn at random and in random order. You don't get the err
 
 - **Back** lets you change a rating. The counter at the top shows how many are done.
 - On a wide screen the article is next to the summary. **One below the other** at the top puts it above the summary instead; on a narrow screen it is always above.
-- If "Save answers file" doesn't work, press **Copy answers** and paste the text into `data/annotation/answers/<name>.json`.
+- If "Save answers file" doesn't work, press **Copy answers** and paste the text into your answers file.
 
 ## After everybody is done
 
-One person runs `python scripts/annotation/agreement.py`. It prints how much we agree and the mean rating per severity, and writes `data/annotation/ratings.csv`.
+One person runs `python scripts/annotation/agreement.py`. It reads all batches together, prints how much we agree and the mean rating per severity, and writes `data/annotation/ratings.csv`.

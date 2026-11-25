@@ -1,9 +1,10 @@
 """Agreement between annotators and first results.
 
-Reads data/annotation/sample.json and data/annotation/answers/<name>.json. Prints, per dimension
+Reads every batch: data/annotation/sample.json with data/annotation/answers/<name>.json, and
+data/annotation/batch<N>/ the same way. Prints, over all batches together, per dimension
 (faithfulness, coverage): Krippendorff's alpha (interval, as in SummEval), how often the two ratings
 are equal or at most 1 apart, and the mean rating per asked severity and per error dimension.
-Writes data/annotation/ratings.csv: one row per output with both ratings and their mean.
+Writes data/annotation/ratings.csv: one row per output with its batch, both ratings and their mean.
 Usage: python scripts/annotation/agreement.py
 """
 import csv
@@ -33,26 +34,33 @@ def mean(xs):
     return sum(xs) / len(xs) if xs else float("nan")
 
 
-def main():
-    sample = json.load(open(DIR / "sample.json", encoding="utf-8"))
-    samples = sample["samples"]
+def load_batch(folder):
+    """The samples of one batch, each with the answers of its annotators (None if missing)."""
+    sample = json.load(open(folder / "sample.json", encoding="utf-8"))
     answers = {}
-    for path in sorted((DIR / "answers").glob("*.json")):
+    for path in sorted((folder / "answers").glob("*.json")):
         data = json.load(open(path, encoding="utf-8"))
         if data.get("sample") != sample["tag"]:
-            print(f"skipped {path.name}: made for another sample ({data.get('sample')}, now {sample['tag']})")
+            print(f"skipped {path.relative_to(ROOT)}: made for another sample ({data.get('sample')}, now {sample['tag']})")
             continue
         answers[data["annotator"]] = data["answers"]
-    print("answers from:", ", ".join(answers) or "nobody yet")
+    batch = sample.get("batch", 1)
+    print(f"batch {batch}: answers from", ", ".join(answers) or "nobody yet")
+    return [dict(s, batch=batch, given=[answers.get(n, {}).get(s["sample_id"]) for n in s["annotators"]])
+            for s in sample["samples"]]
+
+
+def main():
+    folders = [DIR] + sorted((f for f in DIR.glob("batch*/") if f.name[5:].isdigit()), key=lambda f: int(f.name[5:]))
+    samples = [s for f in folders if (f / "sample.json").exists() for s in load_batch(f)]
 
     rows, units, missing = [], {d: [] for d in DIMS}, 0
     by_sev, by_dim = defaultdict(lambda: defaultdict(list)), defaultdict(lambda: defaultdict(list))
     for s in samples:
-        given = [answers.get(n, {}).get(s["sample_id"]) for n in s["annotators"]]
-        given = [g if g and all(d in g for d in DIMS) else None for g in given]  # only complete answers count
+        given = [g if g and all(d in g for d in DIMS) else None for g in s["given"]]  # only complete answers count
         if any(g is None for g in given):
             missing += 1
-        row = {"sample_id": s["sample_id"], "output_id": s["output_id"], "error_type": s["error_type"],
+        row = {"batch": s["batch"], "sample_id": s["sample_id"], "output_id": s["output_id"], "error_type": s["error_type"],
                "error_dimension": s["dimension"], "asked_severity": s["asked_severity"]}
         for k, name in enumerate(s["annotators"], 1):
             g = given[k - 1] or {}

@@ -8,8 +8,10 @@ at random and writes
 Nobody gets an error type they generated or wrote the prompt for. Everybody gets the same number
 of outputs, in random order, so error types and severities are mixed.
 An existing sample.json is kept, so the pages stay the same when outputs are regenerated later.
-Usage: python scripts/annotation/build_pages.py            build the pages from sample.json (draw it if missing)
-       python scripts/annotation/build_pages.py --redraw   draw a new sample
+Further batches go to data/annotation/batch<N>/ and only use outputs that no earlier batch has.
+Usage: python scripts/annotation/build_pages.py                       build batch 1 from sample.json (draw it if missing)
+       python scripts/annotation/build_pages.py --batch 2             the same for batch 2
+       python scripts/annotation/build_pages.py [--batch N] --redraw  draw a new sample for that batch
 """
 import difflib
 import hashlib
@@ -80,12 +82,19 @@ def load_articles():
     return articles
 
 
-def mark_changes(original, modified):
-    """The modified summary as HTML: removed words struck through in <del>, new words in <ins>."""
+def mark_changes(original, modified, exact=False):
+    """The modified summary as HTML: removed words struck through in <del>, new words in <ins>.
+    exact=True (batch 2 on) keeps every space inside the tags, so dropping the <del> parts gives exactly
+    the modified summary and dropping the <ins> parts exactly the original. Batch 1 keeps the old marks."""
     a, b = re.split(r"(\s+)", original), re.split(r"(\s+)", modified)
     out = []
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
         old, new = "".join(a[i1:i2]), "".join(b[j1:j2])
+        if exact:
+            out.append(html.escape(new) if op == "equal" else
+                       (f'<del title="removed">{html.escape(old)}</del>' if old else "") +
+                       (f"<ins>{html.escape(new)}</ins>" if new else ""))
+            continue
         if op == "equal" or not (old.strip() or new.strip()):
             out.append(html.escape(new))
             continue
@@ -122,7 +131,7 @@ def draw_sample(rng, by_type):
         if all(c == target for c in counts):
             break
     else:
-        raise SystemExit("could not balance the severities, try another seed")
+        return draw_sample_loose(rng, by_type)
     picked = []
     for t in types:
         for s in SEVERITIES:
@@ -170,12 +179,39 @@ def sample_tag(entries):
     return hashlib.sha1(json.dumps(entries, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:8]
 
 
+def draw_sample_loose(rng, by_type):
+    """Fallback when the outputs left don't have every severity per type (later batches):
+    a type may repeat a severity, but still gets at least two different ones, and the totals stay equal."""
+    types = sorted(by_type)
+    target = N_SAMPLE // len(SEVERITIES)
+    for _ in range(200000):
+        per_type = {t: N_SAMPLE // len(types) for t in types}
+        for t in rng.sample(types, N_SAMPLE - sum(per_type.values())):
+            per_type[t] += 1
+        picked = [r for t in types for r in rng.sample(by_type[t], per_type[t])]
+        if all(len({r["severity"] for r in picked if r["error_type"] == t}) >= 2 for t in types) and \
+                all(sum(r["severity"] == s for r in picked) == target for s in SEVERITIES):
+            rng.shuffle(picked)
+            return picked
+    raise SystemExit("could not balance the severities, try another seed")
+
+
+def batch_dir(n):
+    return OUT if n == 1 else OUT / f"batch{n}"
+
+
 def main():
-    rng = random.Random(SEED)
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "pages").mkdir(exist_ok=True)
-    (OUT / "answers").mkdir(exist_ok=True)
-    sample_file = OUT / "sample.json"
+    batch = int(sys.argv[sys.argv.index("--batch") + 1]) if "--batch" in sys.argv else 1
+    seed = SEED if batch == 1 else f"{SEED}-batch{batch}"
+    rng = random.Random(seed)
+    earlier = [json.load(open(batch_dir(k) / "sample.json", encoding="utf-8"))["samples"] for k in range(1, batch)]
+    used = {e["output_id"] for s in earlier for e in s}
+    first_id = sum(len(s) for s in earlier) + 1  # sample ids go on across batches: s031, s032, ...
+    out = batch_dir(batch)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "pages").mkdir(exist_ok=True)
+    (out / "answers").mkdir(exist_ok=True)
+    sample_file = out / "sample.json"
 
     if sample_file.exists() and "--redraw" not in sys.argv:
         # keep the drawn sample; the texts are stored in it, so later reruns of outputs don't change the pages
@@ -183,7 +219,7 @@ def main():
         print(f"kept the sample in {sample_file.relative_to(ROOT)} (use --redraw for a new one)")
     else:
         articles = load_articles()
-        by_type = {t: [r for r in recs if len(articles[str(r["item_id"])][1].split()) <= MAX_ARTICLE_WORDS
+        by_type = {t: [r for r in recs if r["id"] not in used and len(articles[str(r["item_id"])][1].split()) <= MAX_ARTICLE_WORDS
                        and len(r["modified_summary"].split()) <= MAX_SUMMARY_WORDS]
                    for t, recs in load_outputs().items()}
         picked = draw_sample(rng, by_type)
@@ -193,27 +229,29 @@ def main():
                     "item_id": str(rec["item_id"]), "title": articles[str(rec["item_id"])][0],
                     "article": articles[str(rec["item_id"])][1], "original_summary": clean(rec["original_summary"]),
                     "modified_summary": clean(rec["modified_summary"])}
-                   for n, (rec, pair) in enumerate(zip(picked, pairs), 1)]
+                   for n, (rec, pair) in enumerate(zip(picked, pairs), first_id)]
         with open(sample_file, "w", encoding="utf-8") as f:
-            json.dump({"seed": SEED, "n_sample": N_SAMPLE, "tag": sample_tag(entries), "samples": entries}, f, ensure_ascii=False, indent=1)
+            json.dump({**({"batch": batch} if batch > 1 else {}), "seed": seed, "n_sample": N_SAMPLE, "tag": sample_tag(entries), "samples": entries}, f, ensure_ascii=False, indent=1)
 
     template = open(Path(__file__).with_name("page_template.html"), encoding="utf-8").read()
     for name in PEOPLE:
         mine = [e for e in entries if name in e["annotators"]]
-        random.Random(f"{SEED}-{name}").shuffle(mine)  # own random order per annotator, the same on every build
+        random.Random(f"{SEED}-{name}" if batch == 1 else f"{seed}-{name}").shuffle(mine)  # own random order per annotator, the same on every build
         items = []
         for e in mine:
             title, article = e["title"], e["article"]
             # the page gets no error type, severity or model: the article, the summary with the marks,
             # and the original summary folded away
-            items.append({"id": e["sample_id"], "summary": mark_changes(e["original_summary"], e["modified_summary"]),
+            items.append({"id": e["sample_id"], "summary": mark_changes(e["original_summary"], e["modified_summary"], exact=batch > 1),
                           "original": html.escape(e["original_summary"]),
                           "title": html.escape(title), "article": html.escape(article)})
-        page = template.replace("__NAME__", name).replace("__SAMPLE__", sample_tag(entries)).replace(
+        answers_path = (out / "answers" / f"{name}.json").relative_to(ROOT).as_posix()
+        page = template.replace("__BATCH__", "" if batch == 1 else f" · batch {batch}").replace(
+            "__ANSWERS__", answers_path).replace("__NAME__", name).replace("__SAMPLE__", sample_tag(entries)).replace(
             "__DATA__", json.dumps(items, ensure_ascii=False).replace("</", "<\\/"))
-        (OUT / "pages" / f"{name}.html").write_text(page, encoding="utf-8")
+        (out / "pages" / f"{name}.html").write_text(page, encoding="utf-8")
         print(f"{name}: {len(items)} outputs")
-    print(f"{len(entries)} outputs in the sample, {PER_OUTPUT} annotators each -> {OUT.relative_to(ROOT)}/")
+    print(f"{len(entries)} outputs in the sample, {PER_OUTPUT} annotators each -> {out.relative_to(ROOT)}/")
 
 
 if __name__ == "__main__":

@@ -49,7 +49,7 @@ Both ratings are given for every summary, whatever kind of error was injected. A
 
 **No separate severity rating.** The two ratings are our judgment of how severe the error is: a light error barely lowers them, a heavy one lowers them a lot. A separate low/medium/high would mean rating the change alone, which Neha asked us not to do, and the judges give no such rating to compare with. The asked severity stays hidden and is compared with our ratings afterwards.
 
-**Broken data.** The English summary (item 1408) is left out of the sample. The doubled quotes from the source dataset ("" instead of ") are cleaned on the pages. We checked the 30 summaries; none is broken.
+**Broken data.** The English summary (item 1408) is left out of the sample. The doubled quotes from the source dataset ("" instead of ") are cleaned on the pages. We checked the summaries of both batches; none is broken.
 
 ## What the annotator sees
 
@@ -66,7 +66,7 @@ Not shown: the error type, the asked severity and the model that generated it. T
 
 The two annotators of each summary are drawn at random. The only rule: nobody rates an error type they generated or wrote the prompt for. Everybody gets their 12 summaries in their own random order, so error types and severities are mixed.
 
-If 30 are not enough, we draw more next week from the rest in the same way.
+**Batch 2** (decided 25.11.): another 30 summaries, 12 more per person, drawn in the same way from the outputs not used in batch 1. In the outputs left, the low severity is missing for some types, so a type may repeat a severity there; it still has at least two different ones, and the totals stay 10 low, 10 medium, 10 high.
 
 Left out: outputs where the model made no change, the week-2 test outputs, and the output with an English summary (item 1408, mistral-nemo).
 
@@ -99,8 +99,8 @@ One HTML page per annotator in `data/annotation/pages/`. It opens in any browser
 
 Scripts in `scripts/annotation/`:
 
-- `build_pages.py` draws the sample (`data/annotation/sample.json`, with the texts), assigns the annotators and builds the pages. Run again, it keeps the sample; `--redraw` draws a new one.
-- `agreement.py` reads the answers files, prints agreement and first results and writes `data/annotation/ratings.csv`.
+- `build_pages.py` draws the sample (`data/annotation/sample.json`, with the texts), assigns the annotators and builds the pages. Run again, it keeps the sample; `--redraw` draws a new one. `--batch 2` does the same for batch 2 in `data/annotation/batch2/`.
+- `agreement.py` reads the answers files of all batches, prints agreement and first results and writes `data/annotation/ratings.csv`.
 - `convert_coverage_csv.py` turned Mick's `data/APPLS_errors/human_labeled.csv` into `data/injected/delete_sentence.jsonl` and `add_in_domain_sentence.jsonl`, so all 11 types are in the shared format.
 
 The pages are ready. Regenerating outputs later (e.g. the unchanged ones) doesn't change them: the sample only has outputs with a change, and their texts are stored in `sample.json`.
@@ -108,4 +108,4 @@ The pages are ready. Regenerating outputs later (e.g. the unchanged ones) doesn'
 ## Decided
 
 - 1 to 7, as in the judge rubrics, so we can compare with the judges.
-- 30 summaries for now. Next week we see whether we need more.
+- 30 summaries in batch 1, 30 more in batch 2.
