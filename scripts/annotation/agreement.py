@@ -3,7 +3,9 @@
 Reads every batch: data/annotation/sample.json with data/annotation/answers/<name>.json, and
 data/annotation/batch<N>/ the same way. Prints, over all batches together, per dimension
 (faithfulness, coverage): Krippendorff's alpha (interval, as in SummEval), how often the two ratings
-are equal or at most 1 apart, and the mean rating per asked severity and per error dimension.
+are equal or at most 1 apart, and alpha again after normalizing each annotator (own mean subtracted,
+or z-score), as a check of how much comes from different use of the scale. Then mean ± SD of the single
+ratings per annotator, per asked severity, per kind of injected error and per error type.
 Writes data/annotation/ratings.csv: one row per output with its batch, both ratings and their mean.
 Usage: python scripts/annotation/agreement.py
 """
@@ -34,6 +36,38 @@ def mean(xs):
     return sum(xs) / len(xs) if xs else float("nan")
 
 
+def sd(xs):
+    """Sample standard deviation (n - 1)."""
+    if len(xs) < 2:
+        return float("nan")
+    m = mean(xs)
+    return (sum((x - m) ** 2 for x in xs) / (len(xs) - 1)) ** 0.5
+
+
+def fmt(xs):
+    return f"{mean(xs):.2f} ± {sd(xs):.2f} (n={len(xs)})" if xs else "-"
+
+
+def table(title, groups, keys):
+    """groups[dim][key] = list of single ratings."""
+    print(f"\n{title}")
+    width = max(len(str(k)) for k in keys) + 2
+    print(f"  {'':<{width}}" + "".join(f"{d:<24}" for d in DIMS))
+    for k in keys:
+        print(f"  {str(k):<{width}}" + "".join(f"{fmt(groups[d][k]):<24}" for d in DIMS))
+
+
+def normalized_alpha(pairs, scale):
+    """pairs: [((name, rating), (name, rating))]. Each rating is replaced by (rating - own mean) / own SD
+    (scale=True) or rating - own mean (scale=False), with mean and SD over all ratings of that annotator."""
+    own = defaultdict(list)
+    for pair in pairs:
+        for name, r in pair:
+            own[name].append(r)
+    norm = lambda name, r: (r - mean(own[name])) / (sd(own[name]) if scale and sd(own[name]) > 0 else 1)
+    return krippendorff_interval([[norm(n, r) for n, r in pair] for pair in pairs])
+
+
 def load_batch(folder):
     """The samples of one batch, each with the answers of its annotators (None if missing)."""
     sample = json.load(open(folder / "sample.json", encoding="utf-8"))
@@ -54,8 +88,8 @@ def main():
     folders = [DIR] + sorted((f for f in DIR.glob("batch*/") if f.name[5:].isdigit()), key=lambda f: int(f.name[5:]))
     samples = [s for f in folders if (f / "sample.json").exists() for s in load_batch(f)]
 
-    rows, units, missing = [], {d: [] for d in DIMS}, 0
-    by_sev, by_dim = defaultdict(lambda: defaultdict(list)), defaultdict(lambda: defaultdict(list))
+    rows, units, named, missing = [], {d: [] for d in DIMS}, {d: [] for d in DIMS}, 0
+    by_sev, by_dim, by_type, by_person = ({d: defaultdict(list) for d in DIMS} for _ in range(4))
     for s in samples:
         given = [g if g and all(d in g for d in DIMS) else None for g in s["given"]]  # only complete answers count
         if any(g is None for g in given):
@@ -68,17 +102,22 @@ def main():
             for d in DIMS:
                 row[f"{d}_{k}"] = g.get(d, "")
         for d in DIMS:
-            vals = [g[d] for g in given if g and d in g]
+            vals = [g[d] for g in given if g]
             row[f"{d}_mean"] = round(mean(vals), 2) if vals else ""
             units[d].append(vals)
-            if vals:
-                by_sev[d][s["asked_severity"]].append(mean(vals))
-                by_dim[d][s["dimension"]].append(mean(vals))
+            if len(vals) == 2:
+                named[d].append(tuple((n, g[d]) for n, g in zip(s["annotators"], given)))
+            for n, g in zip(s["annotators"], given):
+                if g:
+                    by_person[d][n].append(g[d])
+            by_sev[d][s["asked_severity"]] += vals
+            by_dim[d][s["dimension"]] += vals
+            by_type[d][s["error_type"]] += vals
         rows.append(row)
     if missing:
         print(f"{missing} of {len(samples)} outputs don't have both ratings yet")
 
-    print(f"\n{'rating':<14}{'pairs':>6}{'alpha':>8}{'equal':>8}{'±1':>8}")
+    print(f"\n{'rating':<14}{'pairs':>6}{'alpha':>8}{'equal':>8}{'±1':>8}{'alpha centered':>16}{'alpha z':>9}")
     for d in DIMS:
         pairs = [u for u in units[d] if len(u) == 2]
         if not pairs:
@@ -86,14 +125,14 @@ def main():
             continue
         equal = mean([u[0] == u[1] for u in pairs])
         near = mean([abs(u[0] - u[1]) <= 1 for u in pairs])
-        print(f"{d:<14}{len(pairs):>6}{krippendorff_interval(pairs):>8.2f}{equal:>8.0%}{near:>8.0%}")
+        print(f"{d:<14}{len(pairs):>6}{krippendorff_interval(pairs):>8.2f}{equal:>8.0%}{near:>8.0%}"
+              f"{normalized_alpha(named[d], False):>16.2f}{normalized_alpha(named[d], True):>9.2f}")
 
-    print("\nmean rating by asked severity (low / medium / high)")
-    for d in DIMS:
-        print(f"  {d:<14}" + "  ".join(f"{sev} {mean(by_sev[d][sev]):.2f} (n={len(by_sev[d][sev])})" for sev in ("low", "medium", "high")))
-    print("mean rating by kind of injected error (faithfulness / coverage)")
-    for d in DIMS:
-        print(f"  {d:<14}" + "  ".join(f"{k} {mean(by_dim[d][k]):.2f} (n={len(by_dim[d][k])})" for k in ("faithfulness", "coverage")))
+    print("\nmean ± SD of the single ratings (n = number of ratings)")
+    table("by annotator", by_person, sorted({n for d in DIMS for n in by_person[d]}))
+    table("by asked severity", by_sev, ["low", "medium", "high"])
+    table("by kind of injected error", by_dim, ["faithfulness", "coverage"])
+    table("by error type", by_type, sorted({t for d in DIMS for t in by_type[d]}))
 
     with open(DIR / "ratings.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
